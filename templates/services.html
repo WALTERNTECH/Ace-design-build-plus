@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>Services | ACE Company Ltd</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Bebas+Neue&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/services.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<header class="navbar">
+
+  <div class="container nav-wrapper">
+
+    <a href="{{ url_for('company') }}" class="ace-logo">
+      <img src="static/ace-logo.jpeg" alt="ACE Logo" style="height:32px;width:auto;" onerror="this.style.display='none'"/>
+    
+     <!-- Fallback text logo always shown alongside (hidden if image loaded) -->
+     <div class="ace-logo-text">
+       <span class="ace-logo-mark">ACE</span>
+       <span class="ace-logo-sub">Adaptive City Ecosystems</span>
+     </div>
+    
+    </a>
+
+
+    <nav class="nav-menu">
+
+      <a href="{{ url_for('index') }}">Home</a>
+      <a href="{{ url_for('about') }}">About</a>
+      <a href="{{ url_for('services') }}" class="active">Services</a>
+      <a href="{{ url_for('company') }}">Company</a>
+      <a href="{{ url_for('faq') }}">FAQ</a>
+      <a href="{{ url_for('blog') }}">Blog</a>
+      <a href="{{ url_for('contact') }}">Contact</a>
+
+    </nav>
+
+    <a href="{{ url_for('contact') }}" class="nav-btn">
+      Get Quote
+    </a>
+
+    <!-- HAMBURGER -->
+
+    <div class="hamburger" id="hamburger">
+
+      <span></span>
+      <span></span>
+      <span></span>
+
+    </div>
+
+  </div>
+
+</header>
+
+<!-- MOBILE MENU -->
+
+<div class="mobile-menu" id="mobileMenu">
+
+  <a href="{{ url_for('index') }}">Home</a>
+  <a href="{{ url_for('about') }}">About</a>
+  <a href="{{ url_for('services') }}">Services</a>
+  <a href="{{ url_for('company') }}">Company</a>
+  <a href="{{ url_for('faq') }}">FAQ</a>
+  <a href="{{ url_for('blog') }}">Blog</a>
+  <a href="{{ url_for('contact') }}">Contact</a>
+
+  <a 
+  href="https://www.instagram.com/reel/DHxz7qrMIu8/?utm_source=ig_web_copy_link/" 
+  target="_blank"
+  class="instagram-link">
+
+  Instagram
+
+  </a>
+
+</div>
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero">
+
+  <div class="hero-slider">
+
+    <div class="slide active"
+    style="background-image:url('https://images.unsplash.com/photo-1518005020951-eccb494ad742?q=80&w=1800&auto=format&fit=crop')">
+    </div>
+
+    <div class="slide"
+    style="background-image:url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1800&auto=format&fit=crop')">
+    </div>
+
+    <div class="slide"
+    style="background-image:url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=1800&auto=format&fit=crop')">
+    </div>
+
+  </div>
+
+  <div class="hero-overlay"></div>
+
+  <div class="container hero-content">
+
+    <div class="hero-badge">
+      ACE COMPANY LTD
+    </div>
+
+    <h1>
+      Premium Design <br>
+      <span>& Construction</span> Services
+    </h1>
+
+    <p>
+      From architectural design and structural engineering to full-scale
+      construction and interior fit-outs, ACE delivers complete
+      design-build excellence under one trusted team.
+    </p>
+
+    <div class="hero-buttons">
+
+      <a href="{{ url_for('services') }}" class="btn-primary">
+        Explore Services
+      </a>
+
+      <a href="{{ url_for('contact') }}" class="btn-secondary">
+        Get Quote
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- =====================================================
+     SERVICES
+===================================================== -->
+
+<section class="services" id="services">
+
+  <div class="container">
+
+    <div class="section-center">
+
+      <div class="section-tag">
+        WHAT WE DO
+      </div>
+
+      <h2>
+        Our Core <span>Services</span>
+      </h2>
+
+      <p>
+        We provide end-to-end architectural, engineering and construction
+        solutions designed for investors, homeowners, developers and commercial clients.
+      </p>
+
+    </div>
+
+    <div class="services-grid">
+
+      <!-- CARD -->
+
+      <div class="service-card">
+
+        <div class="service-image">
+
+          <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1400&auto=format&fit=crop">
+
+        </div>
+
+        <div class="service-content">
+
+          <div class="service-top">
+
+            <span>Service 01</span>
+
+            <div class="service-icon">
+              🏛
+            </div>
+
+          </div>
+
+          <h3>
+            Architectural Design
+          </h3>
+
+          <p>
+            Innovative modern architectural solutions including residential,
+            commercial and mixed-use developments with BIM modelling,
+            3D visualization and approval documentation.
+          </p>
+
+          <ul>
+
+            <li>✔ Concept Development</li>
+            <li>✔ BIM & Revit Modelling</li>
+            <li>✔ Planning Approvals</li>
+            <li>✔ 3D Visualisation</li>
+            <li>✔ Site Planning</li>
+
+          </ul>
+
+        </div>
+
+      </div>
+
+      <!-- CARD -->
+
+      <div class="service-card">
+
+        <div class="service-image">
+
+          <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1400&auto=format&fit=crop">
+
+        </div>
+
+        <div class="service-content">
+
+          <div class="service-top">
+
+            <span>Service 02</span>
+
+            <div class="service-icon">
+              🏗
+            </div>
+
+          </div>
+
+          <h3>
+            Structural Engineering
+          </h3>
+
+          <p>
+            Advanced reinforced concrete and steel structural systems designed
+            for safety, durability and long-term sustainability across all project types.
+          </p>
+
+          <ul>
+
+            <li>✔ Foundation Design</li>
+            <li>✔ Steel Structures</li>
+            <li>✔ Seismic Analysis</li>
+            <li>✔ Structural Assessment</li>
+            <li>✔ Engineering Reports</li>
+
+          </ul>
+
+        </div>
+
+      </div>
+
+      <!-- CARD -->
+
+      <div class="service-card">
+
+        <div class="service-image">
+
+          <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=1400&auto=format&fit=crop">
+
+        </div>
+
+        <div class="service-content">
+
+          <div class="service-top">
+
+            <span>Service 03</span>
+
+            <div class="service-icon">
+              🚧
+            </div>
+
+          </div>
+
+          <h3>
+            General Contracting
+          </h3>
+
+          <p>
+            Professional construction management and contracting solutions
+            handled by experienced project managers and site engineers.
+          </p>
+
+          <ul>
+
+            <li>✔ Site Supervision</li>
+            <li>✔ Construction Management</li>
+            <li>✔ Procurement</li>
+            <li>✔ Cost Reporting</li>
+            <li>✔ Quality Assurance</li>
+
+          </ul>
+
+        </div>
+
+      </div>
+
+      <!-- CARD -->
+
+      <div class="service-card">
+
+        <div class="service-image">
+
+          <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=1400&auto=format&fit=crop">
+
+        </div>
+
+        <div class="service-content">
+
+          <div class="service-top">
+
+            <span>Service 04</span>
+
+            <div class="service-icon">
+              🛋
+            </div>
+
+          </div>
+
+          <h3>
+            Interior Fit-Outs
+          </h3>
+
+          <p>
+            Luxury interior finishes, office fit-outs and premium residential
+            spaces designed for comfort, elegance and functionality.
+          </p>
+
+          <ul>
+
+            <li>✔ Luxury Interiors</li>
+            <li>✔ Office Fit-Outs</li>
+            <li>✔ Lighting Design</li>
+            <li>✔ Furniture Planning</li>
+            <li>✔ Finishing Works</li>
+
+          </ul>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- =====================================================
+     PROCESS
+===================================================== -->
+
+<section class="process">
+
+  <div class="container">
+
+    <div class="section-center">
+
+      <div class="section-tag">
+        OUR WORKFLOW
+      </div>
+
+      <h2>
+        How We <span>Deliver</span>
+      </h2>
+
+    </div>
+
+    <div class="process-grid">
+
+      <div class="process-card">
+
+        <h1>01</h1>
+
+        <h3>Consultation</h3>
+
+        <p>
+          Project briefing, site analysis and feasibility planning.
+        </p>
+
+      </div>
+
+      <div class="process-card">
+
+        <h1>02</h1>
+
+        <h3>Design & Planning</h3>
+
+        <p>
+          Detailed drawings, approvals and BIM coordination.
+        </p>
+
+      </div>
+
+      <div class="process-card">
+
+        <h1>03</h1>
+
+        <h3>Construction</h3>
+
+        <p>
+          Execution, supervision, handover and project support.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- =====================================================
+     CTA
+===================================================== -->
+
+<section class="cta">
+
+  <div class="container">
+
+    <div class="cta-box">
+
+      <h2>
+        Ready To <span>Build?</span>
+      </h2>
+
+      <p>
+        ACE Company Ltd is ready to transform your vision into a landmark project.
+      </p>
+
+      <div class="cta-buttons">
+
+        <a href="{{ url_for('contact') }}" class="btn-primary">
+          Contact Us
+        </a>
+
+        <a href="{{ url_for('about') }}" class="btn-secondary">
+          About ACE
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ════════════════════════════════════════════════════════
+     FOOTER — self-contained
+════════════════════════════════════════════════════════ -->
+<footer class="ace-footer">
+  <div class="ace-footer-grid">
+
+    <!-- Brand col -->
+    <div class="ace-footer-brand">
+      <div class="ace-footer-logo-row">
+        <img src="static/ace-logo.jpeg" alt="ACE Logo" style="height:32px;width:auto;" onerror="this.style.display='none'"/>
+        <div>
+          <div class="ace-footer-logo-mark">ACE</div>
+          <div class="ace-footer-logo-sub">Adaptive City Ecosystems</div>
+        </div>
+      </div>
+      <p class="ace-footer-tagline">Integrated architecture, structural engineering, interior design and construction management. Nairobi, Kenya. Est. 2020.</p>
+      <div class="ace-footer-contact">
+        <a href="tel:+254726314608">
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.36 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.34 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          +254 726 314 608
+        </a>
+        <a href="mailto:acedesignbuildplus@gmail.com">
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          acedesignbuildplus@gmail.com
+        </a>
+        <a href="#">
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Nairobi, Kenya
+        </a>
+      </div>
+    </div>
+
+    <!-- Services -->
+    <div>
+      <div class="ace-footer-col-title">Services</div>
+      <div class="ace-footer-links">
+        <a href="{{ url_for('services') }}">Architecture &amp; Design</a>
+        <a href="{{ url_for('services') }}">Structural Engineering</a>
+        <a href="{{ url_for('services') }}#fitouts">Interior Fit-Out</a>
+        <a href="{{ url_for('services') }}">Construction Management</a>
+        <a href="{{ url_for('services') }}">Diaspora Real Estate</a>
+        <a href="{{ url_for('services') }}">Industrial Masterplanning</a>
+      </div>
+    </div>
+
+    <!-- Company -->
+    <div>
+      <div class="ace-footer-col-title">Company</div>
+      <div class="ace-footer-links">
+        <a href="{{ url_for('about') }}">About ACE</a>
+        <a href="{{ url_for('company') }}">Projects</a>
+        <a href="{{ url_for('company') }}#faces">Our Team</a>
+        <a href="{{ url_for('company') }}#downloads">Downloads</a>
+        <a href="{{ url_for('company') }}#affiliations">Affiliations</a>
+      </div>
+    </div>
+
+    <!-- Contact -->
+    <div>
+      <div class="ace-footer-col-title">Contact</div>
+      <div class="ace-footer-links">
+        <a href="{{ url_for('contact') }}">Start a Project</a>
+        <a href="{{ url_for('contact') }}">Request a Quote</a>
+        <a href="{{ url_for('contact') }}">Request Credentials</a>
+        <a href="{{ url_for('contact') }}">Diaspora Enquiries</a>
+        <a href="{{ url_for('contact') }}">Media Enquiries</a>
+        <a href="{{ url_for('terms') }}">Terms & Conditions</a>
+        <a href="{{ url_for('privacy') }}">Privacy Policy</a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="ace-footer-bottom">
+    <span class="ace-footer-copy">© 2026 ACE — Adaptive City Ecosystems Ltd. All rights reserved. Nairobi, Kenya.</span>
+    <div class="ace-footer-pills">
+      <span class="ace-footer-pill">NCA Cat 4</span>
+      <span class="ace-footer-pill">AAK</span>
+      <span class="ace-footer-pill">IEK</span>
+      <span class="ace-footer-pill">ACMK</span>
+      <span class="ace-footer-pill">KABCEC</span>
+    </div>
+  </div>
+</footer>
+
+
+<!-- =====================================================
+     JS
+===================================================== -->
+
+<script>
+
+/* HERO SLIDER */
+
+const slides = document.querySelectorAll(".slide");
+
+let currentSlide = 0;
+
+function changeSlide(){
+
+  slides[currentSlide].classList.remove("active");
+
+  currentSlide++;
+
+  if(currentSlide >= slides.length){
+    currentSlide = 0;
+  }
+
+  slides[currentSlide].classList.add("active");
+
+}
+
+setInterval(changeSlide, 5000);
+
+/* MOBILE MENU */
+
+const hamburger = document.getElementById("hamburger");
+const mobileMenu = document.getElementById("mobileMenu");
+
+hamburger.addEventListener("click", () => {
+
+  hamburger.classList.toggle("active");
+  mobileMenu.classList.toggle("active");
+
+});
+
+</script>
+
+</body>
+</html>

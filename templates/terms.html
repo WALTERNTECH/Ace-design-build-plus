@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Terms of Use | ACE — Adaptive City Ecosystems</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/terms.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<!-- ═══════════════════════════════════=
+     NAVBAR
+════════════════════════════════════ -->
+<header class="navbar">
+  <div class="nav-wrapper">
+
+    <a href="{{ url_for('company') }}" class="ace-logo">
+      <img src="static/ace-logo.jpeg" alt="ACE Logo"
+           onerror="this.style.display='none'"/>
+      <div class="ace-logo-text">
+        <span class="ace-logo-mark">ACE</span>
+        <span class="ace-logo-sub">Adaptive City Ecosystems</span>
+      </div>
+    </a>
+
+    <nav class="nav-menu">
+      <a href="{{ url_for('index') }}">Home</a>
+      <a href="{{ url_for('about') }}">About</a>
+      <a href="{{ url_for('services') }}">Services</a>
+      <a href="{{ url_for('company') }}">Company</a>
+      <a href="{{ url_for('faq') }}">FAQ</a>
+      <a href="{{ url_for('blog') }}">Blog</a>
+      <a href="{{ url_for('contact') }}">Contact</a>
+    </nav>
+
+    <a href="{{ url_for('contact') }}" class="nav-btn">Get Quote</a>
+
+    <button class="burger" id="burger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+
+  </div>
+</header>
+
+<!-- Mobile menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="{{ url_for('index') }}">Home</a>
+  <a href="{{ url_for('about') }}">About</a>
+  <a href="{{ url_for('services') }}">Services</a>
+  <a href="{{ url_for('company') }}">Company</a>
+  <a href="{{ url_for('faq') }}">FAQ</a>
+  <a href="{{ url_for('blog') }}">Blog</a>
+  <a href="{{ url_for('contact') }}">Contact</a>
+  <a href="{{ url_for('contact') }}" class="mobile-cta">Get Quote</a>
+</div>
+<div class="menu-overlay" id="menuOverlay"></div>
+
+
+<!-- ════════════════════════════════════
+     HERO
+════════════════════════════════════ -->
+<section class="terms-hero">
+  <div class="terms-hero-inner">
+    <div class="terms-eyebrow">Legal</div>
+    <h1>Terms of <span>Use</span></h1>
+    <p>Understand the rules and conditions governing your use of ACE — Adaptive City Ecosystems services and website.</p>
+    <div class="terms-hero-meta">
+      <span>Last updated: January 2026</span>
+      <span class="meta-dot"></span>
+      <span>Governed by Kenyan Law</span>
+      <span class="meta-dot"></span>
+      <span>ACE Company Ltd</span>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════
+     MAIN LAYOUT
+════════════════════════════════════ -->
+<div class="terms-layout">
+
+  <!-- SIDEBAR TOC -->
+  <aside class="terms-sidebar">
+    <div class="toc-label">Contents</div>
+    <nav class="toc-nav">
+      <a href="#acceptance"   class="toc-link active">Acceptance of Terms</a>
+      <a href="#services"     class="toc-link">Services</a>
+      <a href="#intellectual" class="toc-link">Intellectual Property</a>
+      <a href="#liability"    class="toc-link">Limitation of Liability</a>
+      <a href="#payments"     class="toc-link">Payments &amp; Contracts</a>
+      <a href="#law"          class="toc-link">Governing Law</a>
+    </nav>
+    <a href="{{ url_for('contact') }}" class="toc-cta">Have a question? Contact us →</a>
+  </aside>
+
+  <!-- TERMS CONTENT -->
+  <main class="terms-content">
+
+    <section class="terms-section" id="acceptance">
+      <div class="section-number">01</div>
+      <h2>Acceptance of Terms</h2>
+      <p>By accessing or using the ACE — Adaptive City Ecosystems website and submitting any contact or enquiry form, you agree to be bound by these Terms of Use. If you do not agree to these terms, please discontinue use of the site immediately.</p>
+      <p>These terms apply to all visitors, clients, and users who access or use our website and services. ACE reserves the right to update these terms at any time without prior notice — continued use of the site constitutes acceptance of any changes.</p>
+    </section>
+
+    <section class="terms-section" id="services">
+      <div class="section-number">02</div>
+      <h2>Services</h2>
+      <p>ACE Company Ltd provides integrated architecture, structural engineering, interior fit-out and construction management services across Kenya and East Africa. Information submitted through any contact form on this website is used solely to evaluate, scope and deliver these professional services.</p>
+      <p>All service engagements are governed by a formal written contract agreed between ACE and the client prior to commencement of any work. Website content is provided for informational purposes only and does not constitute a binding service agreement.</p>
+    </section>
+
+    <section class="terms-section" id="intellectual">
+      <div class="section-number">03</div>
+      <h2>Intellectual Property</h2>
+      <p>All logos, branding, architectural drawings, project images, design concepts, written content and other materials published on this website are the exclusive intellectual property of ACE — Adaptive City Ecosystems Ltd. All rights are reserved.</p>
+      <p>Unauthorised reproduction, distribution, modification or use of any content from this site — in whole or in part — without prior written consent from ACE is strictly prohibited and may constitute an infringement of copyright and intellectual property law under Kenyan and international statutes.</p>
+      <div class="terms-highlight">
+        <div class="highlight-icon">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+        </div>
+        <p>To request permission to use ACE content, <a href="{{ url_for('contact') }}">contact us directly</a>.</p>
+      </div>
+    </section>
+
+    <section class="terms-section" id="liability">
+      <div class="section-number">04</div>
+      <h2>Limitation of Liability</h2>
+      <p>ACE — Adaptive City Ecosystems Ltd strives to ensure all website content is accurate, up to date and complete. However, we make no warranties, express or implied, regarding the accuracy, completeness or suitability of the information provided.</p>
+      <p>ACE is not liable for any direct, indirect, incidental or consequential damages arising from reliance on website content, service delays, interruptions or factors beyond our reasonable control including force majeure events, regulatory changes, supply chain disruptions or third-party failures.</p>
+      <p>Nothing in these terms limits ACE's liability for death, personal injury, or fraud caused by our negligence.</p>
+    </section>
+
+    <section class="terms-section" id="payments">
+      <div class="section-number">05</div>
+      <h2>Payments &amp; Contracts</h2>
+      <p>All financial transactions between ACE and clients are governed by formal written contracts and invoices issued by ACE Company Ltd. Payment terms, milestone schedules and retention amounts are defined within each individual project contract.</p>
+      <p>Submitting an enquiry or contact form on this website does not constitute a binding agreement, order, or commitment of any kind. No work will commence without a signed contract and agreed payment terms in place.</p>
+      <p>ACE reserves the right to suspend or terminate services in the event of non-payment in accordance with the terms set out in the applicable project contract.</p>
+    </section>
+
+    <section class="terms-section" id="law">
+      <div class="section-number">06</div>
+      <h2>Governing Law</h2>
+      <p>These Terms of Use are governed by and construed in accordance with the laws of the Republic of Kenya. Any disputes arising from or in connection with these terms or the use of ACE's website and services shall be subject to the exclusive jurisdiction of the Kenyan courts.</p>
+      <p>If any provision of these Terms is found to be unenforceable or invalid under applicable law, that provision will be modified to the minimum extent necessary to make it enforceable, and the remaining provisions will continue in full force and effect.</p>
+      <div class="terms-contact-strip">
+        <div>
+          <div class="strip-label">Questions about our terms?</div>
+          <div class="strip-text">Our team is happy to clarify any aspect of these Terms of Use.</div>
+        </div>
+        <a href="{{ url_for('contact') }}" class="strip-btn">Contact ACE →</a>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+
+<!-- ════════════════════════════════════
+     FOOTER
+════════════════════════════════════ -->
+<footer class="ace-footer">
+  <div class="ace-footer-grid">
+
+    <div class="ace-footer-brand">
+      <div class="ace-footer-logo-row">
+        <img src="static/ace-logo.jpeg" alt="ACE Logo"
+             style="height:36px;width:auto;" onerror="this.style.display='none'"/>
+        <div>
+          <div class="ace-footer-logo-mark">ACE</div>
+          <div class="ace-footer-logo-sub">Adaptive City Ecosystems</div>
+        </div>
+      </div>
+      <p class="ace-footer-tagline">Integrated architecture, structural engineering, interior design and construction management. Nairobi, Kenya. Est. 2020.</p>
+      <div class="ace-footer-contact">
+        <a href="tel:+254726314608">
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.36 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.34 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          +254 726 314 608
+        </a>
+        <a href="mailto:acedesignbuildplus@gmail.com">
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          acedesignbuildplus@gmail.com
+        </a>
+        <a href="#">
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Nairobi, Kenya
+        </a>
+      </div>
+    </div>
+
+    <div>
+      <div class="ace-footer-col-title">Services</div>
+      <div class="ace-footer-links">
+        <a href="{{ url_for('services') }}">Architecture &amp; Design</a>
+        <a href="{{ url_for('services') }}">Structural Engineering</a>
+        <a href="{{ url_for('services') }}">Interior Fit-Out</a>
+        <a href="{{ url_for('services') }}">Construction Management</a>
+        <a href="{{ url_for('services') }}">Diaspora Real Estate</a>
+        <a href="{{ url_for('services') }}">Industrial Masterplanning</a>
+      </div>
+    </div>
+
+    <div>
+      <div class="ace-footer-col-title">Company</div>
+      <div class="ace-footer-links">
+        <a href="{{ url_for('about') }}">About ACE</a>
+        <a href="{{ url_for('company') }}">Projects</a>
+        <a href="{{ url_for('company') }}#faces">Our Team</a>
+        <a href="{{ url_for('company') }}#downloads">Downloads</a>
+        <a href="{{ url_for('company') }}#affiliations">Affiliations</a>
+      </div>
+    </div>
+
+    <div>
+      <div class="ace-footer-col-title">Legal &amp; Contact</div>
+      <div class="ace-footer-links">
+        <a href="{{ url_for('contact') }}" >Start a Project</a>
+        <a href="{{ url_for('contact') }}">Request a Quote</a>
+        <a href="{{ url_for('contact') }}">Request Credentials</a>
+        <a href="{{ url_for('terms') }}">Terms of Use</a>
+        <a href="{{ url_for('privacy') }}">Privacy Policy</a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="ace-footer-bottom">
+    <span class="ace-footer-copy">© 2026 ACE — Adaptive City Ecosystems Ltd. All rights reserved. Nairobi, Kenya.</span>
+    <div class="ace-footer-pills">
+      <span class="ace-footer-pill">NCA Cat 4</span>
+      <span class="ace-footer-pill">AAK</span>
+      <span class="ace-footer-pill">IEK</span>
+      <span class="ace-footer-pill">ACMK</span>
+      <span class="ace-footer-pill">KABCEC</span>
+    </div>
+  </div>
+</footer>
+
+
+<!-- ════════════════════════════════════
+     SCRIPTS
+════════════════════════════════════ -->
+<script>
+/* ── BURGER ── */
+const burger      = document.getElementById('burger');
+const mobileMenu  = document.getElementById('mobileMenu');
+const menuOverlay = document.getElementById('menuOverlay');
+
+function openMenu() {
+  burger.classList.add('open');
+  mobileMenu.classList.add('open');
+  menuOverlay.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeMenu() {
+  burger.classList.remove('open');
+  mobileMenu.classList.remove('open');
+  menuOverlay.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+burger.addEventListener('click', () => {
+  burger.classList.contains('open') ? closeMenu() : openMenu();
+});
+menuOverlay.addEventListener('click', closeMenu);
+mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+
+/* ── TOC ACTIVE ON SCROLL ── */
+const tocLinks   = document.querySelectorAll('.toc-link');
+const termsSects = document.querySelectorAll('.terms-section');
+
+const tocIO = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      tocLinks.forEach(l => l.classList.remove('active'));
+      const active = document.querySelector(`.toc-link[href="#${e.target.id}"]`);
+      if (active) active.classList.add('active');
+    }
+  });
+}, { threshold: 0.4, rootMargin: '-80px 0px -40% 0px' });
+
+termsSects.forEach(s => tocIO.observe(s));
+</script>
+
+</body>
+</html>
