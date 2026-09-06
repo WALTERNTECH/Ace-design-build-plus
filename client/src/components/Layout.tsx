@@ -103,7 +103,8 @@ function Nav() {
           </nav>
 
           <Link to="/contact" className="nav-cta">
-            Start a Project
+            <span className="cta-full">Start a Project</span>
+            <span className="cta-short">Enquire</span>
           </Link>
 
           <button

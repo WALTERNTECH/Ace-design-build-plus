@@ -245,7 +245,7 @@ ul,ol{margin:0;padding:0;list-style:none;}
   color:var(--black);
 }
 .brand-sub{
-  display:block;
+  display:none;
   font-size:.54rem;
   font-weight:600;
   letter-spacing:.15em;
@@ -254,7 +254,17 @@ ul,ol{margin:0;padding:0;list-style:none;}
   margin-top:3px;
   white-space:nowrap;
 }
+/* On the narrowest phones the strapline yields space to the CTA. */
+@media(min-width:420px){ .brand-sub{display:block;} }
 .nav-links{display:none;align-items:center;gap:26px;}
+/* The enquiry CTA is the point of the site — it stays visible at every
+   width, shortening its label rather than disappearing. */
+.nav-cta .cta-short{display:inline;}
+.nav-cta .cta-full{display:none;}
+@media(min-width:600px){
+  .nav-cta .cta-short{display:none;}
+  .nav-cta .cta-full{display:inline;}
+}
 .nav-links a{
   position:relative;
   font-size:.81rem;
@@ -276,22 +286,29 @@ ul,ol{margin:0;padding:0;list-style:none;}
 .nav-links a:hover{color:var(--black);}
 .nav-links a:hover::after,.nav-links a.on::after{transform:scaleX(1);}
 .nav-links a.on{color:var(--black);font-weight:600;}
-.nav-cta{display:none;}
+.nav-cta{
+  display:inline-flex;
+  align-items:center;
+  flex:none;
+  padding:9px 14px;
+  background:var(--black);
+  color:var(--white);
+  border:1px solid var(--black);
+  border-radius:var(--radius);
+  font-size:.72rem;
+  font-weight:600;
+  letter-spacing:.05em;
+  text-transform:uppercase;
+  white-space:nowrap;
+  transition:background .25s var(--ease),color .25s var(--ease),border-color .25s var(--ease);
+}
+.nav-cta:hover{background:var(--green);border-color:var(--green);color:var(--black);}
 
+@media(min-width:600px){
+  .nav-cta{padding:10px 18px;font-size:.75rem;}
+}
 @media(min-width:1024px){
   .nav-links{display:flex;}
-  .nav-cta{
-    display:inline-flex;
-    padding:10px 18px;
-    border:1px solid var(--black);
-    border-radius:var(--radius);
-    font-size:.75rem;
-    font-weight:600;
-    letter-spacing:.05em;
-    text-transform:uppercase;
-    transition:background .25s var(--ease),color .25s var(--ease);
-  }
-  .nav-cta:hover{background:var(--black);color:var(--white);}
 }
 
 .burger{
@@ -393,9 +410,22 @@ ul,ol{margin:0;padding:0;list-style:none;}
   overflow:hidden;
   background:var(--off);
   border:1px solid var(--line-soft);
+  /* Never enlarge a photograph past roughly its captured width — an
+     upscaled image is the single fastest way to look cheap. Raise this
+     cap when higher-resolution photography is supplied. */
+  max-width:var(--photo-max, 380px);
+  margin-inline:auto;
 }
 .hero-media img{width:100%;aspect-ratio:4/3;object-fit:cover;}
-@media(min-width:1000px){ .hero-media img{aspect-ratio:5/6;} }
+
+/* Global guard: images render at their own scale, lightly graded so they
+   sit consistently rather than being stretched to fill a slab. */
+.hero-media img,
+.proj-media img,
+.split-media img,
+.post-media img{
+  filter:saturate(1.04) contrast(1.03);
+}
 
 /* credential strip */
 .creds-strip{
@@ -482,8 +512,11 @@ ul,ol{margin:0;padding:0;list-style:none;}
 .disc:hover .disc-more svg{transform:translateX(4px);}
 
 /* ---------- PROJECTS ---------- */
+/* Three across on desktop rather than two: it keeps each image close to
+   its native width instead of blowing a 300px photo up to 600px. */
 .proj-grid{display:grid;grid-template-columns:1fr;gap:28px;}
-@media(min-width:760px){ .proj-grid{grid-template-columns:repeat(2,1fr);gap:32px;} }
+@media(min-width:680px){ .proj-grid{grid-template-columns:repeat(2,1fr);gap:30px;} }
+@media(min-width:1080px){ .proj-grid{grid-template-columns:repeat(3,1fr);gap:32px;} }
 
 .proj{display:flex;flex-direction:column;}
 .proj-media{
@@ -537,10 +570,14 @@ ul,ol{margin:0;padding:0;list-style:none;}
 .proj-facts b{color:var(--ink);font-weight:600;}
 
 .proj-lead{grid-column:1/-1;}
+/* The feature card is full width below 960px, so its photo needs the same
+   cap the split layouts get — otherwise it alone gets stretched. */
+.proj-lead .proj-media{max-width:var(--photo-max, 380px);}
 @media(min-width:960px){
-  .proj-lead{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center;}
+  /* Text leads on the feature card; the photo stays near native width. */
+  .proj-lead{display:grid;grid-template-columns:minmax(0,380px) minmax(0,1fr);gap:44px;align-items:center;}
   .proj-lead .proj-body{padding-top:0;}
-  .proj-lead .proj-media img{aspect-ratio:16/11;}
+  .proj-lead .proj-media img{aspect-ratio:3/2;}
 }
 
 /* filters */
@@ -563,8 +600,8 @@ ul,ol{margin:0;padding:0;list-style:none;}
 .split{display:grid;gap:32px;align-items:center;}
 @media(min-width:900px){ .split{grid-template-columns:1fr 1fr;gap:64px;} }
 .split-text{display:flex;flex-direction:column;gap:18px;align-items:flex-start;}
+.split-media{max-width:var(--photo-max, 380px);margin-inline:auto;width:100%;}
 .split-media img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--radius);border:1px solid var(--line-soft);}
-@media(min-width:900px){ .split-media img{aspect-ratio:4/5;} }
 .split-flip .split-media{order:-1;}
 @media(min-width:900px){ .split-flip .split-media{order:0;} }
 

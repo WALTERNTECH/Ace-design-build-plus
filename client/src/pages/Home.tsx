@@ -35,7 +35,12 @@ export default function Home() {
             </div>
 
             <Reveal className="hero-media">
-              <img src="/img/hero-slide-1.jpg" alt="An ACE project under construction in Nairobi" />
+              <img
+                src="/img/hero-slide-1.jpg"
+                alt="An ACE project under construction in Nairobi"
+                width={270}
+                height={148}
+              />
             </Reveal>
           </div>
         </div>
