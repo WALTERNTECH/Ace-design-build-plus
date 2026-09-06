@@ -234,7 +234,17 @@ ul,ol{margin:0;padding:0;list-style:none;}
   align-items:center;
   gap:24px;
 }
-.brand{display:flex;align-items:center;gap:10px;margin-right:auto;min-width:0;}
+/* The logo is the main route back to the homepage, so it carries a
+   comfortable tap target rather than just the height of the mark. */
+.brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-right:auto;
+  min-width:0;
+  min-height:44px;
+  flex-shrink:0;
+}
 .brand img{height:32px;width:auto;border-radius:2px;flex:none;}
 .brand-name{
   font-family:var(--display);
@@ -340,21 +350,30 @@ ul,ol{margin:0;padding:0;list-style:none;}
 .burger.on i::before{transform:translateY(6px) rotate(45deg);}
 .burger.on i::after{transform:translateY(-6px) rotate(-45deg);}
 
+/* The menu is gated on `display`, not on a transition finishing. If
+   animation is unavailable — reduced motion, battery saver, an older
+   browser — the drawer still opens; the slide is decoration only.
+   Gating interactive state on an animation is how a menu ends up
+   permanently invisible with no way back to the homepage. */
 .drawer{
   position:fixed;
   inset:var(--nav-h) 0 0;
   z-index:880;
   background:var(--white);
   padding:20px var(--gutter) 40px;
-  display:flex;
+  display:none;
   flex-direction:column;
   overflow-y:auto;
-  opacity:0;
-  visibility:hidden;
-  transform:translateY(-10px);
-  transition:opacity .26s var(--ease),transform .26s var(--ease),visibility .26s;
+  overscroll-behavior:contain;
 }
-.drawer.on{opacity:1;visibility:visible;transform:none;}
+.drawer.on{display:flex;animation:drawer-in .24s var(--ease) both;}
+@keyframes drawer-in{
+  from{opacity:0;transform:translateY(-10px);}
+  to{opacity:1;transform:none;}
+}
+@media(prefers-reduced-motion:reduce){
+  .drawer.on{animation:none;}
+}
 .drawer a{
   display:flex;
   align-items:baseline;
