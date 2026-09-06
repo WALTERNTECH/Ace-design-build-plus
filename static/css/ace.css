@@ -782,15 +782,17 @@ html{scroll-behavior:smooth;scroll-padding-top:calc(var(--nav-h) + 24px);}
 .crumb a:hover{color:var(--lime);}
 
 /* ---------- MOTION ---------- */
-.reveal{
+/* Scoped to .js so that if scripting fails the page still shows its
+   content, rather than leaving everything below the fold invisible. */
+.js .reveal{
   opacity:0;
   transform:translateY(18px);
   transition:opacity .75s var(--ease),transform .75s var(--ease);
 }
-.reveal.is-in{opacity:1;transform:none;}
+.js .reveal.is-in{opacity:1;transform:none;}
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important;}
-  .reveal{opacity:1;transform:none;}
+  .js .reveal{opacity:1;transform:none;}
   .hero-media .frame{transform:none;}
   html{scroll-behavior:auto;}
 }
