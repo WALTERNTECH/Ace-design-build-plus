@@ -1,4 +1,5 @@
 import os
+from datetime import date
 
 from dotenv import load_dotenv
 from flask import Flask, render_template, request, jsonify
@@ -24,6 +25,16 @@ app.config["MAIL_PASSWORD"] = os.environ.get("MAIL_PASSWORD")
 app.config["MAIL_DEFAULT_SENDER"] = os.environ.get("MAIL_DEFAULT_SENDER", COMPANY_EMAIL)
 
 mail = Mail(app)
+
+
+# =====================================================
+# TEMPLATE GLOBALS
+# =====================================================
+
+@app.context_processor
+def inject_globals():
+    """Values every template can reach without each view passing them."""
+    return {"year": date.today().year}
 
 # =====================================================
 # PAGES

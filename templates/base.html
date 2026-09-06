@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}ACE — Adaptive City Ecosystems{% endblock %}</title>
+  <meta name="description" content="{% block description %}ACE Design + Build Partners — integrated architecture, structural engineering, interior fit-out and construction management. Nairobi, Kenya. NCA Category 4 registered.{% endblock %}">
+  <meta name="theme-color" content="#0E0F0C">
+
+  <link rel="icon" href="{{ url_for('static', filename='Favicon.jpeg') }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/ace.css') }}">
+  {% block head %}{% endblock %}
+</head>
+<body>
+
+{% set nav_items = [
+  ('index',    'Home',     '01'),
+  ('about',    'About',    '02'),
+  ('services', 'Services', '03'),
+  ('company',  'Projects', '04'),
+  ('faq',      'FAQ',      '05'),
+  ('blog',     'Journal',  '06'),
+  ('contact',  'Contact',  '07')
+] %}
+
+<!-- ===================== NAV ===================== -->
+<header class="nav">
+  <div class="nav-inner">
+
+    <a href="{{ url_for('index') }}" class="brand" aria-label="ACE — Adaptive City Ecosystems, home">
+      <img src="{{ url_for('static', filename='ace-logo.jpeg') }}" alt="" onerror="this.style.display='none'">
+      <span>
+        <span class="brand-mark">ACE</span>
+        <span class="brand-sub">Adaptive City Ecosystems</span>
+      </span>
+    </a>
+
+    <nav class="nav-links" aria-label="Primary">
+      {% for route, label, num in nav_items %}
+        <a href="{{ url_for(route) }}"{% if active == route %} class="is-active" aria-current="page"{% endif %}>{{ label }}</a>
+      {% endfor %}
+    </nav>
+
+    <a href="{{ url_for('contact') }}" class="nav-cta">Start a Project</a>
+
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="drawer">
+      <span></span><span></span><span></span>
+    </button>
+
+  </div>
+</header>
+
+<div class="drawer" id="drawer">
+  {% for route, label, num in nav_items %}
+    <a href="{{ url_for(route) }}"><span>{{ num }}</span>{{ label }}</a>
+  {% endfor %}
+  <a href="{{ url_for('contact') }}" class="btn">Start a Project</a>
+</div>
+
+<main>
+{% block content %}{% endblock %}
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+
+      <div class="foot-brand">
+        <a href="{{ url_for('index') }}" class="brand" style="margin-right:0;">
+          <img src="{{ url_for('static', filename='ace-logo.jpeg') }}" alt="" onerror="this.style.display='none'">
+          <span>
+            <span class="brand-mark" style="color:var(--tx-on-dark);">ACE</span>
+            <span class="brand-sub">Adaptive City Ecosystems</span>
+          </span>
+        </a>
+        <p class="foot-tag">Integrated architecture, structural engineering, interior design and construction management, delivered by one accountable team. Nairobi, Kenya. Established 2020.</p>
+        <div class="foot-contact">
+          <a href="tel:+254726314608">
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 1.9.7 2.8a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.3-1.3a2 2 0 012.1-.4c.9.3 1.8.6 2.8.7a2 2 0 011.7 2z"/></svg>
+            +254 726 314 608
+          </a>
+          <a href="mailto:acedesignbuildplus@gmail.com">
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
+            acedesignbuildplus@gmail.com
+          </a>
+          <a href="{{ url_for('contact') }}">
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Nairobi, Kenya
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <div class="foot-col-t">Disciplines</div>
+        <div class="foot-links">
+          <a href="{{ url_for('services') }}">Architecture &amp; Design</a>
+          <a href="{{ url_for('services') }}">Structural Engineering</a>
+          <a href="{{ url_for('services') }}">Interior Fit-Out</a>
+          <a href="{{ url_for('services') }}">Construction Management</a>
+          <a href="{{ url_for('services') }}">Diaspora Real Estate</a>
+          <a href="{{ url_for('services') }}">Industrial Masterplanning</a>
+        </div>
+      </div>
+
+      <div>
+        <div class="foot-col-t">Company</div>
+        <div class="foot-links">
+          <a href="{{ url_for('about') }}">About ACE</a>
+          <a href="{{ url_for('company') }}">Selected Work</a>
+          <a href="{{ url_for('company') }}#team">Our Team</a>
+          <a href="{{ url_for('company') }}#credentials">Credentials</a>
+          <a href="{{ url_for('blog') }}">Journal</a>
+          <a href="{{ url_for('faq') }}">FAQ</a>
+        </div>
+      </div>
+
+      <div>
+        <div class="foot-col-t">Enquiries</div>
+        <div class="foot-links">
+          <a href="{{ url_for('contact') }}">Start a Project</a>
+          <a href="{{ url_for('contact') }}">Request a Quote</a>
+          <a href="{{ url_for('contact') }}">Request Credentials</a>
+          <a href="{{ url_for('contact') }}">Diaspora Enquiries</a>
+          <a href="{{ url_for('terms') }}">Terms &amp; Conditions</a>
+          <a href="{{ url_for('privacy') }}">Privacy Policy</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="foot-bottom">
+      <span class="foot-copy">© {{ year }} ACE — Adaptive City Ecosystems Ltd. All rights reserved. Nairobi, Kenya.</span>
+      <div class="foot-pills">
+        <span class="foot-pill">NCA Cat 4</span>
+        <span class="foot-pill">AAK</span>
+        <span class="foot-pill">IEK</span>
+        <span class="foot-pill">ACMK</span>
+        <span class="foot-pill">KABCEC</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ---- mobile drawer ---- */
+(function(){
+  var burger = document.getElementById("burger");
+  var drawer = document.getElementById("drawer");
+  if(!burger || !drawer) return;
+
+  function setOpen(open){
+    burger.classList.toggle("is-open", open);
+    drawer.classList.toggle("is-open", open);
+    burger.setAttribute("aria-expanded", open ? "true" : "false");
+    burger.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+    document.body.style.overflow = open ? "hidden" : "";
+  }
+
+  burger.addEventListener("click", function(){
+    setOpen(!drawer.classList.contains("is-open"));
+  });
+  drawer.querySelectorAll("a").forEach(function(a){
+    a.addEventListener("click", function(){ setOpen(false); });
+  });
+  document.addEventListener("keydown", function(e){
+    if(e.key === "Escape") setOpen(false);
+  });
+  window.addEventListener("resize", function(){
+    if(window.innerWidth > 1020) setOpen(false);
+  });
+})();
+
+/* ---- scroll reveal ---- */
+(function(){
+  var items = document.querySelectorAll(".reveal");
+  if(!items.length) return;
+
+  if(!("IntersectionObserver" in window) ||
+     window.matchMedia("(prefers-reduced-motion: reduce)").matches){
+    items.forEach(function(el){ el.classList.add("is-in"); });
+    return;
+  }
+
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        entry.target.classList.add("is-in");
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
+
+  items.forEach(function(el, i){
+    el.style.transitionDelay = Math.min(i % 4, 3) * 70 + "ms";
+    io.observe(el);
+  });
+})();
+
+/* ---- count up on figures ---- */
+(function(){
+  var nums = document.querySelectorAll("[data-count]");
+  if(!nums.length) return;
+
+  if(!("IntersectionObserver" in window) ||
+     window.matchMedia("(prefers-reduced-motion: reduce)").matches){
+    nums.forEach(function(el){ el.textContent = el.getAttribute("data-count"); });
+    return;
+  }
+
+  function run(el){
+    var target = parseFloat(el.getAttribute("data-count"));
+    var dur = 1100, t0 = null;
+    function step(ts){
+      if(!t0) t0 = ts;
+      var p = Math.min((ts - t0) / dur, 1);
+      var eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.round(target * eased).toLocaleString();
+      if(p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){ run(entry.target); io.unobserve(entry.target); }
+    });
+  }, { threshold: 0.6 });
+
+  nums.forEach(function(el){ io.observe(el); });
+})();
+</script>
+
+{% block scripts %}{% endblock %}
+</body>
+</html>
