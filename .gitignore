@@ -1,5 +1,16 @@
-venv/
+node_modules/
+dist/
 .env
+.env.local
+*.log
+
+# legacy Flask build, replaced by the React + Express app
 __pycache__/
 *.pyc
-node_modules/
+venv/
+templates/
+static/
+app.py
+requirements.txt
+runtime.txt
+Procfile
