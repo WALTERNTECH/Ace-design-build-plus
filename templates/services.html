@@ -1,594 +1,254 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+{% extends "base.html" %}
+{% set active = 'services' %}
 
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+{% block title %}Services — ACE Design + Build Partners, Nairobi{% endblock %}
+{% block description %}Architectural design, structural engineering, construction management, interior fit-out, diaspora real estate and industrial masterplanning — delivered in-house by ACE, Nairobi.{% endblock %}
 
-<title>Services | ACE Company Ltd</title>
+{% block content %}
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Bebas+Neue&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="{{ url_for('static', filename='css/services.css') }}">
-<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-
-</head>
-
-<body>
-
-<!-- =====================================================
-     NAVBAR
-===================================================== -->
-
-<header class="navbar">
-
-  <div class="container nav-wrapper">
-
-    <a href="{{ url_for('company') }}" class="ace-logo">
-      <img src="static/ace-logo.jpeg" alt="ACE Logo" style="height:32px;width:auto;" onerror="this.style.display='none'"/>
-    
-     <!-- Fallback text logo always shown alongside (hidden if image loaded) -->
-     <div class="ace-logo-text">
-       <span class="ace-logo-mark">ACE</span>
-       <span class="ace-logo-sub">Adaptive City Ecosystems</span>
-     </div>
-    
-    </a>
-
-
-    <nav class="nav-menu">
-
-      <a href="{{ url_for('index') }}">Home</a>
-      <a href="{{ url_for('about') }}">About</a>
-      <a href="{{ url_for('services') }}" class="active">Services</a>
-      <a href="{{ url_for('company') }}">Company</a>
-      <a href="{{ url_for('faq') }}">FAQ</a>
-      <a href="{{ url_for('blog') }}">Blog</a>
-      <a href="{{ url_for('contact') }}">Contact</a>
-
-    </nav>
-
-    <a href="{{ url_for('contact') }}" class="nav-btn">
-      Get Quote
-    </a>
-
-    <!-- HAMBURGER -->
-
-    <div class="hamburger" id="hamburger">
-
-      <span></span>
-      <span></span>
-      <span></span>
-
-    </div>
-
-  </div>
-
-</header>
-
-<!-- MOBILE MENU -->
-
-<div class="mobile-menu" id="mobileMenu">
-
-  <a href="{{ url_for('index') }}">Home</a>
-  <a href="{{ url_for('about') }}">About</a>
-  <a href="{{ url_for('services') }}">Services</a>
-  <a href="{{ url_for('company') }}">Company</a>
-  <a href="{{ url_for('faq') }}">FAQ</a>
-  <a href="{{ url_for('blog') }}">Blog</a>
-  <a href="{{ url_for('contact') }}">Contact</a>
-
-  <a 
-  href="https://www.instagram.com/reel/DHxz7qrMIu8/?utm_source=ig_web_copy_link/" 
-  target="_blank"
-  class="instagram-link">
-
-  Instagram
-
-  </a>
-
-</div>
-
-<!-- =====================================================
-     HERO
-===================================================== -->
-
-<section class="hero">
-
-  <div class="hero-slider">
-
-    <div class="slide active"
-    style="background-image:url('https://images.unsplash.com/photo-1518005020951-eccb494ad742?q=80&w=1800&auto=format&fit=crop')">
-    </div>
-
-    <div class="slide"
-    style="background-image:url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1800&auto=format&fit=crop')">
-    </div>
-
-    <div class="slide"
-    style="background-image:url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=1800&auto=format&fit=crop')">
-    </div>
-
-  </div>
-
-  <div class="hero-overlay"></div>
-
-  <div class="container hero-content">
-
-    <div class="hero-badge">
-      ACE COMPANY LTD
-    </div>
-
-    <h1>
-      Premium Design <br>
-      <span>& Construction</span> Services
-    </h1>
-
-    <p>
-      From architectural design and structural engineering to full-scale
-      construction and interior fit-outs, ACE delivers complete
-      design-build excellence under one trusted team.
+<!-- ===================== PAGE HEAD ===================== -->
+<section class="page-head">
+  <div class="wrap page-head-inner">
+    <div class="crumb"><a href="{{ url_for('index') }}">Home</a> <span>/</span> <span>Services</span></div>
+    <span class="eyebrow">What We Do</span>
+    <h1 class="d1">Six disciplines.<br>One delivery team.</h1>
+    <p class="lead">
+      Take the whole scope or a single stage. Every discipline below is
+      staffed in-house and licensed under a recognised professional body, so
+      the work never passes through a firm we do not control.
     </p>
-
-    <div class="hero-buttons">
-
-      <a href="{{ url_for('services') }}" class="btn-primary">
-        Explore Services
-      </a>
-
-      <a href="{{ url_for('contact') }}" class="btn-secondary">
-        Get Quote
-      </a>
-
-    </div>
-
   </div>
-
 </section>
 
-<!-- =====================================================
-     SERVICES
-===================================================== -->
 
-<section class="services" id="services">
-
-  <div class="container">
-
-    <div class="section-center">
-
-      <div class="section-tag">
-        WHAT WE DO
+<!-- ===================== SERVICES ===================== -->
+<section class="section" id="architecture">
+  <div class="wrap">
+    <div class="split">
+      <div class="split-text reveal">
+        <span class="eyebrow">Service 01</span>
+        <h2 class="d2">Architectural Design</h2>
+        <p class="body-tx">
+          Residential, commercial and mixed-use developments taken from concept
+          through to authority-approved documentation. Every drawing set is
+          signed and stamped by AAK-registered architects, and coordinated
+          against structure and services before it leaves the office.
+        </p>
+        <ul class="ticks">
+          <li><svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m4 12 5 5L20 6"/></svg><span>Concept development and site planning</span></li>
+          <li><svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m4 12 5 5L20 6"/></svg><span>BIM and Revit modelling</span></li>
+          <li><svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m4 12 5 5L20 6"/></svg><span>Planning approvals and statutory submissions</span></li>
+          <li><svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m4 12 5 5L20 6"/></svg><span>3D visualisation and construction documentation</span></li>
+        </ul>
       </div>
+      <div class="split-media reveal">
+        <img src="{{ url_for('static', filename='proj-1.jpg') }}" alt="Emerald Heights, an ACE architectural project in Karen" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
 
-      <h2>
-        Our Core <span>Services</span>
-      </h2>
+<section class="section on-paper-2" id="structural">
+  <div class="wrap">
+    <div class="split">
+      <div class="split-media reveal" style="order:-1;">
+        <img src="{{ url_for('static', filename='proj-4.jpg') }}" alt="Reinforced concrete frame on an ACE site in Westlands" loading="lazy">
+      </div>
+      <div class="split-text reveal">
+        <span class="eyebrow">Service 02</span>
+        <h2 class="d2">Structural Engineering</h2>
+        <p class="body-tx">
+          Reinforced concrete and steel systems designed for safety, durability
+          and buildability. Calculations are certified by IEK-affiliated
+          engineers who sit in the same office as the architects — which is why
+          our drawings rarely need a redesign once they reach site.
+        </p>
+        <ul class="ticks">
+          <li><svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m4 12 5 5L20 6"/></svg><span>Foundation and substructure design</span></li>
+          <li><svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m4 12 5 5L20 6"/></svg><span>Reinforced concrete and steel structures</span></li>
+          <li><svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m4 12 5 5L20 6"/></svg><span>Seismic analysis and structural assessment</span></li>
+          <li><svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m4 12 5 5L20 6"/></svg><span>Certified engineering reports</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
 
-      <p>
-        We provide end-to-end architectural, engineering and construction
-        solutions designed for investors, homeowners, developers and commercial clients.
+<section class="section" id="construction">
+  <div class="wrap">
+    <div class="split">
+      <div class="split-text reveal">
+        <span class="eyebrow">Service 03</span>
+        <h2 class="d2">Construction Management</h2>
+        <p class="body-tx">
+          NCA Category 4 registration authorises ACE to self-perform large-scale
+          building works. Each project runs under a PMP®-certified construction
+          manager working to ACMK's code — with cost reporting a client can read
+          without a quantity surveyor sitting next to them.
+        </p>
+        <ul class="ticks">
+          <li><svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m4 12 5 5L20 6"/></svg><span>Site supervision and programme management</span></li>
+          <li><svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m4 12 5 5L20 6"/></svg><span>Procurement and subcontractor coordination</span></li>
+          <li><svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m4 12 5 5L20 6"/></svg><span>Transparent cost reporting and valuations</span></li>
+          <li><svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m4 12 5 5L20 6"/></svg><span>Quality assurance and site safety</span></li>
+        </ul>
+      </div>
+      <div class="split-media reveal">
+        <img src="{{ url_for('static', filename='proj-2.jpg') }}" alt="Sora Business Complex under construction, Westlands" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section on-paper-2" id="fitouts">
+  <div class="wrap">
+    <div class="split">
+      <div class="split-media reveal" style="order:-1;">
+        <img src="{{ url_for('static', filename='proj-6.jpg') }}" alt="Grade-A corporate interior fit-out by ACE, South B" loading="lazy">
+      </div>
+      <div class="split-text reveal">
+        <span class="eyebrow">Service 04</span>
+        <h2 class="d2">Interior Fit-Out</h2>
+        <p class="body-tx">
+          Corporate and residential interiors delivered to a written
+          specification rather than a mood board. Our fit-out division handles
+          everything after the shell — so the finish quality is held by the same
+          firm that built the structure behind it.
+        </p>
+        <ul class="ticks">
+          <li><svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m4 12 5 5L20 6"/></svg><span>Office and corporate fit-outs</span></li>
+          <li><svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m4 12 5 5L20 6"/></svg><span>Custom millwork and acoustic ceilings</span></li>
+          <li><svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m4 12 5 5L20 6"/></svg><span>Lighting design and furniture planning</span></li>
+          <li><svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m4 12 5 5L20 6"/></svg><span>Premium finishing works and handover</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="diaspora">
+  <div class="wrap">
+    <div class="split">
+      <div class="split-text reveal">
+        <span class="eyebrow">Service 05</span>
+        <h2 class="d2">Diaspora Real Estate</h2>
+        <p class="body-tx">
+          Building in Nairobi from abroad removes your ability to walk the site,
+          so we replace it with documentation. Monthly reporting, verified
+          drawdowns against completed work, and one named contact who answers in
+          your timezone.
+        </p>
+        <ul class="ticks">
+          <li><svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m4 12 5 5L20 6"/></svg><span>Monthly photographic and written progress reports</span></li>
+          <li><svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m4 12 5 5L20 6"/></svg><span>Drawdowns released against verified completed work</span></li>
+          <li><svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m4 12 5 5L20 6"/></svg><span>Land acquisition and due-diligence support</span></li>
+          <li><svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m4 12 5 5L20 6"/></svg><span>A single named point of contact throughout</span></li>
+        </ul>
+      </div>
+      <div class="split-media reveal">
+        <img src="{{ url_for('static', filename='proj-5.jpg') }}" alt="Completed private villa in Karen delivered by ACE" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section on-paper-2" id="masterplanning">
+  <div class="wrap">
+    <div class="split">
+      <div class="split-media reveal" style="order:-1;">
+        <img src="{{ url_for('static', filename='proj-3.jpg') }}" alt="Large-scale ACE development project" loading="lazy">
+      </div>
+      <div class="split-text reveal">
+        <span class="eyebrow">Service 06</span>
+        <h2 class="d2">Industrial Masterplanning</h2>
+        <p class="body-tx">
+          Plant and processing facilities planned around throughput, logistics
+          and secure value chains — functional zoning, production cores and
+          phased expansion, with the civil and structural work to build them.
+        </p>
+        <ul class="ticks">
+          <li><svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m4 12 5 5L20 6"/></svg><span>Functional zoning and site logistics</span></li>
+          <li><svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m4 12 5 5L20 6"/></svg><span>Production core and systems integration planning</span></li>
+          <li><svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m4 12 5 5L20 6"/></svg><span>Phased technical expansion and support facilities</span></li>
+          <li><svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m4 12 5 5L20 6"/></svg><span>Site preparation, foundations and commissioning support</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===================== PROCESS ===================== -->
+<section class="section on-dark">
+  <div class="wrap">
+
+    <div class="sec-head">
+      <div>
+        <span class="eyebrow">How We Deliver</span>
+        <h2 class="d2">Five stages,<br>one programme.</h2>
+      </div>
+      <p class="lead">
+        The same sequence on every project, whether it is a private villa or a
+        42,000 sq ft commercial block. You always know which stage you are in
+        and what has to close before the next one opens.
       </p>
-
     </div>
 
-    <div class="services-grid">
-
-      <!-- CARD -->
-
-      <div class="service-card">
-
-        <div class="service-image">
-
-          <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1400&auto=format&fit=crop">
-
-        </div>
-
-        <div class="service-content">
-
-          <div class="service-top">
-
-            <span>Service 01</span>
-
-            <div class="service-icon">
-              🏛
-            </div>
-
-          </div>
-
-          <h3>
-            Architectural Design
-          </h3>
-
-          <p>
-            Innovative modern architectural solutions including residential,
-            commercial and mixed-use developments with BIM modelling,
-            3D visualization and approval documentation.
-          </p>
-
-          <ul>
-
-            <li>✔ Concept Development</li>
-            <li>✔ BIM & Revit Modelling</li>
-            <li>✔ Planning Approvals</li>
-            <li>✔ 3D Visualisation</li>
-            <li>✔ Site Planning</li>
-
-          </ul>
-
-        </div>
-
+    <div class="steps reveal">
+      <div class="step">
+        <span class="step-n">STAGE 01</span>
+        <h3 class="d4">Consultation</h3>
+        <p>Project briefing, site analysis and feasibility. We establish what the site can carry and what the budget can reach before anyone draws anything.</p>
       </div>
-
-      <!-- CARD -->
-
-      <div class="service-card">
-
-        <div class="service-image">
-
-          <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1400&auto=format&fit=crop">
-
-        </div>
-
-        <div class="service-content">
-
-          <div class="service-top">
-
-            <span>Service 02</span>
-
-            <div class="service-icon">
-              🏗
-            </div>
-
-          </div>
-
-          <h3>
-            Structural Engineering
-          </h3>
-
-          <p>
-            Advanced reinforced concrete and steel structural systems designed
-            for safety, durability and long-term sustainability across all project types.
-          </p>
-
-          <ul>
-
-            <li>✔ Foundation Design</li>
-            <li>✔ Steel Structures</li>
-            <li>✔ Seismic Analysis</li>
-            <li>✔ Structural Assessment</li>
-            <li>✔ Engineering Reports</li>
-
-          </ul>
-
-        </div>
-
+      <div class="step">
+        <span class="step-n">STAGE 02</span>
+        <h3 class="d4">Design &amp; Approvals</h3>
+        <p>Concept through to detailed drawings, structural coordination and statutory approvals — submitted under AAK and IEK registration.</p>
       </div>
-
-      <!-- CARD -->
-
-      <div class="service-card">
-
-        <div class="service-image">
-
-          <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=1400&auto=format&fit=crop">
-
-        </div>
-
-        <div class="service-content">
-
-          <div class="service-top">
-
-            <span>Service 03</span>
-
-            <div class="service-icon">
-              🚧
-            </div>
-
-          </div>
-
-          <h3>
-            General Contracting
-          </h3>
-
-          <p>
-            Professional construction management and contracting solutions
-            handled by experienced project managers and site engineers.
-          </p>
-
-          <ul>
-
-            <li>✔ Site Supervision</li>
-            <li>✔ Construction Management</li>
-            <li>✔ Procurement</li>
-            <li>✔ Cost Reporting</li>
-            <li>✔ Quality Assurance</li>
-
-          </ul>
-
-        </div>
-
+      <div class="step">
+        <span class="step-n">STAGE 03</span>
+        <h3 class="d4">Costing &amp; Contract</h3>
+        <p>Bills of quantities and a cost plan from our BORAQS-registered surveyors, so the contract price rests on measured work rather than an estimate.</p>
       </div>
-
-      <!-- CARD -->
-
-      <div class="service-card">
-
-        <div class="service-image">
-
-          <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=1400&auto=format&fit=crop">
-
-        </div>
-
-        <div class="service-content">
-
-          <div class="service-top">
-
-            <span>Service 04</span>
-
-            <div class="service-icon">
-              🛋
-            </div>
-
-          </div>
-
-          <h3>
-            Interior Fit-Outs
-          </h3>
-
-          <p>
-            Luxury interior finishes, office fit-outs and premium residential
-            spaces designed for comfort, elegance and functionality.
-          </p>
-
-          <ul>
-
-            <li>✔ Luxury Interiors</li>
-            <li>✔ Office Fit-Outs</li>
-            <li>✔ Lighting Design</li>
-            <li>✔ Furniture Planning</li>
-            <li>✔ Finishing Works</li>
-
-          </ul>
-
-        </div>
-
+      <div class="step">
+        <span class="step-n">STAGE 04</span>
+        <h3 class="d4">Construction</h3>
+        <p>Execution under a PMP®-certified manager, with programme tracking, procurement, quality assurance and monthly cost reporting.</p>
       </div>
-
+      <div class="step">
+        <span class="step-n">STAGE 05</span>
+        <h3 class="d4">Handover &amp; Support</h3>
+        <p>Snagging, commissioning, as-built documentation and a defects liability period — the project is not closed until the paperwork is.</p>
+      </div>
     </div>
 
   </div>
-
 </section>
 
-<!-- =====================================================
-     PROCESS
-===================================================== -->
 
-<section class="process">
-
-  <div class="container">
-
-    <div class="section-center">
-
-      <div class="section-tag">
-        OUR WORKFLOW
+<!-- ===================== CTA ===================== -->
+<section class="section">
+  <div class="wrap">
+    <div class="cta-band reveal">
+      <div style="display:flex;flex-direction:column;gap:20px;align-items:flex-start;">
+        <span class="eyebrow">Ready To Build</span>
+        <h2 class="d2">Start with a<br>conversation.</h2>
       </div>
-
-      <h2>
-        How We <span>Deliver</span>
-      </h2>
-
-    </div>
-
-    <div class="process-grid">
-
-      <div class="process-card">
-
-        <h1>01</h1>
-
-        <h3>Consultation</h3>
-
-        <p>
-          Project briefing, site analysis and feasibility planning.
+      <div style="display:flex;flex-direction:column;gap:26px;">
+        <p class="lead" style="margin:0;">
+          Tell us the scope and we will tell you which of the six disciplines it
+          actually needs — including the ones you may not need to pay for.
         </p>
-
-      </div>
-
-      <div class="process-card">
-
-        <h1>02</h1>
-
-        <h3>Design & Planning</h3>
-
-        <p>
-          Detailed drawings, approvals and BIM coordination.
-        </p>
-
-      </div>
-
-      <div class="process-card">
-
-        <h1>03</h1>
-
-        <h3>Construction</h3>
-
-        <p>
-          Execution, supervision, handover and project support.
-        </p>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-<!-- =====================================================
-     CTA
-===================================================== -->
-
-<section class="cta">
-
-  <div class="container">
-
-    <div class="cta-box">
-
-      <h2>
-        Ready To <span>Build?</span>
-      </h2>
-
-      <p>
-        ACE Company Ltd is ready to transform your vision into a landmark project.
-      </p>
-
-      <div class="cta-buttons">
-
-        <a href="{{ url_for('contact') }}" class="btn-primary">
-          Contact Us
-        </a>
-
-        <a href="{{ url_for('about') }}" class="btn-secondary">
-          About ACE
-        </a>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-<!-- ════════════════════════════════════════════════════════
-     FOOTER — self-contained
-════════════════════════════════════════════════════════ -->
-<footer class="ace-footer">
-  <div class="ace-footer-grid">
-
-    <!-- Brand col -->
-    <div class="ace-footer-brand">
-      <div class="ace-footer-logo-row">
-        <img src="static/ace-logo.jpeg" alt="ACE Logo" style="height:32px;width:auto;" onerror="this.style.display='none'"/>
-        <div>
-          <div class="ace-footer-logo-mark">ACE</div>
-          <div class="ace-footer-logo-sub">Adaptive City Ecosystems</div>
+        <div class="cta-actions">
+          <a href="{{ url_for('contact') }}" class="btn">
+            Request a Quote
+            <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a href="{{ url_for('company') }}" class="btn btn-ghost">See the Work</a>
         </div>
       </div>
-      <p class="ace-footer-tagline">Integrated architecture, structural engineering, interior design and construction management. Nairobi, Kenya. Est. 2020.</p>
-      <div class="ace-footer-contact">
-        <a href="tel:+254726314608">
-          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.36 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.34 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-          +254 726 314 608
-        </a>
-        <a href="mailto:acedesignbuildplus@gmail.com">
-          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          acedesignbuildplus@gmail.com
-        </a>
-        <a href="#">
-          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          Nairobi, Kenya
-        </a>
-      </div>
-    </div>
-
-    <!-- Services -->
-    <div>
-      <div class="ace-footer-col-title">Services</div>
-      <div class="ace-footer-links">
-        <a href="{{ url_for('services') }}">Architecture &amp; Design</a>
-        <a href="{{ url_for('services') }}">Structural Engineering</a>
-        <a href="{{ url_for('services') }}#fitouts">Interior Fit-Out</a>
-        <a href="{{ url_for('services') }}">Construction Management</a>
-        <a href="{{ url_for('services') }}">Diaspora Real Estate</a>
-        <a href="{{ url_for('services') }}">Industrial Masterplanning</a>
-      </div>
-    </div>
-
-    <!-- Company -->
-    <div>
-      <div class="ace-footer-col-title">Company</div>
-      <div class="ace-footer-links">
-        <a href="{{ url_for('about') }}">About ACE</a>
-        <a href="{{ url_for('company') }}">Projects</a>
-        <a href="{{ url_for('company') }}#faces">Our Team</a>
-        <a href="{{ url_for('company') }}#downloads">Downloads</a>
-        <a href="{{ url_for('company') }}#affiliations">Affiliations</a>
-      </div>
-    </div>
-
-    <!-- Contact -->
-    <div>
-      <div class="ace-footer-col-title">Contact</div>
-      <div class="ace-footer-links">
-        <a href="{{ url_for('contact') }}">Start a Project</a>
-        <a href="{{ url_for('contact') }}">Request a Quote</a>
-        <a href="{{ url_for('contact') }}">Request Credentials</a>
-        <a href="{{ url_for('contact') }}">Diaspora Enquiries</a>
-        <a href="{{ url_for('contact') }}">Media Enquiries</a>
-        <a href="{{ url_for('terms') }}">Terms & Conditions</a>
-        <a href="{{ url_for('privacy') }}">Privacy Policy</a>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="ace-footer-bottom">
-    <span class="ace-footer-copy">© 2026 ACE — Adaptive City Ecosystems Ltd. All rights reserved. Nairobi, Kenya.</span>
-    <div class="ace-footer-pills">
-      <span class="ace-footer-pill">NCA Cat 4</span>
-      <span class="ace-footer-pill">AAK</span>
-      <span class="ace-footer-pill">IEK</span>
-      <span class="ace-footer-pill">ACMK</span>
-      <span class="ace-footer-pill">KABCEC</span>
     </div>
   </div>
-</footer>
+</section>
 
-
-<!-- =====================================================
-     JS
-===================================================== -->
-
-<script>
-
-/* HERO SLIDER */
-
-const slides = document.querySelectorAll(".slide");
-
-let currentSlide = 0;
-
-function changeSlide(){
-
-  slides[currentSlide].classList.remove("active");
-
-  currentSlide++;
-
-  if(currentSlide >= slides.length){
-    currentSlide = 0;
-  }
-
-  slides[currentSlide].classList.add("active");
-
-}
-
-setInterval(changeSlide, 5000);
-
-/* MOBILE MENU */
-
-const hamburger = document.getElementById("hamburger");
-const mobileMenu = document.getElementById("mobileMenu");
-
-hamburger.addEventListener("click", () => {
-
-  hamburger.classList.toggle("active");
-  mobileMenu.classList.toggle("active");
-
-});
-
-</script>
-
-</body>
-</html>
+{% endblock %}

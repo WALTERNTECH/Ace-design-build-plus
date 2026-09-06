@@ -1,596 +1,186 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+{% extends "base.html" %}
+{% set active = 'faq' %}
 
-<title>FAQ | ACE Company Ltd</title>
+{% block title %}Frequently Asked Questions — ACE Design + Build Partners{% endblock %}
+{% block description %}Answers on how ACE Design + Build Partners works: project workflow, approvals, cost estimates, quality assurance on site, and interior fit-out timelines.{% endblock %}
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Bebas+Neue&family=Barlow+Condensed:wght@400;500;600;700&display=swap" rel="stylesheet">
+{% block content %}
 
-<link rel="stylesheet" href="{{ url_for('static', filename='css/faq.css') }}">
-<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<!-- ===================== PAGE HEAD ===================== -->
+<section class="page-head">
+  <div class="wrap page-head-inner">
+    <div class="crumb"><a href="{{ url_for('index') }}">Home</a> <span>/</span> <span>FAQ</span></div>
+    <span class="eyebrow">Questions</span>
+    <h1 class="d1">The things clients<br>ask us first.</h1>
+    <p class="lead">
+      If your question is not here, call us. We would rather answer it directly
+      than have you guess.
+    </p>
+  </div>
+</section>
 
-</head>
 
-<body>
+<!-- ===================== FAQ ===================== -->
+<section class="section">
+  <div class="wrap">
+    <div class="doc">
 
-<!-- NAVBAR -->
-<header class="top-navbar">
+      <!-- side index -->
+      <nav class="doc-index" aria-label="FAQ categories">
+        <a href="#general">01 — General</a>
+        <a href="#process">02 — Our Process</a>
+        <a href="#services">03 — Services</a>
+        <a href="#construction">04 — Construction</a>
+        <a href="#interiors">05 — Interior Fit-Outs</a>
+      </nav>
 
-<div class="nav-line"></div>
+      <div>
 
-<nav class="navbar">
+        <!-- 01 GENERAL -->
+        <div id="general" style="margin-bottom:clamp(44px,5vw,68px);">
+          <span class="eyebrow">01 — General</span>
+          <h2 class="d3" style="margin:16px 0 22px;">About the firm</h2>
+          <div class="faq">
+            <details>
+              <summary>What is ACE Design + Build Partners?<span class="sign"></span></summary>
+              <p class="faq-a">ACE — Adaptive City Ecosystems Ltd — is an integrated design-build firm offering architectural design, structural and MEP engineering, construction management and premium interior fit-out across East Africa. All four disciplines are staffed in-house.</p>
+            </details>
+            <details>
+              <summary>Where are you located?<span class="sign"></span></summary>
+              <p class="faq-a">Our office is on Tebere Crescent Road, Nairobi, Kenya. We deliver projects across Kenya and into neighbouring East African countries, and have masterplanned industrial facilities as far as the Horn of Africa.</p>
+            </details>
+            <details>
+              <summary>What types of projects do you handle?<span class="sign"></span></summary>
+              <p class="faq-a">Residential developments, commercial buildings, mixed-use projects, office spaces, hospitality, schools, luxury interiors and industrial facilities. Our current load runs from a five-bedroom private villa to a 42,000 sq ft commercial complex.</p>
+            </details>
+            <details>
+              <summary>Are you licensed and registered?<span class="sign"></span></summary>
+              <p class="faq-a">Yes. ACE holds NCA Category 4 registration and our professionals are registered or affiliated with AAK, IEK, ACMK, KABCEC and BORAQS. We provide registration numbers and certificates on request for any due-diligence process.</p>
+            </details>
+          </div>
+        </div>
 
-<div class="nav-container">
+        <!-- 02 PROCESS -->
+        <div id="process" style="margin-bottom:clamp(44px,5vw,68px);">
+          <span class="eyebrow">02 — Our Process</span>
+          <h2 class="d3" style="margin:16px 0 22px;">How a project runs</h2>
+          <div class="faq">
+            <details>
+              <summary>How does your project workflow operate?<span class="sign"></span></summary>
+              <p class="faq-a">Five stages: consultation and feasibility, design and approvals, costing and contract, construction, then handover and support. You always know which stage you are in and what has to close before the next one opens.</p>
+            </details>
+            <details>
+              <summary>Do you assist with approvals?<span class="sign"></span></summary>
+              <p class="faq-a">Yes. We handle planning approvals, construction permits and regulatory documentation. Our architects are AAK-registered, which is what allows drawings to be signed and stamped for statutory submission.</p>
+            </details>
+            <details>
+              <summary>Do you provide project timelines?<span class="sign"></span></summary>
+              <p class="faq-a">Every project is issued with a structured programme, a milestone plan and a reporting framework. If a milestone is going to slip, you hear it from us before it slips — not at handover.</p>
+            </details>
+            <details>
+              <summary>Can I build from abroad?<span class="sign"></span></summary>
+              <p class="faq-a">Yes — our Diaspora Real Estate programme is built for exactly that. You get monthly photographic and written progress reports, drawdowns released against verified completed work, and one named contact throughout.</p>
+            </details>
+          </div>
+        </div>
 
-<a href="{{ url_for('company') }}" class="ace-logo">
-    <img src="static/ace-logo.jpeg" 
-     alt="ACE Logo" style="height:32px;width:auto;" 
-     class="ace-logo-img"
-     onerror="this.style.display='none'"
-    />
-    
-    <!-- Fallback text logo always shown alongside (hidden if image loaded) -->
-    <div class="ace-logo-text">
-       <span class="ace-logo-mark">ACE</span>
-       <span class="ace-logo-sub">Adaptive City Ecosystems</span>
+        <!-- 03 SERVICES -->
+        <div id="services" style="margin-bottom:clamp(44px,5vw,68px);">
+          <span class="eyebrow">03 — Services</span>
+          <h2 class="d3" style="margin:16px 0 22px;">What we cover</h2>
+          <div class="faq">
+            <details>
+              <summary>Can ACE handle both design and construction?<span class="sign"></span></summary>
+              <p class="faq-a">Yes — that is the point of the firm. We operate as a complete design-build practice, so one team carries a project from first site visit to final key with no handover between consultants and contractor.</p>
+            </details>
+            <details>
+              <summary>What software do you design in?<span class="sign"></span></summary>
+              <p class="faq-a">Modern BIM tooling, including Autodesk Revit and BIM 360, plus 3D visualisation and collaborative coordination platforms. Digital coordination lets us resolve clashes before they become variations on site.</p>
+            </details>
+            <details>
+              <summary>Do you offer interior design?<span class="sign"></span></summary>
+              <p class="faq-a">Yes. Our interior division handles office fit-outs, luxury residential interiors, furniture planning, lighting design, custom joinery and premium finishes.</p>
+            </details>
+            <details>
+              <summary>Can I engage you for only one stage?<span class="sign"></span></summary>
+              <p class="faq-a">Yes. Many clients start with design or with a single discipline and hand us the rest once they have seen how the programme holds. You are not obliged to take the full scope.</p>
+            </details>
+          </div>
+        </div>
+
+        <!-- 04 CONSTRUCTION -->
+        <div id="construction" style="margin-bottom:clamp(44px,5vw,68px);">
+          <span class="eyebrow">04 — Construction</span>
+          <h2 class="d3" style="margin:16px 0 22px;">On site</h2>
+          <div class="faq">
+            <details>
+              <summary>How do you ensure quality on site?<span class="sign"></span></summary>
+              <p class="faq-a">Experienced site engineers, scheduled inspections, documented reporting and strict construction standards — under a PMP®-certified construction manager working to ACMK's code of professional conduct.</p>
+            </details>
+            <details>
+              <summary>Do you provide cost estimates?<span class="sign"></span></summary>
+              <p class="faq-a">Yes. Our BORAQS-registered quantity surveyors produce feasibility estimates, cost plans, bills of quantities and procurement reporting at every stage — so the contract price rests on measured work rather than a guess.</p>
+            </details>
+            <details>
+              <summary>Can you manage large-scale projects?<span class="sign"></span></summary>
+              <p class="faq-a">Yes. NCA Category 4 registration authorises us to self-perform large-scale building works, and we currently run four major sites concurrently including an 18-storey tower and a 42,000 sq ft commercial complex.</p>
+            </details>
+            <details>
+              <summary>How do you handle site safety?<span class="sign"></span></summary>
+              <p class="faq-a">A Zero Harm culture enforced daily through strict HSE standards. Our KABCEC membership also places us under negotiated Collective Bargaining Agreements, which protects both our workers and our clients' legal exposure.</p>
+            </details>
+          </div>
+        </div>
+
+        <!-- 05 INTERIORS -->
+        <div id="interiors">
+          <span class="eyebrow">05 — Interior Fit-Outs</span>
+          <h2 class="d3" style="margin:16px 0 22px;">Fit-out specifics</h2>
+          <div class="faq">
+            <details>
+              <summary>How long does an interior fit-out take?<span class="sign"></span></summary>
+              <p class="faq-a">Typically 8–12 weeks, depending on scope, material procurement lead times and site readiness. We will tell you which of those three is the binding constraint on your particular job.</p>
+            </details>
+            <details>
+              <summary>Do you handle MEP modifications?<span class="sign"></span></summary>
+              <p class="faq-a">Yes. We coordinate HVAC, electrical, plumbing and data infrastructure modifications during fit-out — using our own IEK-affiliated MEP engineers rather than a subcontracted consultant.</p>
+            </details>
+            <details>
+              <summary>Do you supply furniture and finishes?<span class="sign"></span></summary>
+              <p class="faq-a">Yes — furniture sourcing, custom joinery, lighting systems and premium finish selection, specified in writing so what arrives matches what was agreed.</p>
+            </details>
+          </div>
+        </div>
+
+      </div>
     </div>
-    
-</a>
-
-<div class="menu-btn" id="menuBtn">
-☰
-</div>
-
-<div class="nav-links" id="navLinks">
-
-<a href="{{ url_for('index') }}">Home</a>
-<a href="{{ url_for('about') }}">About</a>
-<a href="{{ url_for('services') }}">Services</a>
-<a href="{{ url_for('blog') }}">Blog</a>
-<a href="{{ url_for('company') }}">Company</a>
-<a href="{{ url_for('faq') }}" class="active-link">FAQ</a>
-<a href="{{ url_for('contact') }}">Contact</a>
-
-</div>
-
-</div>
-
-</nav>
-
-</header>
-
-<!-- HERO -->
-<section class="faq-hero">
-
-<div class="hero-image">
-<img src="https://images.unsplash.com/photo-1479839672679-a46483c0e7c8?q=80&w=1800&auto=format&fit=crop" alt="">
-</div>
-
-<div class="hero-overlay"></div>
-
-<div class="container hero-content">
-
-<div class="hero-tag">
-ACE COMPANY LTD
-</div>
-
-<h1>
-Frequently Asked <br>
-<span>Questions</span>
-</h1>
-
-<p>
-Everything you need to know about ACE Company Ltd —
-from project consultation and architectural design
-to construction management and interior fit-outs.
-</p>
-
-<div class="hero-buttons">
-
-<a href="#faq-section" class="btn-primary">
-Browse FAQs
-</a>
-
-<a href="{{ url_for('contact') }}" class="btn-secondary">
-Contact Us
-</a>
-
-</div>
-
-</div>
-
+  </div>
 </section>
 
-<!-- FAQ -->
-<section id="faq-section" class="faq-main">
 
-<div class="container faq-grid">
-
-<!-- SIDEBAR -->
-<div class="faq-sidebar">
-
-<div class="sidebar-box">
-
-<h3>Categories</h3>
-
-<nav>
-
-<a href="#general" class="faq-nav-link active-cat">
-General
-</a>
-
-<a href="#process" class="faq-nav-link">
-Our Process
-</a>
-
-<a href="#services" class="faq-nav-link">
-Services
-</a>
-
-<a href="#construction" class="faq-nav-link">
-Construction
-</a>
-
-<a href="#interiors" class="faq-nav-link">
-Interiors
-</a>
-
-</nav>
-
-</div>
-
-</div>
-
-<!-- CONTENT -->
-<div class="faq-content">
-
-<!-- GENERAL -->
-<div id="general" class="faq-category">
-
-<div class="faq-number">01</div>
-
-<h2>General Questions</h2>
-
-<div class="faq-item open">
-
-<button class="faq-question">
-What is ACE Company Ltd?
-<span>+</span>
-</button>
-
-<div class="faq-answer">
-ACE Company Ltd is a modern design-build company offering
-architectural design, engineering, construction management
-and premium interior fit-out services across East Africa.
-</div>
-
-</div>
-
-<div class="faq-item">
-
-<button class="faq-question">
-Where are you located?
-<span>+</span>
-</button>
-
-<div class="faq-answer">
-Our offices are based in Tebere Crescent Road,
-Nairobi, Kenya, and we handle
-projects across Kenya and neighboring East African countries.
-</div>
-
-</div>
-
-<div class="faq-item">
-
-<button class="faq-question">
-What types of projects do you handle?
-<span>+</span>
-</button>
-
-<div class="faq-answer">
-We work on residential developments, commercial buildings,
-mixed-use projects, office spaces, hospitality projects,
-schools and luxury interior spaces.
-</div>
-
-</div>
-
-</div>
-
-<!-- PROCESS -->
-<div id="process" class="faq-category">
-
-<div class="faq-number">02</div>
-
-<h2>Our Process</h2>
-
-<div class="faq-item">
-
-<button class="faq-question">
-How does your project workflow operate?
-<span>+</span>
-</button>
-
-<div class="faq-answer">
-Our process includes consultation, feasibility analysis,
-concept design, BIM coordination, construction documentation,
-site execution and final project handover.
-</div>
-
-</div>
-
-<div class="faq-item">
-
-<button class="faq-question">
-Do you assist with approvals?
-<span>+</span>
-</button>
-
-<div class="faq-answer">
-Yes. We help clients with planning approvals,
-construction permits and regulatory documentation
-required for project execution.
-</div>
-
-</div>
-
-<div class="faq-item">
-
-<button class="faq-question">
-Do you provide project timelines?
-<span>+</span>
-</button>
-
-<div class="faq-answer">
-Absolutely. Every project is issued with a structured
-timeline, milestone plan and reporting framework.
-</div>
-
-</div>
-
-</div>
-
-<!-- SERVICES -->
-<div id="services" class="faq-category">
-
-<div class="faq-number">03</div>
-
-<h2>Services</h2>
-
-<div class="faq-item">
-
-<button class="faq-question">
-What architectural software do you use?
-<span>+</span>
-</button>
-
-<div class="faq-answer">
-We utilize modern BIM tools including Autodesk Revit,
-3D visualization systems and collaborative design platforms.
-</div>
-
-</div>
-
-<div class="faq-item">
-
-<button class="faq-question">
-Can ACE handle both design and construction?
-<span>+</span>
-</button>
-
-<div class="faq-answer">
-Yes. ACE operates as a complete design-build company,
-allowing us to manage projects from concept to completion
-under one coordinated team.
-</div>
-
-</div>
-
-<div class="faq-item">
-
-<button class="faq-question">
-Do you offer interior design?
-<span>+</span>
-</button>
-
-<div class="faq-answer">
-Yes. Our interior team handles office fit-outs,
-luxury residential interiors, furniture planning,
-lighting design and premium finishes.
-</div>
-
-</div>
-
-</div>
-
-<!-- CONSTRUCTION -->
-<div id="construction" class="faq-category">
-
-<div class="faq-number">04</div>
-
-<h2>Construction</h2>
-
-<div class="faq-item">
-
-<button class="faq-question">
-How do you ensure quality on site?
-<span>+</span>
-</button>
-
-<div class="faq-answer">
-We maintain quality assurance through experienced site engineers,
-scheduled inspections, reporting systems and strict construction standards.
-</div>
-
-</div>
-
-<div class="faq-item">
-
-<button class="faq-question">
-Do you provide cost estimates?
-<span>+</span>
-</button>
-
-<div class="faq-answer">
-Yes. We provide feasibility estimates, budgeting support,
-cost planning and procurement reporting during every stage.
-</div>
-
-</div>
-
-<div class="faq-item">
-
-<button class="faq-question">
-Can you manage large-scale projects?
-<span>+</span>
-</button>
-
-<div class="faq-answer">
-Yes. ACE manages both medium and large-scale developments
-including commercial complexes and institutional facilities.
-</div>
-
-</div>
-
-</div>
-
-<!-- INTERIORS -->
-<div id="interiors" class="faq-category">
-
-<div class="faq-number">05</div>
-
-<h2>Interior Fit-Outs</h2>
-
-<div class="faq-item">
-
-<button class="faq-question">
-How long does an interior fit-out take?
-<span>+</span>
-</button>
-
-<div class="faq-answer">
-Typical fit-outs range between 8–12 weeks depending
-on scope, material procurement and site readiness.
-</div>
-
-</div>
-
-<div class="faq-item">
-
-<button class="faq-question">
-Do you handle MEP modifications?
-<span>+</span>
-</button>
-
-<div class="faq-answer">
-Yes. We coordinate HVAC, electrical, plumbing and
-data infrastructure modifications during fit-out execution.
-</div>
-
-</div>
-
-<div class="faq-item">
-
-<button class="faq-question">
-Do you supply furniture and finishes?
-<span>+</span>
-</button>
-
-<div class="faq-answer">
-Yes. We provide furniture sourcing, custom joinery,
-lighting systems and premium finish selections.
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- CTA -->
-<section class="faq-cta">
-
-<div class="container">
-
-<h2>
-Still Have <span>Questions?</span>
-</h2>
-
-<p>
-Speak with ACE Company Ltd directly and let our team
-guide you through your next project.
-</p>
-
-<div class="cta-buttons">
-
-<a href="{{ url_for('contact') }}" class="btn-primary">
-Contact Us
-</a>
-
-<a href="{{ url_for('services') }}" class="btn-outline">
-Our Services
-</a>
-
-</div>
-
-</div>
-
-</section>
-<!-- ════════════════════════════════════════════════════════
-     FOOTER — self-contained
-════════════════════════════════════════════════════════ -->
-<footer class="ace-footer">
-  <div class="ace-footer-grid">
-
-    <!-- Brand col -->
-    <div class="ace-footer-brand">
-      <div class="ace-footer-logo-row">
-        <img src="static/ace-logo.jpeg" alt="ACE Logo" style="height:32px;width:auto;" onerror="this.style.display='none'"/>
-        <div>
-          <div class="ace-footer-logo-mark">ACE</div>
-          <div class="ace-footer-logo-sub">Adaptive City Ecosystems</div>
+<!-- ===================== CTA ===================== -->
+<section class="section on-dark">
+  <div class="wrap">
+    <div class="cta-band reveal">
+      <div style="display:flex;flex-direction:column;gap:20px;align-items:flex-start;">
+        <span class="eyebrow">Still Have Questions</span>
+        <h2 class="d2">Ask us<br>directly.</h2>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:26px;">
+        <p class="lead" style="margin:0;">
+          Speak with the ACE team and we will walk you through your next project
+          — including whether we are the right firm for it.
+        </p>
+        <div class="cta-actions">
+          <a href="{{ url_for('contact') }}" class="btn">
+            Contact Us
+            <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a href="{{ url_for('services') }}" class="btn btn-ghost">Our Services</a>
         </div>
       </div>
-      <p class="ace-footer-tagline">Integrated architecture, structural engineering, interior design and construction management. Nairobi, Kenya. Est. 2020.</p>
-      <div class="ace-footer-contact">
-        <a href="tel:+254726314608">
-          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.36 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.34 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-          +254 726 314 608
-        </a>
-        <a href="mailto:acedesignbuildplus@gmail.com">
-          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          acedesignbuildplus@gmail.com
-        </a>
-        <a href="#">
-          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          Nairobi, Kenya
-        </a>
-      </div>
-    </div>
-
-    <!-- Services -->
-    <div>
-      <div class="ace-footer-col-title">Services</div>
-      <div class="ace-footer-links">
-        <a href="{{ url_for('services') }}">Architecture &amp; Design</a>
-        <a href="{{ url_for('services') }}">Structural Engineering</a>
-        <a href="{{ url_for('services') }}#fitouts">Interior Fit-Out</a>
-        <a href="{{ url_for('services') }}">Construction Management</a>
-        <a href="{{ url_for('services') }}">Diaspora Real Estate</a>
-        <a href="{{ url_for('services') }}">Industrial Masterplanning</a>
-      </div>
-    </div>
-
-    <!-- Company -->
-    <div>
-      <div class="ace-footer-col-title">Company</div>
-      <div class="ace-footer-links">
-        <a href="{{ url_for('about') }}">About ACE</a>
-        <a href="{{ url_for('company') }}">Projects</a>
-        <a href="{{ url_for('company') }}#faces">Our Team</a>
-        <a href="{{ url_for('company') }}#downloads">Downloads</a>
-        <a href="{{ url_for('company') }}#affiliations">Affiliations</a>
-      </div>
-    </div>
-
-    <!-- Contact -->
-    <div>
-      <div class="ace-footer-col-title">Contact</div>
-      <div class="ace-footer-links">
-        <a href="{{ url_for('contact') }}">Start a Project</a>
-        <a href="{{ url_for('contact') }}">Request a Quote</a>
-        <a href="{{ url_for('contact') }}">Request Credentials</a>
-        <a href="{{ url_for('contact') }}">Diaspora Enquiries</a>
-        <a href="{{ url_for('contact') }}">Media Enquiries</a>
-        <a href="{{ url_for('terms') }}">Terms & Conditions</a>
-        <a href="{{ url_for('privacy') }}">Privacy Policy</a>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="ace-footer-bottom">
-    <span class="ace-footer-copy">© 2026 ACE — Adaptive City Ecosystems Ltd. All rights reserved. Nairobi, Kenya.</span>
-    <div class="ace-footer-pills">
-      <span class="ace-footer-pill">NCA Cat 4</span>
-      <span class="ace-footer-pill">AAK</span>
-      <span class="ace-footer-pill">IEK</span>
-      <span class="ace-footer-pill">ACMK</span>
-      <span class="ace-footer-pill">KABCEC</span>
     </div>
   </div>
-</footer>
+</section>
 
-
-<script>
-
-const menuBtn = document.getElementById('menuBtn');
-const navLinks = document.getElementById('navLinks');
-
-menuBtn.addEventListener('click', () => {
-navLinks.classList.toggle('active');
-});
-
-const faqItems = document.querySelectorAll('.faq-item');
-
-faqItems.forEach(item => {
-
-const btn = item.querySelector('.faq-question');
-
-btn.addEventListener('click', () => {
-
-const isOpen = item.classList.contains('open');
-
-document.querySelectorAll('.faq-item').forEach(i => {
-i.classList.remove('open');
-});
-
-if(!isOpen){
-item.classList.add('open');
-}
-
-});
-
-});
-
-const sections = document.querySelectorAll('.faq-category');
-const navItems = document.querySelectorAll('.faq-nav-link');
-
-window.addEventListener('scroll', () => {
-
-let current = '';
-
-sections.forEach(section => {
-
-const sectionTop = section.offsetTop;
-
-if(pageYOffset >= sectionTop - 200){
-current = section.getAttribute('id');
-}
-
-});
-
-navItems.forEach(link => {
-
-link.classList.remove('active-cat');
-
-if(link.getAttribute('href') === '#' + current){
-link.classList.add('active-cat');
-}
-
-});
-
-});
-
-</script>
-
-</body>
-</html>
+{% endblock %}

@@ -1,1142 +1,231 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="ACE Media Centre — Project updates, construction progress, completed builds, company news, videos and insights from ACE — Adaptive City Ecosystems, Nairobi."/>
-  <title>ACE Media Centre | ACE — Adaptive City Ecosystems</title>
+{% extends "base.html" %}
+{% set active = 'blog' %}
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+{% block title %}Journal — Project Updates &amp; Insights | ACE Design + Build Partners{% endblock %}
+{% block description %}Site progress from live ACE projects across Nairobi, plus practical writing on procurement, contractor selection, passive design and construction costs in Kenya.{% endblock %}
 
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/blog.css') }}">
-</head>
-<body>
+{% block content %}
 
-<!-- ══════════════════════════════════════
-     UNIVERSAL NAVBAR
-══════════════════════════════════════ -->
-<header class="navbar">
-  <div class="nav-wrapper">
-
-    <a href="{{ url_for('company') }}" class="ace-logo">
-      <img src="{{ url_for('static', filename='ace-logo.jpeg') }}"
-           alt="ACE Logo"
-           onerror="this.style.display='none'"/>
-      <div class="ace-logo-text">
-        <span class="ace-logo-mark">ACE</span>
-        <span class="ace-logo-sub">Adaptive City Ecosystems</span>
-      </div>
-    </a>
-
-    <nav class="nav-menu">
-      <a href="{{ url_for('index') }}">Home</a>
-      <a href="{{ url_for('about') }}">About</a>
-      <a href="{{ url_for('services') }}">Services</a>
-      <a href="{{ url_for('company') }}">Company</a>
-      <a href="{{ url_for('faq') }}">FAQ</a>
-      <a href="{{ url_for('blog') }}" class="active">Blog</a>
-    </nav>
-
-    <a href="{{ url_for('contact') }}" class="nav-btn">Get Quote</a>
-
-    <button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-
-  </div>
-</header>
-
-<!-- Mobile menu -->
-<div class="mobile-menu" id="mobileMenu">
-  <a href="{{ url_for('index') }}">Home</a>
-  <a href="{{ url_for('about') }}">About</a>
-  <a href="{{ url_for('services') }}">Services</a>
-  <a href="{{ url_for('company') }}">Company</a>
-  <a href="{{ url_for('faq') }}">FAQ</a>
-  <a href="{{ url_for('blog') }}" class="active">Blog</a>
-  <a href="{{ url_for('contact') }}" class="mobile-cta">Get Quote</a>
-</div>
-
-
-<!-- ══════════════════════════════════════
-     HERO
-══════════════════════════════════════ -->
-<section class="blog-hero">
-  <img class="blog-hero-image"
-    src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1600&auto=format&fit=crop"
-    alt="ACE Construction site Nairobi"/>
-  <div class="blog-overlay"></div>
-
-  <div class="hero-content">
-    <div class="hero-eyebrow">ACE MEDIA CENTRE</div>
-    <h1 class="blog-title">
-      STORIES.<br>
-      PROJECTS.<br>
-      <span>UPDATES.</span>
-    </h1>
-    <p class="blog-text">
-      Explore project updates, construction progress, completed builds,
-      company news, team insights, videos and media from ACE — Adaptive City
-      Ecosystems — Nairobi's premier integrated design-build firm.
+<!-- ===================== PAGE HEAD ===================== -->
+<section class="page-head">
+  <div class="wrap page-head-inner">
+    <div class="crumb"><a href="{{ url_for('index') }}">Home</a> <span>/</span> <span>Journal</span></div>
+    <span class="eyebrow">Journal</span>
+    <h1 class="d1">What is happening<br>on our sites.</h1>
+    <p class="lead">
+      Progress from live projects, and what we have learned building in Nairobi
+      — written for clients who want to understand the decisions, not just see
+      the render.
     </p>
-    <div class="hero-stats">
-      <div><span class="hstat-n">6+</span><span class="hstat-l">Years in Business</span></div>
-      <div><span class="hstat-n">50+</span><span class="hstat-l">Projects Completed</span></div>
-      <div><span class="hstat-n">100%</span><span class="hstat-l">Client Commitment</span></div>
+  </div>
+</section>
+
+
+<!-- ===================== SITE UPDATES ===================== -->
+<section class="section">
+  <div class="wrap">
+
+    <div class="sec-head">
+      <div>
+        <span class="eyebrow">Site Updates</span>
+        <h2 class="d2">From the sites,<br>this quarter.</h2>
+      </div>
+      <p class="lead">
+        Where each active project actually stands. We publish progress whether
+        or not it is ahead of programme.
+      </p>
+    </div>
+
+    <div class="posts">
+
+      <article class="post reveal">
+        <div class="post-media">
+          <img src="{{ url_for('static', filename='proj-2.jpg') }}" alt="Sora Business Complex facade complete" loading="lazy">
+        </div>
+        <div class="post-kicker"><span>Sora Business Complex</span><span class="dot"></span><span>Westlands</span></div>
+        <h3>Facade complete, fit-outs underway</h3>
+        <p>The glass curtain wall is 100% installed across all elevations. Interior fit-out has begun on the lower floors while the rooftop conferencing suite is framed out.</p>
+      </article>
+
+      <article class="post reveal">
+        <div class="post-media">
+          <img src="{{ url_for('static', filename='proj-4.jpg') }}" alt="Westlands commercial project structural phase complete" loading="lazy">
+        </div>
+        <div class="post-kicker"><span>Westlands Commercial</span><span class="dot"></span><span>Westlands</span></div>
+        <h3>Structural phase 100% complete</h3>
+        <p>Foundation and reinforced concrete framing are signed off by our IEK-affiliated engineers. MEP rough-ins are underway ahead of facade cladding.</p>
+      </article>
+
+      <article class="post reveal">
+        <div class="post-media">
+          <img src="{{ url_for('static', filename='proj-3.jpg') }}" alt="XYZ Apartments rooftop decks installed" loading="lazy">
+        </div>
+        <div class="post-kicker"><span>XYZ Apartments</span><span class="dot"></span><span>Kilimani</span></div>
+        <h3>Rooftop decks installed, 80% pre-sold</h3>
+        <p>Rooftop decks are in and balcony glazing is in its final stage. Eighty per cent of units are now pre-sold off-plan, ahead of the sales programme.</p>
+      </article>
+
+      <article class="post reveal">
+        <div class="post-media">
+          <img src="{{ url_for('static', filename='proj-1.jpg') }}" alt="Emerald Heights interior finishing phase" loading="lazy">
+        </div>
+        <div class="post-kicker"><span>Emerald Heights</span><span class="dot"></span><span>Karen</span></div>
+        <h3>Interior fit-out phase underway</h3>
+        <p>All 24 units have moved into interior finishing. Smart-home first fix is complete and the rooftop garden waterproofing has passed inspection.</p>
+      </article>
+
+      <article class="post reveal">
+        <div class="post-media">
+          <img src="{{ url_for('static', filename='proj-5.jpg') }}" alt="Karen private residence handed over" loading="lazy">
+        </div>
+        <div class="post-kicker"><span>Karen Private Villa</span><span class="dot"></span><span>Delivered</span></div>
+        <h3>Handed over two weeks early</h3>
+        <p>The five-bedroom residence was handed over ahead of programme and on budget. Snagging closed within the first week of occupation.</p>
+      </article>
+
+      <article class="post reveal">
+        <div class="post-media">
+          <img src="{{ url_for('static', filename='proj-6.jpg') }}" alt="South B corporate interior fit-out showcase" loading="lazy">
+        </div>
+        <div class="post-kicker"><span>Corporate HQ</span><span class="dot"></span><span>South B</span></div>
+        <h3>Grade-A fit-out showcase</h3>
+        <p>6,000 sq ft delivered with acoustic ceilings, custom millwork and a full AV-enabled boardroom — our interior division's reference project.</p>
+      </article>
+
     </div>
   </div>
 </section>
 
 
-<!-- ══════════════════════════════════════
-     STICKY CATEGORY FILTER BAR
-     Clicking scrolls to the relevant section
-══════════════════════════════════════ -->
-<div class="filter-bar" id="filterBar">
-  <div class="filter-inner">
-    <button class="filter-btn active"  data-target="">All</button>
-    <button class="filter-btn" data-target="section-updates">Project Updates</button>
-    <button class="filter-btn" data-target="section-videos">Videos</button>
-    <button class="filter-btn" data-target="section-commercial">Commercial</button>
-    <button class="filter-btn" data-target="section-residential">Residential</button>
-    <button class="filter-btn" data-target="section-insights">Insights</button>
-    <button class="filter-btn" data-target="section-news">Company News</button>
-    <button class="filter-btn" data-target="section-downloads">Downloads</button>
-    <button class="filter-btn" data-target="section-team">Team</button>
-  </div>
-</div>
+<!-- ===================== INSIGHTS ===================== -->
+<section class="section on-paper-2">
+  <div class="wrap">
 
-
-<!-- ══════════════════════════════════════
-     FEATURED POST
-══════════════════════════════════════ -->
-<section class="featured-section" id="section-featured">
-  <div style="width:min(1200px,92%);margin:auto;margin-bottom:24px;">
-    <div class="featured-tag">★ FEATURED STORY</div>
-  </div>
-  <div style="width:min(1200px,92%);margin:auto;">
-    <div class="featured-card" data-cat="project-update">
-      <div class="featured-img">
-        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1600&auto=format&fit=crop"
-             alt="Emerald Heights Nairobi"/>
-        <div class="featured-badge">FEATURED PROJECT</div>
+    <div class="sec-head">
+      <div>
+        <span class="eyebrow">What We Know</span>
+        <h2 class="d2">Worth reading<br>before you build.</h2>
       </div>
-      <div class="featured-body">
-        <span class="featured-cat">Project Update</span>
-        <h2 class="featured-title">
-          Emerald Heights — Nairobi's<br>Most Anticipated Luxury Residence
-        </h2>
-        <p class="featured-desc">
-          Emerald Heights stands as a testament to ACE's design philosophy —
-          where modern African aesthetics meet world-class engineering precision.
-          Situated in Karen, this 24-unit luxury residential development has
-          entered its final interior fit-out phase, with rooftop gardens, infinity
-          pool and smart-home systems now being installed. Expected completion: Q4 2026.
+      <p class="lead">
+        The questions clients wish they had asked earlier — answered without the
+        sales pitch.
+      </p>
+    </div>
+
+    <div class="disciplines reveal">
+
+      <article class="discipline">
+        <span class="discipline-n">01</span>
+        <h3 class="d4">Design-build vs traditional procurement</h3>
+        <p>Why splitting design from construction creates variations, and what changes when one firm carries both. Includes where traditional procurement is still the better choice.</p>
+      </article>
+
+      <article class="discipline">
+        <span class="discipline-n">02</span>
+        <h3 class="d4">Five questions to ask a contractor before signing</h3>
+        <p>The checks that separate a registered contractor from a confident one — NCA category, professional registrations, cost transparency and how variations get priced.</p>
+      </article>
+
+      <article class="discipline">
+        <span class="discipline-n">03</span>
+        <h3 class="d4">Passive design for Nairobi's climate</h3>
+        <p>Orientation, shading and cross-ventilation decisions that cut running costs for the life of a building — most of them free if made early enough.</p>
+      </article>
+
+      <article class="discipline">
+        <span class="discipline-n">04</span>
+        <h3 class="d4">Understanding construction costs in Kenya</h3>
+        <p>How a cost plan is actually built up, what a bill of quantities does and does not guarantee, and why the cheapest tender is often the most expensive build.</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ===================== SUBSCRIBE ===================== -->
+<section class="section on-dark">
+  <div class="wrap">
+    <div class="cta-band reveal">
+
+      <div style="display:flex;flex-direction:column;gap:20px;align-items:flex-start;">
+        <span class="eyebrow">Newsletter</span>
+        <h2 class="d2">Project updates,<br>once a month.</h2>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:22px;">
+        <p class="lead" style="margin:0;">
+          Site progress, completed handovers and practical writing on building in
+          Kenya. No sales sequences — you can leave whenever you like.
         </p>
-        <div class="featured-meta">
-          <span>June 2026</span>
-          <div class="featured-meta-dot"></div>
-          <span>Project Update</span>
-          <div class="featured-meta-dot"></div>
-          <span>Karen, Nairobi</span>
-        </div>
-        <a href="{{ url_for('company') }}" class="featured-link">
-          Read Full Update
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-        </a>
+
+        <form id="subscribeForm" action="{{ url_for('subscribe') }}" method="POST" novalidate
+              style="display:flex;flex-wrap:wrap;gap:12px;align-items:flex-end;">
+          <div class="field" style="flex:1 1 260px;">
+            <label for="subEmail" style="color:var(--tx-on-dark-2);">Email Address</label>
+            <input type="email" id="subEmail" name="email" required autocomplete="email" placeholder="you@example.com">
+          </div>
+          <button type="submit" class="btn" id="subBtn">
+            Subscribe
+            <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </button>
+        </form>
+
+        <p class="form-note" id="subNote" role="status" aria-live="polite"></p>
       </div>
+
     </div>
   </div>
 </section>
 
+{% endblock %}
 
-<!-- ══════════════════════════════════════
-     MAIN BLOG GRID
-══════════════════════════════════════ -->
-<section class="blog-section" id="blogGrid">
 
-  <div class="section-heading">
-    <span class="section-tag">LATEST CONTENT</span>
-    <h2>Media &amp; Project Updates</h2>
-    <p>Construction progress reports, project walkthroughs, design insights, team stories and everything happening inside ACE.</p>
-  </div>
-
-  <div class="blog-grid">
-
-    <!-- PROJECT UPDATES anchor -->
-    <div id="section-updates" style="grid-column:1/-1;"></div>
-
-    <!-- 1 — Wide: Sora -->
-    <article class="blog-card blog-card-wide" data-cat="commercial" id="section-commercial-anchor">
-      <div class="blog-media">
-        <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?q=80&w=1200&auto=format&fit=crop" alt="Sora Business Complex"/>
-      </div>
-      <div class="blog-content">
-        <span class="blog-category">Commercial</span>
-        <h3>Sora Business Complex — Facade Complete, Fit-Outs Underway</h3>
-        <p>The Sora Business Complex in Westlands has reached a significant milestone — its glass curtain-wall facade is fully installed. ACE's interior fit-out teams are now commissioning the Grade-A office floors, lobby atrium, basement parking and rooftop conferencing suite. The complex will deliver 42,000 sq ft of premium commercial space to the Westlands CBD corridor. Handover: August 2026.</p>
-        <div class="blog-footer">
-          <span class="blog-date">May 2026</span>
-          <a href="{{ url_for('company') }}" class="read-link">Read More →</a>
-        </div>
-      </div>
-    </article>
-
-    <!-- 2 -->
-    <article class="blog-card" data-cat="project-update">
-      <div class="blog-media">
-        <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=1200&auto=format&fit=crop" alt="Westlands Construction"/>
-      </div>
-      <div class="blog-content">
-        <span class="blog-category">Project Update</span>
-        <h3>Westlands Commercial Project — Structural Phase Complete</h3>
-        <p>Foundation and reinforced concrete framing are now 100% complete. MEP rough-ins begin next week, followed by cladding installation.</p>
-        <div class="blog-footer">
-          <span class="blog-date">June 2026</span>
-          <a href="{{ url_for('company') }}" class="read-link">Read More →</a>
-        </div>
-      </div>
-    </article>
-
-    <!-- 3 -->
-    <article class="blog-card" data-cat="project-update">
-      <div class="blog-media">
-        <img src="https://images.unsplash.com/photo-1605146769289-440113cc3d00?q=80&w=1200&auto=format&fit=crop" alt="XYZ Apartments Kilimani"/>
-      </div>
-      <div class="blog-content">
-        <span class="blog-category">Project Update</span>
-        <h3>XYZ Apartments Kilimani — Rooftop Decks Installed</h3>
-        <p>The 18-storey XYZ Apartments tower in Kilimani has completed rooftop deck installation. Balcony glazing and external plaster works in final stages. 80% pre-sold off-plan.</p>
-        <div class="blog-footer">
-          <span class="blog-date">April 2026</span>
-          <a href="{{ url_for('company') }}" class="read-link">Read More →</a>
-        </div>
-      </div>
-    </article>
-
-    <!-- VIDEOS anchor -->
-    <div id="section-videos" style="grid-column:1/-1;"></div>
-
-    <!-- 4 — Video -->
-    <article class="blog-card" data-cat="site-video">
-      <div class="blog-media video-wrap">
-        <iframe src="https://www.youtube.com/embed/Mo-DdheRBl8" title="Emerald Heights Site Walkthrough" allowfullscreen loading="lazy"></iframe>
-      </div>
-      <div class="blog-content">
-        <span class="blog-category cat-video">Site Video</span>
-        <h3>Emerald Heights Site Walkthrough — Interior Finishes</h3>
-        <p>Full construction walkthrough showcasing the progress and interior finishing works including kitchen cabinets, flooring and bathroom installations at Emerald Heights.</p>
-        <div class="blog-footer">
-          <span class="blog-date">May 2026</span>
-          <a href="{{ url_for('company') }}" class="read-link">Watch →</a>
-        </div>
-      </div>
-    </article>
-
-    <!-- RESIDENTIAL anchor -->
-    <div id="section-residential" style="grid-column:1/-1;"></div>
-
-    <!-- 5 -->
-    <article class="blog-card" data-cat="residential">
-      <div class="blog-media">
-        <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=1200&auto=format&fit=crop" alt="Karen Residence"/>
-      </div>
-      <div class="blog-content">
-        <span class="blog-category">Residential</span>
-        <h3>Karen Private Residence — Handed Over Ahead of Schedule</h3>
-        <p>A sprawling 5-bedroom private villa in Karen was successfully handed over two weeks ahead of the contractual deadline — a reflection of ACE's commitment to precision scheduling.</p>
-        <div class="blog-footer">
-          <span class="blog-date">March 2026</span>
-          <a href="{{ url_for('company') }}" class="read-link">Read More →</a>
-        </div>
-      </div>
-    </article>
-
-    <!-- INSIGHTS anchor -->
-    <div id="section-insights" style="grid-column:1/-1;"></div>
-
-    <!-- 7 — Insight -->
-    <article class="blog-card" data-cat="insight">
-      <div class="blog-media">
-        <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1200&auto=format&fit=crop" alt="Architecture Drawing"/>
-      </div>
-      <div class="blog-content">
-        <span class="blog-category cat-insight">Design Insight</span>
-        <h3>Why Integrated Design-Build Saves Clients 20% on Every Project</h3>
-        <p>When architecture, engineering and construction sit under one roof, coordination gaps disappear. ACE explains the financial and quality advantages of the integrated design-build model.</p>
-        <div class="blog-footer">
-          <span class="blog-date">January 2026</span>
-          <a href="{{ url_for('company') }}" class="read-link">Read Article →</a>
-        </div>
-      </div>
-    </article>
-
-    <!-- 8 — Video -->
-    <article class="blog-card" data-cat="site-video">
-      <div class="blog-media video-wrap">
-        <iframe src="https://www.youtube.com/embed/3Kg6DZaJX_c" title="ACE Build Partners Site Video" allowfullscreen loading="lazy"></iframe>
-      </div>
-      <div class="blog-content">
-        <span class="blog-category cat-video">Site Video</span>
-        <h3>ACE Design + Build Partners — Full Site Reel 2026</h3>
-        <p>Our 2026 construction reel featuring ongoing projects, completed builds, team footage and behind-the-scenes highlights from across all active sites in Nairobi.</p>
-        <div class="blog-footer">
-          <span class="blog-date">May 2026</span>
-          <a href="{{ url_for('company') }}" class="read-link">Watch →</a>
-        </div>
-      </div>
-    </article>
-
-    <!-- 9 — Insight -->
-    <article class="blog-card" data-cat="insight">
-      <div class="blog-media">
-        <img src="https://images.unsplash.com/photo-1545558014-8692077e9b5c?q=80&w=1200&auto=format&fit=crop" alt="Sustainable Building"/>
-      </div>
-      <div class="blog-content">
-        <span class="blog-category cat-insight">Sustainability</span>
-        <h3>Building Green in Nairobi — How ACE Embeds Sustainability</h3>
-        <p>From passive cooling strategies and solar-ready roof designs to rainwater harvesting systems, ACE is leading the shift toward sustainable construction across Nairobi.</p>
-        <div class="blog-footer">
-          <span class="blog-date">December 2025</span>
-          <a href="{{ url_for('company') }}" class="read-link">Read Article →</a>
-        </div>
-      </div>
-    </article>
-
-    <!-- COMMERCIAL section card -->
-    <div id="section-commercial" style="grid-column:1/-1;"></div>
-
-    <!-- 10 — People -->
-    <article class="blog-card" data-cat="people">
-      <div class="blog-media" style="background:var(--dark3);display:flex;align-items:center;justify-content:center;">
-        <div style="font-family:'Bebas Neue',sans-serif;font-size:4rem;color:var(--lime);opacity:0.4;">MK</div>
-      </div>
-      <div class="blog-content">
-        <span class="blog-category cat-people">Team Spotlight</span>
-        <h3>Meet the Lead Architect Behind Emerald Heights and Sora Hub</h3>
-        <p>We sit down with ACE's Principal Architect to discuss the design philosophy behind two of Nairobi's most ambitious current projects and what drives modern African architecture forward.</p>
-        <div class="blog-footer">
-          <span class="blog-date">November 2025</span>
-          <a href="{{ url_for('company') }}" class="read-link">Read Profile →</a>
-        </div>
-      </div>
-    </article>
-
-    <!-- 11 -->
-    <article class="blog-card" data-cat="commercial">
-      <div class="blog-media">
-        <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=1200&auto=format&fit=crop" alt="Office Interior"/>
-      </div>
-      <div class="blog-content">
-        <span class="blog-category">Commercial</span>
-        <h3>Interior Fit-Out Showcase — Grade A Offices, South B</h3>
-        <p>ACE's Interior Fit-Out division delivered a 6,000 sq ft open-plan corporate office suite featuring integrated acoustic ceilings, custom millwork and a full AV-enabled boardroom.</p>
-        <div class="blog-footer">
-          <span class="blog-date">October 2025</span>
-          <a href="{{ url_for('company') }}" class="read-link">See Project →</a>
-        </div>
-      </div>
-    </article>
-
-    <!-- 12 — News -->
-    <article class="blog-card" data-cat="news">
-      <div class="blog-media">
-        <img src="https://images.unsplash.com/photo-1556761175-4b46a572b786?q=80&w=1200&auto=format&fit=crop" alt="Team Meeting"/>
-      </div>
-      <div class="blog-content">
-        <span class="blog-category cat-news">Company News</span>
-        <h3>ACE Expands — New Structural Engineering Division Launched</h3>
-        <p>ACE has formally launched its in-house Structural Engineering division, bringing full structural analysis, design and certification capabilities under one roof for the first time.</p>
-        <div class="blog-footer">
-          <span class="blog-date">September 2025</span>
-          <a href="{{ url_for('services') }}" class="read-link">Read More →</a>
-        </div>
-      </div>
-    </article>
-
-  </div>
-</section>
-
-
-<!-- ══════════════════════════════════════
-     INSIGHTS STRIP
-══════════════════════════════════════ -->
-<section class="insights-section" id="section-insights-cards">
-  <div class="sh-wrap">
-    <span class="section-tag">INSIGHTS &amp; EXPERTISE</span>
-    <h2 class="sh-title">What We Know. <span>What We Share.</span></h2>
-    <p class="sh-desc">Practical knowledge from 10+ years of building in Kenya — shared freely.</p>
-  </div>
-  <div class="insights-grid">
-    <div class="insight-card">
-      <div class="insight-icon">📐</div>
-      <h4>Design-Build vs Traditional Procurement</h4>
-      <p>Why integrated design-build consistently delivers projects faster, on budget and with fewer disputes than traditional separated contracts.</p>
-    </div>
-    <div class="insight-card">
-      <div class="insight-icon">🏗️</div>
-      <h4>5 Questions to Ask Your Contractor Before Signing</h4>
-      <p>Protect your investment. These five questions reveal the true quality and reliability of any construction firm before you commit a single shilling.</p>
-    </div>
-    <div class="insight-card">
-      <div class="insight-icon">🌿</div>
-      <h4>Passive Design Strategies for Nairobi's Climate</h4>
-      <p>How ACE uses orientation, shading, natural ventilation and thermal mass to reduce cooling loads by up to 35% in Nairobi buildings.</p>
-    </div>
-    <div class="insight-card">
-      <div class="insight-icon">📊</div>
-      <h4>Understanding Construction Cost Estimates in Kenya</h4>
-      <p>A transparent breakdown of what drives construction costs per square metre in Nairobi — materials, labour, approvals and contractor margin.</p>
-    </div>
-  </div>
-</section>
-
-
-<!-- ══════════════════════════════════════
-     VIDEOS SECTION
-══════════════════════════════════════ -->
-<section class="videos-section" id="section-videos-full">
-  <div class="sh-wrap">
-    <span class="section-tag">VIDEO LIBRARY</span>
-    <h2 class="sh-title">Watch Our <span>Work in Motion.</span></h2>
-    <p class="sh-desc">Site walkthroughs, timelapse builds and project reveals from across our portfolio.</p>
-  </div>
-  <div class="videos-grid">
-    <div class="video-card">
-      <div class="vc-thumb">
-        <iframe src="https://www.youtube.com/embed/3Kg6DZaJX_c" title="ACE 2026 Reel" allowfullscreen loading="lazy"></iframe>
-      </div>
-      <div class="vc-body">
-        <div class="vc-cat">COMPANY REEL</div>
-        <h3 class="vc-title">ACE Design + Build 2026 Showreel</h3>
-        <p class="vc-desc">Full highlights from our 2026 project portfolio — 50+ builds showcased in under 3 minutes.</p>
-        <div class="vc-date">May 2026</div>
-      </div>
-    </div>
-    <div class="video-card">
-      <div class="vc-thumb">
-        <iframe src="https://www.youtube.com/embed/Mo-DdheRBl8" title="Emerald Heights Walkthrough" allowfullscreen loading="lazy"></iframe>
-      </div>
-      <div class="vc-body">
-        <div class="vc-cat">SITE WALKTHROUGH</div>
-        <h3 class="vc-title">Emerald Heights — Interior Finishing Walkthrough</h3>
-        <p class="vc-desc">Go inside the penthouse as our team installs kitchen systems and bathroom fittings.</p>
-        <div class="vc-date">April 2026</div>
-      </div>
-    </div>
-    <div class="video-card">
-      <div class="vc-thumb">
-        <iframe src="https://www.youtube.com/embed/3Kg6DZaJX_c" title="Sora Hub Timelapse" allowfullscreen loading="lazy"></iframe>
-      </div>
-      <div class="vc-body">
-        <div class="vc-cat">TIMELAPSE</div>
-        <h3 class="vc-title">Sora Business Hub — 8 Months of Construction in 90 Seconds</h3>
-        <p class="vc-desc">From cleared ground to completed facade — watch the Sora Business Hub rise floor by floor.</p>
-        <div class="vc-date">March 2026</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- ══════════════════════════════════════
-     AWARDS & NCA AFFILIATION
-══════════════════════════════════════ -->
-<section class="awards-section" id="section-nca affiliation">
-
-    <!-- NCA affiliation callout -->
-    <div class="nca-callout">
-      <div class="nca-icon">
-        <svg width="28" height="28" fill="none" stroke="#9DC025" stroke-width="1.8" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-      </div>
-      <div>
-        <div class="nca-text-label">NCA Category 4 · Active Registration</div>
-        <div class="nca-text-title">National Construction Authority — Registered &amp; Licensed</div>
-        <div class="nca-text-desc">ACE holds an active NCA Category 4 registration — the classification that authorises the firm to self-perform large-scale building works across Kenya. Our NCA licence is renewed annually and is independently verifiable through the Authority's public contractor register. Registration number available on request for any due diligence process.</div>
-      </div>
-      <a href="{{ url_for('contact') }}" class="nca-btn">Request NCA Certificate</a>
-    </div>
-
-  </div>
-</section>
-
-
-<!-- ══════════════════════════════════════
-     DOWNLOADS
-══════════════════════════════════════ -->
-<section class="downloads-section" id="section-downloads">
-  <div class="downloads-container">
-
-    <div class="sh-wrap">
-      <span class="section-tag">DOWNLOADS</span>
-      <h2 class="sh-title">Documents &amp; <span>Resources</span></h2>
-      <p class="sh-desc">Key company documents, credentials, capability statements and project profiles — available for download by clients, investors and project stakeholders.</p>
-    </div>
-
-    <div class="downloads-grid">
-
-      <a href="static/downloads/ACE-Company-Profile-2026.pdf" class="dl-card" target="_blank" rel="noopener">
-        <div class="dl-icon">
-          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-        </div>
-        <div class="dl-type">PDF · Company Profile</div>
-        <div class="dl-title">ACE Company Profile 2026</div>
-        <div class="dl-desc">Full company profile including services, team credentials, project portfolio, professional affiliations and contact details.</div>
-        <div class="dl-meta">
-          <span>PDF · 4.2 MB</span>
-          <span class="dl-btn">Download <svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></span>
-        </div>
-      </a>
-
-      <a href="static/downloads/ACE-Capability-Statement.pdf" class="dl-card" target="_blank" rel="noopener">
-        <div class="dl-icon">
-          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-        </div>
-        <div class="dl-type">PDF · Capability Statement</div>
-        <div class="dl-title">ACE Capability Statement</div>
-        <div class="dl-desc">One-page summary: four core disciplines, NCA registration status, professional affiliations and key project statistics. For tender submissions.</div>
-        <div class="dl-meta">
-          <span>PDF · 1.1 MB</span>
-          <span class="dl-btn">Download <svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></span>
-        </div>
-      </a>
-
-      <a href="static/downloads/ACE-NCA-Certificate-2026.pdf" class="dl-card" target="_blank" rel="noopener">
-        <div class="dl-icon">
-          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        </div>
-        <div class="dl-type">PDF · Regulatory Certificate</div>
-        <div class="dl-title">NCA Registration Certificate 2026</div>
-        <div class="dl-desc">Current National Construction Authority Category 4 registration certificate. For client due diligence and procurement processes.</div>
-        <div class="dl-meta">
-          <span>PDF · 0.8 MB</span>
-          <span class="dl-btn">Download <svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></span>
-        </div>
-      </a>
-
-      <a href="static/downloads/ACE-Project-Portfolio-2026.pdf" class="dl-card" target="_blank" rel="noopener">
-        <div class="dl-icon">
-          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M3 9h6M3 15h6"/></svg>
-        </div>
-        <div class="dl-type">PDF · Portfolio</div>
-        <div class="dl-title">ACE Project Portfolio 2026</div>
-        <div class="dl-desc">Visual portfolio of ACE's 50+ completed and in-progress projects — residential, commercial and industrial with technical specifications.</div>
-        <div class="dl-meta">
-          <span>PDF · 12.6 MB</span>
-          <span class="dl-btn">Download <svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></span>
-        </div>
-      </a>
-
-      <a href="static/downloads/ACE-Credentials-Pack.pdf" class="dl-card" target="_blank" rel="noopener">
-        <div class="dl-icon">
-          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
-        </div>
-        <div class="dl-type">PDF · Credentials Pack</div>
-        <div class="dl-title">Professional Credentials Pack</div>
-        <div class="dl-desc">Combined credentials: NCA certificate, AAK registrations, IEK memberships, ACMK affiliations and KABCEC membership. Full due diligence pack.</div>
-        <div class="dl-meta">
-          <span>PDF · 3.4 MB</span>
-          <span class="dl-btn">Download <svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></span>
-        </div>
-      </a>
-
-      <a href="static/downloads/ACE-Diaspora-Investment-Guide.pdf" class="dl-card" target="_blank" rel="noopener">
-        <div class="dl-icon">
-          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
-        </div>
-        <div class="dl-type">PDF · Investor Guide</div>
-        <div class="dl-title">Diaspora Real Estate Investment Guide</div>
-        <div class="dl-desc">Complete guide for Kenyan diaspora investors — remote project management, monthly reporting standards, financial transparency framework.</div>
-        <div class="dl-meta">
-          <span>PDF · 2.2 MB</span>
-          <span class="dl-btn">Download <svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></span>
-        </div>
-      </a>
-
-      <a href="static/downloads/ACE-Services-Brochure.pdf" class="dl-card" target="_blank" rel="noopener">
-        <div class="dl-icon">
-          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><polyline points="21 8 21 21 3 21 3 8"/><rect x="1" y="3" width="22" height="5"/></svg>
-        </div>
-        <div class="dl-type">PDF · Services Brochure</div>
-        <div class="dl-title">ACE Services Brochure</div>
-        <div class="dl-desc">Full-colour brochure covering ACE's four core divisions: Architecture, Structural Engineering, Interior Fit-Out and Construction Management.</div>
-        <div class="dl-meta">
-          <span>PDF · 6.1 MB</span>
-          <span class="dl-btn">Download <svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></span>
-        </div>
-      </a>
-
-      <a href="static/downloads/ACE-Awards-Certificates.pdf" class="dl-card" target="_blank" rel="noopener">
-        <div class="dl-icon">
-          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>
-        </div>
-        <div class="dl-type">PDF · Award Certificates</div>
-        <div class="dl-title">ACE Awards &amp; Certifications 2021–2026</div>
-        <div class="dl-desc">Scanned copies of all major awards and industry certifications received by ACE from 2021 to 2026, including AIA Kenya Award 2026.</div>
-        <div class="dl-meta">
-          <span>PDF · 5.8 MB</span>
-          <span class="dl-btn">Download <svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></span>
-        </div>
-      </a>
-
-    </div>
-
-    <div class="dl-request">
-      <div>
-        <h3>Need a Specific <span>Document?</span></h3>
-        <p>Can't find what you need above? Contact ACE directly to request specific credentials, registration certificates, professional indemnity insurance certificates, or bespoke project data packs. We respond within one business day.</p>
-      </div>
-      <a href="{{ url_for('contact') }}" class="dl-request-btn">
-        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-        Request Documents
-      </a>
-    </div>
-
-  </div>
-</section>
-
-
-<!-- ══════════════════════════════════════
-     MILESTONE TIMELINE
-══════════════════════════════════════ -->
-<section class="timeline-section" id="section-timeline">
-  <div class="timeline-wrap">
-    <div style="margin-bottom:48px;">
-      <span class="section-tag" style="display:inline-flex;">OUR JOURNEY</span>
-      <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(1.8rem,4vw,2.8rem);letter-spacing:0.03em;margin-top:14px;">6 Years. <span style="color:var(--lime);">50+ Projects.</span> One Vision.</h2>
-      <p style="color:var(--muted);font-size:0.88rem;margin-top:10px;max-width:560px;line-height:1.72;">Key milestones that define ACE — Adaptive City Ecosystems — since founding in Nairobi in 2020.</p>
-    </div>
-    <div class="timeline-track">
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div>
-          <div class="timeline-year">2020 — FOUNDING</div>
-          <h3 class="timeline-title">ACE — Adaptive City Ecosystems Established</h3>
-          <p class="timeline-desc">Founded in Nairobi with a vision to eliminate the fragmentation between architecture, engineering and construction — bringing all three disciplines under one accountable team.</p>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div>
-          <div class="timeline-year">2021 — FIRST COMMERCIAL</div>
-          <h3 class="timeline-title">First Major Commercial Project — Parklands Office Block</h3>
-          <p class="timeline-desc">ACE completed its first Grade-A commercial office block in Parklands, delivering 12,000 sq ft of premium office space and establishing our reputation in the commercial sector.</p>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div>
-          <div class="timeline-year">2024 — 15 PROJECTS</div>
-          <h3 class="timeline-title">25 Projects Milestone — Interior Division Launched</h3>
-          <p class="timeline-desc">Reaching 25 completed projects, ACE formally launched its Interior Fit-Out division, enabling true end-to-end delivery from architectural concept through to furnished handover.</p>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div>
-          <div class="timeline-year">2025 — EXPANSION</div>
-          <h3 class="timeline-title">Structural Engineering Division Launched In-House</h3>
-          <p class="timeline-desc">ACE added in-house Structural Engineering capabilities, giving clients one truly integrated team from concept design through structural analysis and construction delivery.</p>
-        </div>
-      </div>
-      <div class="timeline-item" style="padding-bottom:0;">
-        <div class="timeline-dot" style="box-shadow:0 0 0 4px var(--lime);background:var(--lime);"></div>
-        <div>
-          <div class="timeline-year">2026 — NOW</div>
-          <h3 class="timeline-title">50+ Projects. Emerald Heights &amp; Sora Hub Under Delivery.</h3>
-          <p class="timeline-desc">Today ACE manages its largest ever project portfolio — Emerald Heights, Sora Business Complex and five other active sites simultaneously, with 60+ professionals across all disciplines.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- ══════════════════════════════════════
-     TEAM — CREDENTIALS ONLY (no images)
-══════════════════════════════════════ -->
-<section class="team-section" id="section-team">
-
-  <div class="sh-wrap" style="width:min(1200px,92%);margin-left:auto;margin-right:auto;">
-    <span class="section-tag">THE PEOPLE</span>
-    <h2 class="sh-title">Faces <span>Behind ACE</span></h2>
-    <p class="sh-desc">Licensed, credentialled professionals across every discipline — from Architecture to Structural Engineering, Quantity Surveying to MEP. Every person listed practises under a recognised professional body.</p>
-  </div>
-
-  <!-- Discipline overview strip -->
-  <div class="disciplines-strip">
-    <div class="disc-card"><div class="disc-icon">🏛️</div><div class="disc-label">Architects</div><div class="disc-count">AAK</div></div>
-    <div class="disc-card"><div class="disc-icon">🔩</div><div class="disc-label">Engineers</div><div class="disc-count">IEK</div></div>
-    <div class="disc-card"><div class="disc-icon">📊</div><div class="disc-label">Qty Surveyors</div><div class="disc-count">BORAQS</div></div>
-    <div class="disc-card"><div class="disc-icon">⚡</div><div class="disc-label">Elec &amp; Mech</div><div class="disc-count">IEK</div></div>
-    <div class="disc-card"><div class="disc-icon">🗺️</div><div class="disc-label">Planners</div><div class="disc-count">KIP</div></div>
-    <div class="disc-card"><div class="disc-icon">📋</div><div class="disc-label">Proj. Managers</div><div class="disc-count">PMP / ACMK</div></div>
-  </div>
-
-  <!-- Partner cards — no images, credentials only -->
-  <div class="team-grid">
-
-    <div class="team-card">
-      <div class="team-initials">MK</div>
-      <div class="team-role-tag">Partner · Business Development</div>
-      <div class="team-name">Arch Mungai Kihara</div>
-      <div class="team-creds">
-        <div class="team-cred"><div class="team-cred-dot"></div>Registered Architect · AAK</div>
-        <div class="team-cred"><div class="team-cred-dot"></div>BSc / M.Arch Architecture</div>
-        <div class="team-cred"><div class="team-cred-dot"></div>10+ Years in Practice · CPD Compliant</div>
-      </div>
-      <div class="team-desc">Lead designer of Emerald Heights and Sora Hub. Drives business development and client relationships across ACE's residential and commercial portfolio.</div>
-      <div class="team-tags"><span class="team-tag">AAK Registered</span><span class="team-tag">Statutory Drawings</span><span class="team-tag">CPD</span></div>
-    </div>
-
-    <div class="team-card">
-      <div class="team-initials">BS</div>
-      <div class="team-role-tag">Partner · Administration &amp; Finance</div>
-      <div class="team-name">Arch Bernard Segecha</div>
-      <div class="team-creds">
-        <div class="team-cred"><div class="team-cred-dot"></div>Registered Architect · AAK</div>
-        <div class="team-cred"><div class="team-cred-dot"></div>CPA(K) — Certified Public Accountant</div>
-        <div class="team-cred"><div class="team-cred-dot"></div>Project Finance &amp; Contract Administration</div>
-      </div>
-      <div class="team-desc">Oversees all financial management, project accounting, contract administration and corporate governance across ACE's operations.</div>
-      <div class="team-tags"><span class="team-tag">AAK Registered</span><span class="team-tag">CPA(K)</span><span class="team-tag">Contract Admin</span></div>
-    </div>
-
-    <div class="team-card">
-      <div class="team-initials">PT</div>
-      <div class="team-role-tag">Partner · Land Capital &amp; Diaspora (U.K) Real Estate</div>
-      <div class="team-name">Arch Patrick Terer</div>
-      <div class="team-creds">
-        <div class="team-cred"><div class="team-cred-dot"></div>Registered Architect · AAK</div>
-        <div class="team-cred"><div class="team-cred-dot"></div>Licensed Project Manager · ACMK</div>
-        <div class="team-cred"><div class="team-cred-dot"></div>UK Property &amp; Land Acquisition Specialist</div>
-      </div>
-      <div class="team-desc">Responsible for land acquisition, diaspora real estate programme and development of real estate projects in the UK diaspora market.</div>
-      <div class="team-tags"><span class="team-tag">AAK Registered</span><span class="team-tag">ACMK</span><span class="team-tag">Diaspora RE</span></div>
-    </div>
-
-    <div class="team-card">
-      <div class="team-initials">ML</div>
-      <div class="team-role-tag">Partner · Innovation &amp; Strategy</div>
-      <div class="team-name">Arch Martin Leitich</div>
-      <div class="team-creds">
-        <div class="team-cred"><div class="team-cred-dot"></div>Registered Architect · AAK</div>
-        <div class="team-cred"><div class="team-cred-dot"></div>PMP® — Project Management Professional (PMI)</div>
-        <div class="team-cred"><div class="team-cred-dot"></div>BIM &amp; Sustainable Design Specialist</div>
-      </div>
-      <div class="team-desc">Leads the innovation and strategy initiatives at ACE, driving integration of new technologies, BIM workflows and sustainable design practices across all projects.</div>
-      <div class="team-tags"><span class="team-tag">AAK Registered</span><span class="team-tag">PMP®</span><span class="team-tag">BIM</span><span class="team-tag">Sustainability</span></div>
-    </div>
-
-    <div class="team-card">
-      <div class="team-initials">SE</div>
-      <div class="team-role-tag">Structural &amp; Civil Engineering Division</div>
-      <div class="team-name">Structural &amp; Civil Engineers</div>
-      <div class="team-creds">
-        <div class="team-cred"><div class="team-cred-dot"></div>IEK Affiliated — Institution of Engineers of Kenya</div>
-        <div class="team-cred"><div class="team-cred-dot"></div>Licensed to certify structural calculations &amp; designs</div>
-        <div class="team-cred"><div class="team-cred-dot"></div>BSc Civil / Structural Engineering · CPD Compliant</div>
-      </div>
-      <div class="team-desc">ACE's in-house Structural Division provides complete structural analysis, design and certification — every frame, slab and foundation engineered to the highest Kenyan professional standard.</div>
-      <div class="team-tags"><span class="team-tag">IEK Affiliated</span><span class="team-tag">Structural Cert.</span><span class="team-tag">CPD</span></div>
-    </div>
-
-    <div class="team-card">
-      <div class="team-initials">QS</div>
-      <div class="team-role-tag">Quantity Surveying Division</div>
-      <div class="team-name">Quantity Surveyors</div>
-      <div class="team-creds">
-        <div class="team-cred"><div class="team-cred-dot"></div>BORAQS Registered — Board of Registration of Architects &amp; QS</div>
-        <div class="team-cred"><div class="team-cred-dot"></div>Bills of Quantities, Cost Plans &amp; Valuations</div>
-        <div class="team-cred"><div class="team-cred-dot"></div>BSc Quantity Surveying · CPD Compliant</div>
-      </div>
-      <div class="team-desc">ACE's QS team provides transparent, independently verified cost plans and valuations from pre-contract through final account — total financial clarity at every stage.</div>
-      <div class="team-tags"><span class="team-tag">BORAQS Registered</span><span class="team-tag">BOQ</span><span class="team-tag">Cost Planning</span></div>
-    </div>
-
-    <div class="team-card">
-      <div class="team-initials">ME</div>
-      <div class="team-role-tag">MEP Engineering Division</div>
-      <div class="team-name">Electrical &amp; Mechanical Engineers</div>
-      <div class="team-creds">
-        <div class="team-cred"><div class="team-cred-dot"></div>IEK Affiliated — Institution of Engineers of Kenya</div>
-        <div class="team-cred"><div class="team-cred-dot"></div>Licensed Electrical Installation Supervisors</div>
-        <div class="team-cred"><div class="team-cred-dot"></div>HVAC, Plumbing, Fire Protection &amp; BMS</div>
-      </div>
-      <div class="team-desc">Our MEP engineers design, coordinate and commission all mechanical, electrical and plumbing systems in-house — from smart-home integration to full building automation.</div>
-      <div class="team-tags"><span class="team-tag">IEK Affiliated</span><span class="team-tag">Licensed Elec.</span><span class="team-tag">MEP Design</span><span class="team-tag">BMS</span></div>
-    </div>
-
-    <div class="team-card">
-      <div class="team-initials">TP</div>
-      <div class="team-role-tag">Urban &amp; Physical Planning Division</div>
-      <div class="team-name">Town &amp; Urban Planners</div>
-      <div class="team-creds">
-        <div class="team-cred"><div class="team-cred-dot"></div>KIP Registered — Kenya Institute of Planners</div>
-        <div class="team-cred"><div class="team-cred-dot"></div>Physical development planning &amp; change of user applications</div>
-        <div class="team-cred"><div class="team-cred-dot"></div>BSc / MA Urban &amp; Regional Planning</div>
-      </div>
-      <div class="team-desc">ACE's planning professionals manage all statutory approvals, environmental impact assessments and masterplanning — from Nairobi County applications to large-scale industrial masterplans.</div>
-      <div class="team-tags"><span class="team-tag">KIP Registered</span><span class="team-tag">Masterplanning</span><span class="team-tag">EIA</span></div>
-    </div>
-
-    <div class="team-card">
-      <div class="team-initials">PM</div>
-      <div class="team-role-tag">Construction Project Management</div>
-      <div class="team-name">Licensed Project Managers</div>
-      <div class="team-creds">
-        <div class="team-cred"><div class="team-cred-dot"></div>PMP® Certified — Project Management Professional (PMI)</div>
-        <div class="team-cred"><div class="team-cred-dot"></div>ACMK Members — Association of Construction Managers of Kenya</div>
-        <div class="team-cred"><div class="team-cred-dot"></div>NCA Licensed · BSc Construction Management</div>
-      </div>
-      <div class="team-desc">Every ACE project is run by a PMP®-certified construction manager operating under ACMK's code of professional conduct — structured programme management from mobilisation to handover.</div>
-      <div class="team-tags"><span class="team-tag">PMP® Certified</span><span class="team-tag">ACMK</span><span class="team-tag">NCA Licensed</span></div>
-    </div>
-
-  </div>
-</section>
-
-
-<!-- ══════════════════════════════════════
-     TESTIMONIALS
-══════════════════════════════════════ -->
-<section class="testi-section">
-  <div class="sh-wrap">
-    <span class="section-tag">CLIENT VOICES</span>
-    <h2 class="sh-title">What Our <span>Clients Say.</span></h2>
-    <p class="sh-desc">Real feedback from property owners, developers and businesses who have built with ACE.</p>
-  </div>
-  <div class="testi-grid">
-    <div class="testi-card">
-      <div class="testi-stars">★★★★★</div>
-      <p class="testi-quote">ACE delivered our Karen villa two weeks ahead of schedule and the quality of finish exceeded everything we imagined. The fact that one team handled architecture, engineering and construction made everything seamless.</p>
-      <div class="testi-author">
-        <div class="testi-avatar">NK</div>
-        <div>
-          <div class="testi-name">Njoroge Kamau</div>
-          <div class="testi-loc">Private Homeowner · Karen, Nairobi</div>
-        </div>
-      </div>
-    </div>
-    <div class="testi-card">
-      <div class="testi-stars">★★★★★</div>
-      <p class="testi-quote">We contracted ACE for the Sora Business Hub after seeing their track record on residential projects. Their commercial expertise is equally strong — communication was transparent throughout. Will use them again without question.</p>
-      <div class="testi-author">
-        <div class="testi-avatar">FO</div>
-        <div>
-          <div class="testi-name">Fatuma Omar</div>
-          <div class="testi-loc">Property Developer · Westlands</div>
-        </div>
-      </div>
-    </div>
-    <div class="testi-card">
-      <div class="testi-stars">★★★★★</div>
-      <p class="testi-quote">Their interior fit-out team transformed our raw shell into a world-class corporate HQ. Every detail — from the reception desk to the boardroom acoustics — was handled with exceptional care and professionalism.</p>
-      <div class="testi-author">
-        <div class="testi-avatar">PM</div>
-        <div>
-          <div class="testi-name">Peter Mwangi</div>
-          <div class="testi-loc">CEO, TechCo East Africa · South B</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- ══════════════════════════════════════
-     NEWSLETTER
-══════════════════════════════════════ -->
-<section class="newsletter-section">
-  <div class="newsletter-inner">
-    <span class="section-tag" style="display:inline-flex;margin-bottom:10px;">STAY UPDATED</span>
-    <h2>Get <span>Project Updates</span> Direct to Your Inbox</h2>
-    <p>Construction progress reports, new project launches, design insights and company news — sent monthly. No spam. Unsubscribe any time.</p>
-    <form class="newsletter-form" id="newsletterForm" action="/subscribe" method="POST">
-      <input type="email" name="email" placeholder="Your email address" required aria-label="Email address"/>
-      <button type="submit">Subscribe →</button>
-    </form>
-    <p class="newsletter-note">Join 1,200+ developers, architects and homeowners already subscribed.</p>
-  </div>
-</section>
-
-
-<!-- ══════════════════════════════════════
-     CTA
-══════════════════════════════════════ -->
-<section class="blog-cta">
-  <div class="cta-content">
-    <h2>LET'S BUILD YOUR NEXT PROJECT.</h2>
-    <p>Residential, commercial and integrated design-build solutions across Nairobi and Kenya. One team. One vision. Zero compromise.</p>
-    <div class="cta-buttons">
-      <a href="{{ url_for('contact') }}" class="btn-dark">Start a Project</a>
-      <a href="{{ url_for('services') }}" class="btn-light">View Our Services</a>
-    </div>
-  </div>
-</section>
-
-
-
-<!-- ════════════════════════════════════════════════════════
-     FOOTER — self-contained
-════════════════════════════════════════════════════════ -->
-<footer class="ace-footer">
-  <div class="ace-footer-grid">
-
-    <!-- Brand col -->
-    <div class="ace-footer-brand">
-      <div class="ace-footer-logo-row">
-        <img src="static/ace-logo.jpeg" alt="ACE Logo" style="height:32px;width:auto;" onerror="this.style.display='none'"/>
-        <div>
-          <div class="ace-footer-logo-mark">ACE</div>
-          <div class="ace-footer-logo-sub">Adaptive City Ecosystems</div>
-        </div>
-      </div>
-      <p class="ace-footer-tagline">Integrated architecture, structural engineering, interior design and construction management. Nairobi, Kenya. Est. 2020.</p>
-      <div class="ace-footer-contact">
-        <a href="tel:+254726314608">
-          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.36 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.34 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-          +254 726 314 608
-        </a>
-        <a href="mailto:acedesignbuildplus@gmail.com">
-          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          acedesignbuildplus@gmail.com
-        </a>
-        <a href="#">
-          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          Nairobi, Kenya
-        </a>
-      </div>
-    </div>
-
-    <!-- Services -->
-    <div>
-      <div class="ace-footer-col-title">Services</div>
-      <div class="ace-footer-links">
-        <a href="{{ url_for('services') }}">Architecture &amp; Design</a>
-        <a href="{{ url_for('services') }}">Structural Engineering</a>
-        <a href="{{ url_for('services') }}#fitouts">Interior Fit-Out</a>
-        <a href="{{ url_for('services') }}">Construction Management</a>
-        <a href="{{ url_for('services') }}">Diaspora Real Estate</a>
-        <a href="{{ url_for('services') }}">Industrial Masterplanning</a>
-      </div>
-    </div>
-
-    <!-- Company -->
-    <div>
-      <div class="ace-footer-col-title">Company</div>
-      <div class="ace-footer-links">
-        <a href="{{ url_for('about') }}">About ACE</a>
-        <a href="{{ url_for('company') }}">Projects</a>
-        <a href="{{ url_for('company') }}#faces">Our Team</a>
-        <a href="{{ url_for('company') }}#downloads">Downloads</a>
-        <a href="{{ url_for('company') }}#affiliations">Affiliations</a>
-      </div>
-    </div>
-
-    <!-- Contact -->
-    <div>
-      <div class="ace-footer-col-title">Contact</div>
-      <div class="ace-footer-links">
-        <a href="{{ url_for('contact') }}">Start a Project</a>
-        <a href="{{ url_for('contact') }}">Request a Quote</a>
-        <a href="{{ url_for('contact') }}">Request Credentials</a>
-        <a href="{{ url_for('contact') }}">Diaspora Enquiries</a>
-        <a href="{{ url_for('contact') }}">Media Enquiries</a>
-        <a href="{{ url_for('terms') }}">Terms & Conditions</a>
-        <a href="{{ url_for('privacy') }}">Privacy Policy</a>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="ace-footer-bottom">
-    <span class="ace-footer-copy">© 2026 ACE — Adaptive City Ecosystems Ltd. All rights reserved. Nairobi, Kenya.</span>
-    <div class="ace-footer-pills">
-      <span class="ace-footer-pill">NCA Cat 4</span>
-      <span class="ace-footer-pill">AAK</span>
-      <span class="ace-footer-pill">IEK</span>
-      <span class="ace-footer-pill">ACMK</span>
-      <span class="ace-footer-pill">KABCEC</span>
-    </div>
-  </div>
-</footer>
-
-
-<!-- ══════════════════════════════════════
-     SCRIPTS
-══════════════════════════════════════ -->
+{% block scripts %}
 <script>
-/* ══ BURGER / MOBILE MENU ══ */
-const burger     = document.getElementById('burger');
-const mobileMenu = document.getElementById('mobileMenu');
+(function(){
+  var form = document.getElementById("subscribeForm");
+  var note = document.getElementById("subNote");
+  var btn  = document.getElementById("subBtn");
+  if(!form) return;
 
-burger.addEventListener('click', () => {
-  const isOpen = burger.classList.toggle('open');
-  mobileMenu.classList.toggle('open');
-  burger.setAttribute('aria-expanded', isOpen);
-});
+  var idle = btn.innerHTML;
 
-// Close on link tap
-mobileMenu.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => {
-    burger.classList.remove('open');
-    mobileMenu.classList.remove('open');
-    burger.setAttribute('aria-expanded', false);
-  });
-});
-
-// Close on outside tap
-document.addEventListener('click', e => {
-  if (!burger.contains(e.target) && !mobileMenu.contains(e.target)) {
-    burger.classList.remove('open');
-    mobileMenu.classList.remove('open');
+  function say(kind, text){
+    note.className = "form-note " + kind;
+    note.textContent = text;
   }
-});
 
+  form.addEventListener("submit", function(e){
+    e.preventDefault();
 
-/* ══ FILTER BAR — scroll to section + highlight ══ */
-const filterBtns = document.querySelectorAll('.filter-btn');
-
-// Map filter button to the correct section id
-const targetMap = {
-  '':                    'section-featured',
-  'section-updates':     'section-updates',
-  'section-videos':      'section-videos',
-  'section-commercial':  'section-commercial',
-  'section-residential': 'section-residential',
-  'section-insights':    'section-insights',
-  'section-news':        'section-news',
-  'section-awards':      'section-awards',
-  'section-downloads':   'section-downloads',
-  'section-team':        'section-team',
-};
-
-filterBtns.forEach(btn => {
-  btn.addEventListener('click', () => {
-    // Update active state
-    filterBtns.forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-
-    const targetId = btn.dataset.target;
-
-    if (!targetId) {
-      // "All" → scroll to top of page
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+    if(!form.checkValidity()){
+      form.reportValidity();
       return;
     }
 
-    const el = document.getElementById(targetId);
-    if (el) {
-      // Offset for sticky nav + filter bar (72px + 56px)
-      const offset = 72 + 56 + 12;
-      const y = el.getBoundingClientRect().top + window.scrollY - offset;
-      window.scrollTo({ top: y, behavior: 'smooth' });
-    }
-  });
-});
+    btn.disabled = true;
+    btn.textContent = "Sending…";
+    note.className = "form-note";
 
-// Auto-highlight filter button on scroll
-const sectionIds = [
-  'section-featured','section-updates','section-videos',
-  'section-commercial','section-residential','section-insights',
-  'section-news','section-awards','section-downloads','section-team'
-];
-
-const scrollIO = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      const id = e.target.id;
-      filterBtns.forEach(b => {
-        b.classList.toggle('active', b.dataset.target === id || (id === 'section-featured' && b.dataset.target === ''));
+    fetch(form.action, { method: "POST", body: new FormData(form) })
+      .then(function(res){ return res.json().catch(function(){ return {success: res.ok}; }); })
+      .then(function(data){
+        if(data && data.success){
+          form.reset();
+          say("is-ok", "You are subscribed — a confirmation is on its way to your inbox.");
+        } else {
+          say("is-bad", "That did not go through. Please email acedesignbuildplus@gmail.com and we will add you manually.");
+        }
+      })
+      .catch(function(){
+        say("is-bad", "Network error. Please email acedesignbuildplus@gmail.com and we will add you manually.");
+      })
+      .finally(function(){
+        btn.disabled = false;
+        btn.innerHTML = idle;
       });
-    }
   });
-}, { threshold: 0.25, rootMargin: '-72px 0px -40% 0px' });
-
-sectionIds.forEach(id => {
-  const el = document.getElementById(id);
-  if (el) scrollIO.observe(el);
-});
-
-
-/* ══ NEWSLETTER — FIXED ══ */
-document.getElementById('newsletterForm').addEventListener('submit', function(e) {
-  e.preventDefault();
-
-  const btn   = this.querySelector('button');
-  const input = this.querySelector('input');
-  const email = input.value.trim();
-
-  if (!email) return;
-
-  /* Show loading state */
-  const original = btn.textContent;
-  btn.textContent = 'Sending...';
-  btn.disabled = true;
-
-  /* Actually POST to Flask */
-  fetch('/subscribe', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: 'email=' + encodeURIComponent(email)
-  })
-  .then(function(res) { return res.json(); })
-  .then(function(data) {
-    if (data.success) {
-      btn.textContent = 'Subscribed! ✓';
-      btn.style.background = '#4CAF50';
-      btn.style.color = '#fff';
-      input.value = '';
-    } else {
-      btn.textContent = 'Failed — try again';
-      btn.style.background = '#e53e3e';
-      btn.style.color = '#fff';
-    }
-    /* Reset after 3.5s */
-    setTimeout(function() {
-      btn.textContent = original;
-      btn.style.background = '';
-      btn.style.color = '';
-      btn.disabled = false;
-    }, 3500);
-  })
-  .catch(function() {
-    btn.textContent = 'Error — try again';
-    btn.style.background = '#e53e3e';
-    btn.style.color = '#fff';
-    setTimeout(function() {
-      btn.textContent = original;
-      btn.style.background = '';
-      btn.style.color = '';
-      btn.disabled = false;
-    }, 3500);
-  });
-});
-
-
-/* ══ INTERSECTION REVEAL ══ */
-const revealIO = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      e.target.style.opacity = '1';
-      e.target.style.transform = 'translateY(0)';
-      revealIO.unobserve(e.target);
-    }
-  });
-}, { threshold: 0.08 });
-
-document.querySelectorAll(
-  '.blog-card, .insight-card, .video-card, .timeline-item, .team-card, .testi-card, .award-card, .dl-card'
-).forEach(el => {
-  el.style.opacity    = '0';
-  el.style.transform  = 'translateY(24px)';
-  el.style.transition = 'opacity 0.55s ease, transform 0.55s ease';
-  revealIO.observe(el);
-});
+})();
 </script>
-
-</body>
-</html>
+{% endblock %}

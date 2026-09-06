@@ -1,548 +1,259 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+{% extends "base.html" %}
+{% set active = 'contact' %}
 
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+{% block title %}Contact — ACE Design + Build Partners, Nairobi{% endblock %}
+{% block description %}Start a project with ACE Design + Build Partners. Nairobi, Kenya. Call +254 726 314 608 or send a project brief — we respond within one business day.{% endblock %}
 
-  <title>Contact | ACE Design + Build Partners</title>
+{% block content %}
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/contact.css') }}">
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-</head>
-<body>
-
-<!-- =====================================================
-     NAVBAR
-===================================================== -->
-
-<header class="navbar">
-
-  <div class="container nav-wrapper">
-   <a href="{{ url_for('company') }}" class="ace-logo">
-      <img src="static/ace-logo.jpeg" alt="ACE Logo" style="height:32px;width:auto;" onerror="this.style.display='none'"/>
-    
-     <!-- Fallback text logo always shown alongside (hidden if image loaded) -->
-     <div class="ace-logo-text">
-       <span class="ace-logo-mark">ACE</span>
-       <span class="ace-logo-sub">Adaptive City Ecosystems</span>
-     </div>
-    
-    </a>
-
-    <nav class="nav-menu">
-
-      <a href="{{ url_for('index') }}">Home</a>
-      <a href="{{ url_for('about') }}">About</a>
-      <a href="{{ url_for('services') }}">Services</a>
-      <a href="{{ url_for('company') }}">Company</a>
-      <a href="{{ url_for('faq') }}">FAQ</a>
-      <a href="{{ url_for('blog') }}">Blog</a>
-      <a href="{{ url_for('contact') }}" class="active">Contact</a>
-
-    </nav>
-
-    <a href="#" class="nav-btn">
-      Get Started
-    </a>
-     <!-- HAMBURGER -->
-
-    <div class="hamburger" id="hamburger">
-
-      <span></span>
-      <span></span>
-      <span></span>
-
-    </div>
-
-  </div>
-
-</header>
-
-<!-- MOBILE MENU -->
-
-<div class="mobile-menu" id="mobileMenu">
-
-  <a href="{{ url_for('index') }}">Home</a>
-  <a href="{{ url_for('about') }}">About</a>
-  <a href="{{ url_for('services') }}">Services</a>
-  <a href="{{ url_for('company') }}">Company</a>
-  <a href="{{ url_for('faq') }}">FAQ</a>
-  <a href="{{ url_for('blog') }}">Blog</a>
-  <a href="{{ url_for('contact') }}">Contact</a>
-
-  <a
-    href="https://www.instagram.com/reel/C2JyyORRwpH/?utm_source=ig_web_copy_link/"
-    target="_blank"
-    class="instagram-link">
-
-    Instagram
-
-  </a>
-
-</div>
-<div class="menu-overlay" id="menuOverlay"></div>
-
-
-<!-- =====================================================
-     HERO
-===================================================== -->
-
-<section class="hero">
-
-  <!-- SLIDER -->
-
-  <div class="hero-slider">
-
-    <div class="slide active"
-      style="background-image:url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1800');">
-    </div>
-
-    <div class="slide"
-      style="background-image:url('https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=1800');">
-    </div>
-
-    <div class="slide"
-      style="background-image:url('https://images.unsplash.com/photo-1511818966892-d7d671e672a2?q=80&w=1800');">
-    </div>
-
-    <div class="slide"
-      style="background-image:url('https://images.unsplash.com/photo-1484154218962-a197022b5858?q=80&w=1800');">
-    </div>
-
-  </div>
-
-  <div class="hero-overlay"></div>
-
-  <div class="container hero-content">
-
-    <div class="hero-tag">
-      CONTACT ACE COMPANY
-    </div>
-
-    <h1>
-      LET’S BUILD <br>
-      SOMETHING <span>TOGETHER</span>
-    </h1>
-
-    <p>
-      Whether you have a detailed brief or a rough concept,
-      the ACE team is ready to help bring your vision to life.
+<!-- ===================== PAGE HEAD ===================== -->
+<section class="page-head">
+  <div class="wrap page-head-inner">
+    <div class="crumb"><a href="{{ url_for('index') }}">Home</a> <span>/</span> <span>Contact</span></div>
+    <span class="eyebrow">Contact ACE</span>
+    <h1 class="d1">Tell us what<br>you are building.</h1>
+    <p class="lead">
+      A detailed brief or a rough idea — either is enough to start. The more you
+      can tell us about the site and the budget, the more useful our first reply
+      will be.
     </p>
-
   </div>
-
 </section>
 
-<!-- =====================================================
-     CONTACT STRIP
-===================================================== -->
 
-<section class="contact-strip">
+<!-- ===================== CONTACT + FORM ===================== -->
+<section class="section">
+  <div class="wrap">
+    <div class="split" style="align-items:start;grid-template-columns:1fr 1.15fr;">
 
-  <a href="tel:+254726314608" class="strip-box">
-    <h3>CALL US</h3>
-    <p>+254 726 314 608</p>
-  </a>
+      <!-- LEFT: details -->
+      <div class="split-text reveal" style="position:sticky;top:calc(var(--nav-h) + 32px);">
+        <span class="eyebrow">Direct Contact</span>
+        <h2 class="d3">Reach us<br>directly.</h2>
 
-  <a href="mailto:acecompanylimited@gmail.com" class="strip-box">
-    <h3>EMAIL</h3>
-    <p>acecompanylimited@gmail.com</p>
-  </a>
+        <dl class="contact-rows" style="width:100%;">
+          <div class="contact-row">
+            <dt>Call</dt>
+            <dd><a href="tel:+254726314608">+254 726 314 608</a></dd>
+          </div>
+          <div class="contact-row">
+            <dt>Email</dt>
+            <dd><a href="mailto:acedesignbuildplus@gmail.com">acedesignbuildplus@gmail.com</a></dd>
+          </div>
+          <div class="contact-row">
+            <dt>Office</dt>
+            <dd>Tebere Crescent Road<span>Nairobi, Kenya</span></dd>
+          </div>
+          <div class="contact-row">
+            <dt>Hours</dt>
+            <dd>Monday – Friday<span>8:00 – 17:30 EAT</span></dd>
+          </div>
+        </dl>
 
-  <div class="strip-box">
-    <h3>LOCATION</h3>
-    <p>Tebere Crescent Rd, Nairobi</p>
+        <div style="margin-top:8px;">
+          <span class="eyebrow">What Happens Next</span>
+        </div>
+        <ul class="ticks" style="margin-top:-6px;">
+          <li>
+            <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m4 12 5 5L20 6"/></svg>
+            <span>We reply within one business day, from a named person rather than an inbox.</span>
+          </li>
+          <li>
+            <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m4 12 5 5L20 6"/></svg>
+            <span>If it is a fit, we arrange a site visit or a call to walk through the brief.</span>
+          </li>
+          <li>
+            <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m4 12 5 5L20 6"/></svg>
+            <span>You get an honest view of scope, programme and cost before anything is signed.</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- RIGHT: form -->
+      <div class="reveal">
+        <span class="eyebrow">Enquiry Form</span>
+        <h2 class="d3" style="margin:18px 0 28px;">Send us your brief.</h2>
+
+        <form id="enquiryForm" action="{{ url_for('send_enquiry') }}" method="POST" novalidate>
+          <div class="form-grid">
+
+            <div class="field">
+              <label for="first_name">First Name *</label>
+              <input type="text" id="first_name" name="first_name" required autocomplete="given-name">
+            </div>
+
+            <div class="field">
+              <label for="last_name">Last Name *</label>
+              <input type="text" id="last_name" name="last_name" required autocomplete="family-name">
+            </div>
+
+            <div class="field">
+              <label for="email">Email Address *</label>
+              <input type="email" id="email" name="email" required autocomplete="email">
+            </div>
+
+            <div class="field">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" autocomplete="tel">
+            </div>
+
+            <div class="field field-wide">
+              <label for="company">Company / Organisation</label>
+              <input type="text" id="company" name="company" autocomplete="organization">
+            </div>
+
+            <div class="field field-wide">
+              <label for="service">Service of Interest *</label>
+              <select id="service" name="service" required>
+                <option value="">Select a service</option>
+                <option>Architectural Design</option>
+                <option>Structural Engineering</option>
+                <option>Construction Management</option>
+                <option>Interior Fit-Out</option>
+                <option>Diaspora Real Estate</option>
+                <option>Industrial Masterplanning</option>
+                <option>Full Design + Build</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="project_type">Project Type *</label>
+              <select id="project_type" name="project_type" required>
+                <option value="">Select a type</option>
+                <option>Residential</option>
+                <option>Commercial</option>
+                <option>Industrial</option>
+                <option>Mixed Use Development</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="budget">Indicative Budget</label>
+              <select id="budget" name="budget">
+                <option value="">Prefer not to say</option>
+                <option>Under KES 5 Million</option>
+                <option>KES 5M – 15M</option>
+                <option>KES 15M – 50M</option>
+                <option>Over KES 50 Million</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="location">Site Location / Area</label>
+              <input type="text" id="location" name="location" placeholder="e.g. Karen, Nairobi">
+            </div>
+
+            <div class="field">
+              <label for="timeline">Preferred Start</label>
+              <select id="timeline" name="timeline">
+                <option value="">Select a timeframe</option>
+                <option>As soon as possible</option>
+                <option>Within 1–3 months</option>
+                <option>Within 6 months</option>
+                <option>Still planning</option>
+              </select>
+            </div>
+
+            <div class="field field-wide">
+              <label for="message">Tell Us About Your Project *</label>
+              <textarea id="message" name="message" rows="7" required
+                placeholder="The site, what you want to build, and anything already decided — drawings, approvals, budget."></textarea>
+            </div>
+
+          </div>
+
+          <div style="margin-top:26px;">
+            <button type="submit" class="btn" id="submitBtn">
+              Send Enquiry
+              <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </button>
+          </div>
+
+          <p class="form-note" id="formNote" role="status" aria-live="polite"></p>
+
+          <p class="small" style="margin-top:16px;">
+            We use your details only to respond to this enquiry. See our
+            <a href="{{ url_for('privacy') }}" style="border-bottom:1px solid var(--lime);">Privacy Policy</a>.
+          </p>
+        </form>
+      </div>
+
+    </div>
   </div>
-
 </section>
 
-<!-- =====================================================
-     CONTACT MAIN
-===================================================== -->
 
-<section class="contact-main">
-
-  <div class="container contact-grid">
-
-    <!-- LEFT -->
-
-    <div class="contact-left">
-
-      <div class="section-tag">
-        ENQUIRY FORM
+<!-- ===================== CTA ===================== -->
+<section class="section on-dark">
+  <div class="wrap">
+    <div class="cta-band reveal">
+      <div style="display:flex;flex-direction:column;gap:20px;align-items:flex-start;">
+        <span class="eyebrow">Due Diligence</span>
+        <h2 class="d2">Need our<br>credentials first?</h2>
       </div>
-
-      <h2>
-        Tell Us About <span>Your Project</span>
-      </h2>
-
-      <p class="contact-intro">
-        Fill in the form below and a member of the ACE team
-        will respond within one business day.
-      </p>
-
-      <form action="{{ url_for('send_enquiry') }}" method="POST">
-
-        <div class="double-input">
-
-          <div class="form-group">
-            <label>First Name *</label>
-            <input type="text" name="first_name" required>
-          </div>
-
-          <div class="form-group">
-            <label>Last Name *</label>
-            <input type="text" name="last_name" required>
-          </div>
-
+      <div style="display:flex;flex-direction:column;gap:26px;">
+        <p class="lead" style="margin:0;">
+          We provide registration numbers and certificates for NCA, AAK, IEK,
+          ACMK, KABCEC and BORAQS on request — before you commit to anything.
+        </p>
+        <div class="cta-actions">
+          <a href="tel:+254726314608" class="btn">+254 726 314 608</a>
+          <a href="{{ url_for('company') }}#credentials" class="btn btn-ghost">View Credentials</a>
         </div>
-
-        <div class="double-input">
-
-          <div class="form-group">
-            <label>Email Address *</label>
-            <input type="email" name="email" required>
-          </div>
-
-          <div class="form-group">
-            <label>Phone Number</label>
-            <input type="text" name="phone">
-          </div>
-
-        </div>
-
-        <div class="form-group">
-          <label>Company / Organisation</label>
-          <input type="text" name="company">
-        </div>
-
-        <div class="form-group">
-
-          <label>Service of Interest *</label>
-
-          <select name="service" required>
-
-            <option value="">Select Service</option>
-
-            <option>Architectural Design</option>
-            <option>Structural Engineering</option>
-            <option>General Contracting</option>
-            <option>Interior Fit-Out</option>
-            <option>Design + Build</option>
-
-          </select>
-
-        </div>
-
-        <div class="double-input">
-
-          <div class="form-group">
-
-            <label>Project Type *</label>
-
-            <select name="project_type" required>
-
-              <option value="">Select Type</option>
-
-              <option>Residential</option>
-              <option>Commercial</option>
-              <option>Industrial</option>
-              <option>Mixed Use Development</option>
-
-            </select>
-
-          </div>
-
-          <div class="form-group">
-
-            <label>Indicative Budget</label>
-
-            <select name="budget">
-
-              <option>Under KES 5 Million</option>
-              <option>KES 5M – 15M</option>
-              <option>KES 15M – 50M</option>
-              <option>Over KES 50 Million</option>
-
-            </select>
-
-          </div>
-
-        </div>
-
-        <div class="form-group">
-          <label>Site Location / Area</label>
-          <input type="text" name="location">
-        </div>
-
-        <div class="form-group">
-
-          <label>When Would You Like To Start?</label>
-
-          <select name="timeline">
-
-            <option>As Soon As Possible</option>
-            <option>Within 1–3 Months</option>
-            <option>Within 6 Months</option>
-            <option>Still Planning</option>
-
-          </select>
-
-        </div>
-
-        <div class="form-group">
-
-          <label>Tell Us About Your Project *</label>
-
-          <textarea
-            rows="7"
-            name="message"
-            required></textarea>
-
-        </div>
-
-        <button type="submit" class="submit-btn">
-          SEND MESSAGE
-        </button>
-
-      </form>
-
+      </div>
     </div>
-
-    <!-- RIGHT -->
-
-    <div class="contact-right">
-
-      <div class="info-card">
-
-        <h3>OFFICE HOURS</h3>
-
-        <div class="info-row">
-          <span>Monday – Friday</span>
-          <strong>8:00 – 17:30</strong>
-        </div>
-
-        <div class="info-row">
-          <span>Saturday</span>
-          <strong>9:00 – 13:00</strong>
-        </div>
-
-        <div class="info-row">
-          <span>Sunday</span>
-          <strong>Closed</strong>
-        </div>
-
-      </div>
-
-      <div class="info-card">
-
-        <h3>CONTACT DETAILS</h3>
-
-        <div class="detail-box">
-          <h4>PHONE</h4>
-          <p>+254 726 314 608</p>
-        </div>
-
-        <div class="detail-box">
-          <h4>EMAIL</h4>
-          <p>acecompanylimited@gmail.com</p>
-        </div>
-
-        <div class="detail-box">
-          <h4>OFFICE</h4>
-          <p>Tebere Crescent Road,<br>Nairobi, Kenya</p>
-        </div>
-
-      </div>
-
-      <div class="info-card">
-
-        <h3>WHAT HAPPENS NEXT?</h3>
-
-        <div class="step-box">
-          <span>1</span>
-          <p>We review your message and assign the right team member.</p>
-        </div>
-
-        <div class="step-box">
-          <span>2</span>
-          <p>We respond within one business day.</p>
-        </div>
-
-        <div class="step-box">
-          <span>3</span>
-          <p>We prepare a tailored proposal for your project.</p>
-        </div>
-
-      </div>
-
-    </div>
-
   </div>
-
 </section>
 
-<!-- =====================================================
-     MAP
-===================================================== -->
+{% endblock %}
 
-<section class="map-section">
 
-  <iframe
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15955.116767028!2d36.8219!3d-1.2921!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f10d24ef2c9c9%3A0x9b33ad38a2ba3da!2sNairobi%2C%20Kenya!5e0!3m2!1sen!2ske!4v1700000000000!5m2!1sen!2ske"
-    loading="lazy">
-  </iframe>
-
-</section>
-
-<!-- ════════════════════════════════════════════════════════
-     FOOTER — self-contained
-════════════════════════════════════════════════════════ -->
-<footer class="ace-footer">
-  <div class="ace-footer-grid">
-
-    <!-- Brand col -->
-    <div class="ace-footer-brand">
-      <div class="ace-footer-logo-row">
-        <img src="static/ace-logo.jpeg" alt="ACE Logo" style="height:32px;width:auto;" onerror="this.style.display='none'"/>
-        <div>
-          <div class="ace-footer-logo-mark">ACE</div>
-          <div class="ace-footer-logo-sub">Adaptive City Ecosystems</div>
-        </div>
-      </div>
-      <p class="ace-footer-tagline">Integrated architecture, structural engineering, interior design and construction management. Nairobi, Kenya. Est. 2020.</p>
-      <div class="ace-footer-contact">
-        <a href="tel:+254726314608">
-          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.36 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.34 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-          +254 726 314 608
-        </a>
-        <a href="mailto:acedesignbuildplus@gmail.com">
-          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          acedesignbuildplus@gmail.com
-        </a>
-        <a href="#">
-          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          Nairobi, Kenya
-        </a>
-      </div>
-    </div>
-
-    <!-- Services -->
-    <div>
-      <div class="ace-footer-col-title">Services</div>
-      <div class="ace-footer-links">
-        <a href="{{ url_for('services') }}">Architecture &amp; Design</a>
-        <a href="{{ url_for('services') }}">Structural Engineering</a>
-        <a href="{{ url_for('services') }}#fitouts">Interior Fit-Out</a>
-        <a href="{{ url_for('services') }}">Construction Management</a>
-        <a href="{{ url_for('services') }}">Diaspora Real Estate</a>
-        <a href="{{ url_for('services') }}">Industrial Masterplanning</a>
-      </div>
-    </div>
-
-    <!-- Company -->
-    <div>
-      <div class="ace-footer-col-title">Company</div>
-      <div class="ace-footer-links">
-        <a href="{{ url_for('about') }}">About ACE</a>
-        <a href="{{ url_for('company') }}">Projects</a>
-        <a href="{{ url_for('company') }}#faces">Our Team</a>
-        <a href="{{ url_for('company') }}#downloads">Downloads</a>
-        <a href="{{ url_for('company') }}#affiliations">Affiliations</a>
-      </div>
-    </div>
-
-    <!-- Contact -->
-    <div>
-      <div class="ace-footer-col-title">Contact</div>
-      <div class="ace-footer-links">
-        <a href="{{ url_for('contact') }}">Start a Project</a>
-        <a href="{{ url_for('contact') }}">Request a Quote</a>
-        <a href="{{ url_for('contact') }}">Request Credentials</a>
-        <a href="{{ url_for('contact') }}">Diaspora Enquiries</a>
-        <a href="{{ url_for('contact') }}">Media Enquiries</a>
-        <a href="{{ url_for('terms') }}">Terms & Conditions</a>
-        <a href="{{ url_for('privacy') }}">Privacy Policy</a>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="ace-footer-bottom">
-    <span class="ace-footer-copy">© 2026 ACE — Adaptive City Ecosystems Ltd. All rights reserved. Nairobi, Kenya.</span>
-    <div class="ace-footer-pills">
-      <span class="ace-footer-pill">NCA Cat 4</span>
-      <span class="ace-footer-pill">AAK</span>
-      <span class="ace-footer-pill">IEK</span>
-      <span class="ace-footer-pill">ACMK</span>
-      <span class="ace-footer-pill">KABCEC</span>
-    </div>
-  </div>
-</footer>
-
-<!-- ══════════════════════════════════════════════════════
-     REPLACE the entire <script> block at the bottom of
-     contact.html with this fixed version
-══════════════════════════════════════════════════════ -->
+{% block scripts %}
 <script>
+/* Submit in place so the visitor never lands on a raw JSON response. */
+(function(){
+  var form = document.getElementById("enquiryForm");
+  var note = document.getElementById("formNote");
+  var btn  = document.getElementById("submitBtn");
+  if(!form) return;
 
-/* ── HERO SLIDER ── */
-const slides = document.querySelectorAll(".slide");
-let currentSlide = 0;
-function changeSlide() {
-  slides[currentSlide].classList.remove("active");
-  currentSlide = (currentSlide + 1) % slides.length;
-  slides[currentSlide].classList.add("active");
-}
-setInterval(changeSlide, 5000);
+  var idle = btn.innerHTML;
 
+  function say(kind, text){
+    note.className = "form-note " + kind;
+    note.textContent = text;
+  }
 
-/* ── MOBILE MENU ──────────────────────────────────────
-   HTML ids:  hamburger / mobileMenu / menuOverlay
-   CSS class: .hamburger.active  .mobile-menu.active  .menu-overlay.active
-─────────────────────────────────────────────────────── */
-const hamburger   = document.getElementById("hamburger");
-const mobileMenu  = document.getElementById("mobileMenu");
-const menuOverlay = document.getElementById("menuOverlay");
+  form.addEventListener("submit", function(e){
+    e.preventDefault();
 
-function openMenu() {
-  hamburger.classList.add("active");
-  mobileMenu.classList.add("active");
-  menuOverlay.classList.add("active");
-  document.body.style.overflow = "hidden";
-}
+    if(!form.checkValidity()){
+      form.reportValidity();
+      return;
+    }
 
-function closeMenu() {
-  hamburger.classList.remove("active");
-  mobileMenu.classList.remove("active");
-  menuOverlay.classList.remove("active");
-  document.body.style.overflow = "";
-}
+    btn.disabled = true;
+    btn.textContent = "Sending…";
+    note.className = "form-note";
 
-hamburger.addEventListener("click", function () {
-  this.classList.contains("active") ? closeMenu() : openMenu();
-});
-
-/* Tap overlay → close */
-menuOverlay.addEventListener("click", closeMenu);
-
-/* Tap any menu link → close */
-mobileMenu.querySelectorAll("a").forEach(function (link) {
-  link.addEventListener("click", closeMenu);
-});
-
-
-/* ── NAVBAR SCROLL SHADOW ── */
-window.addEventListener("scroll", function () {
-  const nav = document.querySelector(".navbar");
-  if (nav) nav.classList.toggle("scrolled", window.scrollY > 30);
-});
-
+    fetch(form.action, { method: "POST", body: new FormData(form) })
+      .then(function(res){ return res.json().catch(function(){ return {success: res.ok}; }); })
+      .then(function(data){
+        if(data && data.success){
+          form.reset();
+          say("is-ok", "Thank you — your enquiry has reached the ACE team. We reply within one business day.");
+        } else {
+          say("is-bad", "We could not send that just now. Please call +254 726 314 608 or email acedesignbuildplus@gmail.com.");
+        }
+      })
+      .catch(function(){
+        say("is-bad", "Network error. Please call +254 726 314 608 or email acedesignbuildplus@gmail.com.");
+      })
+      .finally(function(){
+        btn.disabled = false;
+        btn.innerHTML = idle;
+      });
+  });
+})();
 </script>
-</body>
-</html>
+{% endblock %}

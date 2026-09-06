@@ -1,273 +1,108 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Privacy Policy | ACE Company Ltd</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/privacy.css') }}">
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+{% extends "base.html" %}
+{% set active = 'privacy' %}
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-</head>
-<body class="bg-[#0d1117] text-white font-inter">
-<!-- ════════════════════════════════════════════════════════
-     NAVBAR — self-contained
-════════════════════════════════════════════════════════ -->
-<nav class="ace-nav" role="navigation" aria-label="Main navigation">
-  <div class="ace-nav-inner">
+{% block title %}Privacy Policy — ACE Design + Build Partners{% endblock %}
+{% block description %}How ACE — Adaptive City Ecosystems Ltd collects, uses and protects personal information, in compliance with the Kenya Data Protection Act, 2019.{% endblock %}
 
-    <a href="{{ url_for('company') }}" class="ace-logo">
-      <img src="static/ace-logo.jpeg" alt="ACE Logo" style="height:32px;width:auto;" onerror="this.style.display='none'"/>
-    
-     <!-- Fallback text logo always shown alongside (hidden if image loaded) -->
-     <div class="ace-logo-text">
-       <span class="ace-logo-mark">ACE</span>
-       <span class="ace-logo-sub">Adaptive City Ecosystems</span>
-     </div>
-    
-    </a>
+{% block content %}
 
-    <!-- Desktop nav links -->
-    <div class="ace-nav-links">
-      <a href="{{ url_for('index') }}"    class="ace-nav-link">Home</a>
-      <a href="{{ url_for('about') }}"    class="ace-nav-link">About</a>
-      <a href="{{ url_for('services') }}" class="ace-nav-link">Services</a>
-      <a href="{{ url_for('company') }}"  class="ace-nav-link active">Company</a>
-      <a href="{{ url_for('contact') }}"  class="ace-nav-link">Contact</a>
+<section class="page-head">
+  <div class="wrap page-head-inner">
+    <div class="crumb"><a href="{{ url_for('index') }}">Home</a> <span>/</span> <span>Privacy Policy</span></div>
+    <span class="eyebrow">Legal</span>
+    <h1 class="d1">Privacy Policy</h1>
+    <p class="lead">
+      How we collect, use and protect your personal information — in compliance
+      with the Kenya Data Protection Act, 2019.
+    </p>
+    <div class="foot-pills" style="margin-top:8px;">
+      <span class="foot-pill">Kenya Data Protection Act 2019</span>
+      <span class="foot-pill">Last updated January 2026</span>
     </div>
-
-    <!-- Desktop CTA -->
-    <div class="ace-nav-cta">
-      <a href="tel:+254726314608" class="ace-nav-tel">+254 726 314 608</a>
-      <a href="{{ url_for('contact') }}" class="ace-nav-btn">Start a Project</a>
-    </div>
-
-    <!-- Hamburger -->
-    <button class="ace-nav-toggle" id="navToggle" aria-label="Open menu">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</nav>
-
-<!-- Mobile nav -->
-<div class="ace-nav-mobile" id="navMobile">
-  <a href="{{ url_for('index') }}">Home</a>
-  <a href="{{ url_for('about') }}">About</a>
-  <a href="{{ url_for('services') }}">Services</a>
-  <a href="{{ url_for('company') }}" class="active">Company</a>
-  <a href="{{ url_for('contact') }}">Contact</a>
-  <a href="tel:+254726314608" style="color:var(--lime);border-bottom:none;">+254 726 314 608</a>
-</div>
-<!-- HERO -->
-<section class="py-20 text-center bg-black">
-  <h1 class="text-6xl font-black">Privacy <span class="text-green-500">Policy</span></h1>
-  <p class="mt-6 text-gray-400 max-w-2xl mx-auto">ACE Company Ltd values your privacy. This policy explains how we collect, use, and protect your personal information in compliance with the Kenya Data Protection Act, 2019.</p>
-</section>
-
-<!-- MAIN CONTENT -->
-<section class="max-w-7xl mx-auto px-6 py-16 flex gap-12">
-  <!-- Sidebar TOC -->
-  <aside class="w-64 bg-[#111827] p-6 rounded-xl border border-green-500 sticky top-24 h-fit">
-    <h3 class="text-green-500 font-bold mb-4">Contents</h3>
-    <nav class="flex flex-col gap-3">
-      <a href="#intro" class="hover:text-green-500">Introduction</a>
-      <a href="#data" class="hover:text-green-500">Information We Collect</a>
-      <a href="#use" class="hover:text-green-500">How We Use Your Information</a>
-      <a href="#cookies" class="hover:text-green-500">Cookies & Analytics</a>
-      <a href="#sharing" class="hover:text-green-500">Data Sharing</a>
-      <a href="#security" class="hover:text-green-500">Data Security</a>
-      <a href="#rights" class="hover:text-green-500">Your Rights</a>
-      <a href="#contact" class="hover:text-green-500">Contact Us</a>
-    </nav>
-  </aside>
-
-  <!-- Privacy Content -->
-  <div class="flex-1 space-y-12">
-    <section id="intro">
-      <h2 class="text-3xl font-bold text-green-500 mb-4">Introduction</h2>
-      <p>ACE Company Ltd values your privacy. This policy explains how we collect, use, and protect your personal information in compliance with the Kenya Data Protection Act, 2019.</p>
-    </section>
-
-    <section id="data">
-      <h2 class="text-3xl font-bold text-green-500 mb-4">Information We Collect</h2>
-      <ul class="list-disc list-inside text-gray-300">
-        <li>Full Name</li>
-        <li>Email Address</li>
-        <li>Business Email</li>
-        <li>Phone Number</li>
-        <li>Company Name</li>
-        <li>Project Type</li>
-        <li>Estimated Budget</li>
-        <li>Project Timeline</li>
-        <li>Project Location</li>
-        <li>Project Details</li>
-      </ul>
-    </section>
-
-    <section id="use">
-      <h2 class="text-3xl font-bold text-green-500 mb-4">How We Use Your Information</h2>
-      <ul class="list-disc list-inside text-gray-300">
-        <li>To respond to inquiries and provide construction services.</li>
-        <li>To prepare quotations and project proposals.</li>
-        <li>To communicate updates regarding projects.</li>
-        <li>For internal record‑keeping and business analysis.</li>
-      </ul>
-    </section>
-
-    <section id="cookies">
-      <h2 class="text-3xl font-bold text-green-500 mb-4">Cookies & Analytics</h2>
-      <p>Our website may use cookies to improve user experience and track site performance. We may use Google Analytics or similar tools to understand how visitors interact with our site. You can disable cookies in your browser settings, but some features may not function properly.</p>
-    </section>
-
-    <section id="sharing">
-      <h2 class="text-3xl font-bold text-green-500 mb-4">Data Sharing</h2>
-      <p>We do not sell or rent personal data. Information may be shared with subcontractors or partners strictly for project execution. Disclosure may occur if required by Kenyan law or regulatory authorities.</p>
-    </section>
-
-    <section id="security">
-      <h2 class="text-3xl font-bold text-green-500 mb-4">Data Security</h2>
-      <p>We implement reasonable technical and organizational measures to protect data. Access is restricted to authorized staff only. Data is retained only as long as necessary for business or legal purposes.</p>
-    </section>
-
-    <section id="rights">
-      <h2 class="text-3xl font-bold text-green-500 mb-4">Your Rights</h2>
-      <ul class="list-disc list-inside text-gray-300">
-        <li>Request access to your personal data.</li>
-        <li>Correct or update inaccurate information.</li>
-        <li>Request deletion of your data.</li>
-        <li>Withdraw consent for data processing.</li>
-      </ul>
-    </section>
-
-    <section id="contact">
-      <h2 class="text-3xl font-bold text-green-500 mb-4">Contact Us</h2>
-      <p>For questions or requests regarding your data, contact:</p>
-      <p>ACE Company Ltd – Nairobi, Kenya</p>
-      <p>Email: info@acecompany.co.ke</p>
-      <p>Phone: +254 726 314 608</p>
-    </section>
   </div>
 </section>
 
+<section class="section">
+  <div class="wrap">
+    <div class="doc">
 
-<!-- ════════════════════════════════════════════════════════
-     FOOTER — self-contained
-════════════════════════════════════════════════════════ -->
-<footer class="ace-footer">
-  <div class="ace-footer-grid">
+      <nav class="doc-index" aria-label="Contents">
+        <a href="#intro">Introduction</a>
+        <a href="#collect">Information We Collect</a>
+        <a href="#use">How We Use It</a>
+        <a href="#cookies">Cookies &amp; Analytics</a>
+        <a href="#sharing">Data Sharing</a>
+        <a href="#security">Data Security</a>
+        <a href="#rights">Your Rights</a>
+        <a href="#contact">Contact Us</a>
+      </nav>
 
-    <!-- Brand col -->
-    <div class="ace-footer-brand">
-      <div class="ace-footer-logo-row">
-        <img src="static/ace-logo.jpeg" alt="ACE Logo" style="height:32px;width:auto;" onerror="this.style.display='none'"/>
-        <div>
-          <div class="ace-footer-logo-mark">ACE</div>
-          <div class="ace-footer-logo-sub">Adaptive City Ecosystems</div>
+      <div class="prose">
+
+        <div id="intro">
+          <h2 style="margin-top:0;">Introduction</h2>
         </div>
-      </div>
-      <p class="ace-footer-tagline">Integrated architecture, structural engineering, interior design and construction management. Nairobi, Kenya. Est. 2020.</p>
-      <div class="ace-footer-contact">
-        <a href="tel:+254726314608">
-          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.36 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.34 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-          +254 726 314 608
-        </a>
-        <a href="mailto:acedesignbuildplus@gmail.com">
-          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          acedesignbuildplus@gmail.com
-        </a>
-        <a href="#">
-          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          Nairobi, Kenya
-        </a>
-      </div>
-    </div>
+        <p>ACE — Adaptive City Ecosystems Ltd values your privacy. This policy explains how we collect, use and protect your personal information in compliance with the Kenya Data Protection Act, 2019.</p>
 
-    <!-- Services -->
-    <div>
-      <div class="ace-footer-col-title">Services</div>
-      <div class="ace-footer-links">
-        <a href="{{ url_for('services') }}">Architecture &amp; Design</a>
-        <a href="{{ url_for('services') }}">Structural Engineering</a>
-        <a href="{{ url_for('services') }}#fitouts">Interior Fit-Out</a>
-        <a href="{{ url_for('services') }}">Construction Management</a>
-        <a href="{{ url_for('services') }}">Diaspora Real Estate</a>
-        <a href="{{ url_for('services') }}">Industrial Masterplanning</a>
+        <div id="collect"><h2>Information We Collect</h2></div>
+        <p>When you submit an enquiry through this website, we collect only what we need in order to reply usefully:</p>
+        <ul>
+          <li>Full name</li>
+          <li>Email address</li>
+          <li>Phone number</li>
+          <li>Company or organisation name</li>
+          <li>Project type and service of interest</li>
+          <li>Estimated budget and preferred start date</li>
+          <li>Project location</li>
+          <li>The project details you choose to share in your message</li>
+        </ul>
+
+        <div id="use"><h2>How We Use Your Information</h2></div>
+        <ul>
+          <li>To respond to enquiries and provide design and construction services.</li>
+          <li>To prepare quotations and project proposals.</li>
+          <li>To communicate updates regarding live projects.</li>
+          <li>For internal record-keeping and business analysis.</li>
+        </ul>
+        <p>We do not use your details for automated marketing sequences, and we do not add enquiry contacts to our newsletter unless you subscribe to it yourself.</p>
+
+        <div id="cookies"><h2>Cookies &amp; Analytics</h2></div>
+        <p>Our website may use cookies to improve user experience and monitor site performance, and we may use Google Analytics or similar tools to understand how visitors interact with the site. You can disable cookies in your browser settings, though some features may not function properly as a result.</p>
+
+        <div id="sharing"><h2>Data Sharing</h2></div>
+        <p>We do not sell or rent personal data. Information may be shared with subcontractors or partners strictly where it is necessary for project execution. Disclosure may also occur where required by Kenyan law or by a regulatory authority.</p>
+
+        <div id="security"><h2>Data Security</h2></div>
+        <p>We implement reasonable technical and organisational measures to protect personal data. Access is restricted to authorised staff only, and data is retained only as long as necessary for business or legal purposes.</p>
+
+        <div id="rights"><h2>Your Rights</h2></div>
+        <p>Under the Kenya Data Protection Act, 2019, you may:</p>
+        <ul>
+          <li>Request access to the personal data we hold about you.</li>
+          <li>Correct or update inaccurate information.</li>
+          <li>Request deletion of your data.</li>
+          <li>Withdraw consent for data processing at any time.</li>
+        </ul>
+
+        <div id="contact"><h2>Contact Us</h2></div>
+        <p>For questions or requests regarding your data, contact:</p>
+        <p>
+          <strong>ACE — Adaptive City Ecosystems Ltd</strong><br>
+          Tebere Crescent Road, Nairobi, Kenya<br>
+          Email: <a href="mailto:acedesignbuildplus@gmail.com">acedesignbuildplus@gmail.com</a><br>
+          Phone: <a href="tel:+254726314608">+254 726 314 608</a>
+        </p>
+
+        <div style="margin-top:20px;">
+          <a href="{{ url_for('contact') }}" class="link-u">
+            Contact Us
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+
       </div>
-    </div>
-
-    <!-- Company -->
-    <div>
-      <div class="ace-footer-col-title">Company</div>
-      <div class="ace-footer-links">
-        <a href="{{ url_for('about') }}">About ACE</a>
-        <a href="{{ url_for('company') }}">Projects</a>
-        <a href="{{ url_for('company') }}#faces">Our Team</a>
-        <a href="{{ url_for('company') }}#downloads">Downloads</a>
-        <a href="{{ url_for('company') }}#affiliations">Affiliations</a>
-      </div>
-    </div>
-
-    <!-- Contact -->
-    <div>
-      <div class="ace-footer-col-title">Contact</div>
-      <div class="ace-footer-links">
-        <a href="{{ url_for('contact') }}">Start a Project</a>
-        <a href="{{ url_for('contact') }}">Request a Quote</a>
-        <a href="{{ url_for('contact') }}">Request Credentials</a>
-        <a href="{{ url_for('contact') }}">Diaspora Enquiries</a>
-        <a href="{{ url_for('contact') }}">Media Enquiries</a>
-        <a href="{{ url_for('terms') }}">Terms & Conditions</a>
-        <a href="{{ url_for('privacy') }}">Privacy Policy</a>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="ace-footer-bottom">
-    <span class="ace-footer-copy">© 2026 ACE — Adaptive City Ecosystems Ltd. All rights reserved. Nairobi, Kenya.</span>
-    <div class="ace-footer-pills">
-      <span class="ace-footer-pill">NCA Cat 4</span>
-      <span class="ace-footer-pill">AAK</span>
-      <span class="ace-footer-pill">IEK</span>
-      <span class="ace-footer-pill">ACMK</span>
-      <span class="ace-footer-pill">KABCEC</span>
     </div>
   </div>
-</footer>
- <!-- ════════════════════════════════════
-     PASTE THIS JUST BEFORE </body> IN privacy.html
-════════════════════════════════════ -->
-<script>
-  const navToggle  = document.getElementById('navToggle');
-  const navMobile  = document.getElementById('navMobile');
+</section>
 
-  /* Create overlay dynamically so you don't need to touch the HTML */
-  const navOverlay = document.createElement('div');
-  navOverlay.className = 'ace-nav-overlay';
-  document.body.appendChild(navOverlay);
-
-  function openNav() {
-    navToggle.classList.add('open');
-    navMobile.classList.add('open');
-    navOverlay.classList.add('open');
-    document.body.style.overflow = 'hidden';
-  }
-
-  function closeNav() {
-    navToggle.classList.remove('open');
-    navMobile.classList.remove('open');
-    navOverlay.classList.remove('open');
-    document.body.style.overflow = '';
-  }
-
-  navToggle.addEventListener('click', () =>
-    navToggle.classList.contains('open') ? closeNav() : openNav()
-  );
-
-  navOverlay.addEventListener('click', closeNav);
-
-  /* Close when any mobile nav link is tapped */
-  navMobile.querySelectorAll('a').forEach(a => a.addEventListener('click', closeNav));
-</script>
-</body>
-</html>
+{% endblock %}

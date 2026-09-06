@@ -88,27 +88,42 @@ def send_enquiry():
         data = request.form
 
         first_name = data.get("first_name")
-        print("FORM RECEIVED")
-        print(data)
         last_name = data.get("last_name")
         email = data.get("email")
         phone = data.get("phone")
         company = data.get("company")
         message = data.get("message")
 
+        # The form also qualifies the lead. Carry all of it into the email —
+        # the service, budget and timeline are the useful part of an enquiry.
+        service = data.get("service")
+        project_type = data.get("project_type")
+        budget = data.get("budget")
+        location = data.get("location")
+        timeline = data.get("timeline")
+
         admin_email = Message(
-            subject=f"New Enquiry From {first_name} {last_name}",
-            recipients=[COMPANY_EMAIL]
+            subject=f"New Enquiry — {first_name} {last_name} ({service or 'unspecified'})",
+            recipients=[COMPANY_EMAIL],
+            reply_to=email,
         )
 
-        admin_email.body = f"""
-FIRST NAME: {first_name}
-LAST NAME: {last_name}
-EMAIL: {email}
-PHONE: {phone}
-COMPANY: {company}
+        admin_email.body = f"""NEW PROJECT ENQUIRY
 
-MESSAGE:
+CONTACT
+  Name:     {first_name} {last_name}
+  Email:    {email}
+  Phone:    {phone or '-'}
+  Company:  {company or '-'}
+
+PROJECT
+  Service:   {service or '-'}
+  Type:      {project_type or '-'}
+  Budget:    {budget or '-'}
+  Location:  {location or '-'}
+  Start:     {timeline or '-'}
+
+MESSAGE
 {message}
 """
         print("SENDING ADMIN EMAIL...")

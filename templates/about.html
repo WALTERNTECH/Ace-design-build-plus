@@ -1,685 +1,283 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>About ACE Design + Build Partners — Nairobi, Kenya</title>
+{% extends "base.html" %}
+{% set active = 'about' %}
 
+{% block title %}About — ACE Design + Build Partners, Nairobi{% endblock %}
+{% block description %}ACE Design + Build Partners was founded in Nairobi in 2020 to close the gap between design and construction. Architects, engineers, quantity surveyors and site managers in one accountable firm.{% endblock %}
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+{% block content %}
 
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
-  
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-</head>
-<body>
-
-<!-- =========================
-     FIXED NAVBAR
-========================= -->
-<nav class="navbar">
-
-  <div class="container nav-wrapper">
-
-    <a href="{{ url_for('company') }}" class="ace-logo">
-      <img src="static/ace-logo.jpeg" alt="ACE Logo" style="height:32px;width:auto;" onerror="this.style.display='none'"/>
-    
-     <!-- Fallback text logo always shown alongside (hidden if image loaded) -->
-     <div class="ace-logo-text">
-       <span class="ace-logo-mark">ACE</span>
-       <span class="ace-logo-sub">Adaptive City Ecosystems</span>
-     </div>
-    
-    </a>
-
-
-    <!-- DESKTOP NAV -->
-    <div class="nav-links">
-      <a href="{{ url_for('index') }}">Home</a>
-      <a href="{{ url_for('about') }}" class="active">About</a>
-      <a href="{{ url_for('services') }}">Services</a>
-      <a href="{{ url_for('faq') }}">FAQ</a>
-      <a href="{{ url_for('company') }}">Company</a>
-      <a href="{{ url_for('blog') }}">Blog</a>
-      <a href="{{ url_for('contact') }}" class="nav-btn">Contact</a>
-    </div>
-
-    <!-- BURGER -->
-    <button class="burger" id="burger" aria-label="menu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-
-  </div>
-
-</nav>
-
-<!-- MOBILE MENU -->
-<div class="mobile-menu" id="mobileMenu">
-  <a href="{{ url_for('index') }}">Home</a>
-  <a href="{{ url_for('about') }}">About</a>
-  <a href="{{ url_for('services') }}">Services</a>
-  <a href="{{ url_for('company') }}">Company</a>
-  <a href="{{ url_for('faq') }}">FAQ</a>
-  <a href="{{ url_for('blog') }}">Blog</a>
-  <a href="{{ url_for('contact') }}">Contact</a>
-</div>
-
-
-<!-- HERO -->
-<section class="about-hero">
-
-  <div class="about-hero-bg">
-    <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1800&q=90" alt="ACE industrial site"/>
-  </div>
-
-  <div class="hero-overlay"></div>
-
-  <div class="container hero-content">
-
-    <div class="hero-eyebrow">
-      Adaptive City Ecosystems Ltd · Est. 2020 · Nairobi, Kenya
-    </div>
-
-    <h1 class="hero-title">
-      WHO<br>
-      WE<br>
-      <span>ARE.</span>
-    </h1>
-
-    <p class="hero-text">
-      We are architects, engineers, quantity surveyors and site managers —
-      operating as one integrated firm with full accountability from concept
-      to completion.
+<!-- ===================== PAGE HEAD ===================== -->
+<section class="page-head">
+  <div class="wrap page-head-inner">
+    <div class="crumb"><a href="{{ url_for('index') }}">Home</a> <span>/</span> <span>About</span></div>
+    <span class="eyebrow">About ACE</span>
+    <h1 class="d1">The split between<br>design and construction<br>is a broken system.</h1>
+    <p class="lead">
+      We are architects, engineers, quantity surveyors and site managers
+      operating as one firm — with full accountability from concept to
+      completion. ACE was built to close that gap.
     </p>
-
-    <div class="hero-buttons">
-      <a href="{{ url_for('services') }}" class="btn btn-primary">
+    <div class="hero-actions" style="margin-top:12px;">
+      <a href="{{ url_for('services') }}" class="btn">
         Our Services
+        <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </a>
-
-      <a href="{{ url_for('contact') }}" class="btn btn-outline">
-        Start a Project
-      </a>
+      <a href="{{ url_for('contact') }}" class="btn btn-ghost">Start a Project</a>
     </div>
-
-  </div>
-
-</section>
-
-
-<!-- MANIFESTO -->
-<section class="manifesto-strip">
-  <div class="container">
-    <p>
-      The separation of design and construction is
-      <span>a broken system.</span>
-      We built ACE to fix it.
-    </p>
   </div>
 </section>
 
 
-<!-- STATS -->
-<section class="stats-section">
-
-  <div class="container stats-grid">
-
-    <div class="stat-card">
-      <h3>2020</h3>
-      <h4>Year Founded</h4>
-      <p>
-        Born in Nairobi with one mission —
-        one team, full accountability, zero blame gaps.
-      </p>
-    </div>
-
-    <div class="stat-card">
-      <h3>50+</h3>
-      <h4>Projects Delivered</h4>
-      <p>
-        Residential, commercial, institutional and industrial projects
-        across East Africa.
-      </p>
-    </div>
-
-    <div class="stat-card">
-      <h3>6+</h3>
-      <h4>Years Combined Experience</h4>
-      <p>
-        Senior architects and engineers leading complex builds
-        across the region.
-      </p>
-    </div>
-
-    <div class="stat-card">
-      <h3>4</h3>
-      <h4>Disciplines. One Firm.</h4>
-      <p>
-        Architecture · Engineering · Contracting · Interior Fit-Outs.
-      </p>
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- STORY -->
-<section class="story-section">
-
-  <div class="container story-grid">
-
-    <div class="story-content">
-
-      <div class="section-tag">Our Story</div>
-
-      <h2 class="section-title">
-        Founded on a
-        <span>Fundamental Belief.</span>
-      </h2>
-
-      <p>
-        ACE Design + Build Partners was founded in Nairobi in 2020 with a
-        singular premise: that the separation of design and construction creates
-        inefficiency, conflict, and waste.
-      </p>
-
-      <p>
-        Traditional procurement forces architects and contractors into an
-        adversarial relationship — one draws it, the other builds it, and nobody
-        is fully accountable for the result.
-      </p>
-
-      <div class="quote-box">
-        “We eliminated the gap. One team carries your project from first site
-        visit to final key. No handovers. No blame. Just delivery.”
+<!-- ===================== FIGURES ===================== -->
+<section class="section-tight">
+  <div class="wrap">
+    <div class="figures reveal">
+      <div class="figure">
+        <div class="figure-n">2020</div>
+        <div class="figure-l">Year Founded</div>
+        <p class="figure-d">Born in Nairobi with one mission: one team, full accountability, no blame gaps.</p>
       </div>
-
-      <p>
-        Today, our multidisciplinary team works in concert across every project
-        type — from luxury residential compounds in Karen to industrial
-        masterplans in the Horn of Africa.
-      </p>
-
+      <div class="figure">
+        <div class="figure-n"><span data-count="50">50</span><em>+</em></div>
+        <div class="figure-l">Projects Delivered</div>
+        <p class="figure-d">Residential, commercial, institutional and industrial across East Africa.</p>
+      </div>
+      <div class="figure">
+        <div class="figure-n"><span data-count="6">6</span><em>+</em></div>
+        <div class="figure-l">Years Delivering</div>
+        <p class="figure-d">Senior architects and engineers leading complex builds across the region.</p>
+      </div>
+      <div class="figure">
+        <div class="figure-n"><span data-count="4">4</span></div>
+        <div class="figure-l">Disciplines, One Firm</div>
+        <p class="figure-d">Architecture, engineering, contracting and interior fit-out.</p>
+      </div>
     </div>
-
-    <div class="story-image">
-      <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=900&q=85" alt="ACE Team">
-    </div>
-
   </div>
-
 </section>
 
 
-<!-- MISSION + VISION -->
-<section class="mv-section">
-
-  <div class="mv-grid">
-
-    <div class="mv-card lime">
-
-      <div class="mv-tag">Our Mission</div>
-
-      <h3>
-        One Team.<br>
-        Full Accountability.<br>
-        Zero Compromise.
-      </h3>
-
-      <p>
-        To deliver integrated architecture and construction solutions that are
-        technically excellent, economically rational, and built to last.
-      </p>
-
-    </div>
-
-    <div class="mv-card dark">
-
-      <div class="mv-tag">Our Vision</div>
-
-      <h3>
-        The Premier<br>
-        Design-Build Firm<br>
-        in East Africa.
-      </h3>
-
-      <p>
-        To become the benchmark for engineering excellence, sustainable
-        construction and client-first project delivery across the region.
-      </p>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- CORE VALUES -->
-<section class="values-section">
-
-  <div class="container">
-
-    <div class="section-center">
-
-      <div class="section-tag">What Drives Us</div>
-
-      <h2 class="section-title center">
-        Six Values.
-        <span>Non-Negotiable.</span>
-      </h2>
-
-    </div>
-
-    <div class="values-grid">
-
-      <div class="value-card">
-        <div class="value-number">01</div>
-        <h3>Precision</h3>
-        <p>
-          Every measurement, budget line and structural calculation
-          is verified before execution.
+<!-- ===================== STORY ===================== -->
+<section class="section rule-top">
+  <div class="wrap">
+    <div class="split">
+      <div class="split-text reveal">
+        <span class="eyebrow">Our Story</span>
+        <h2 class="d2">Founded on a<br>fundamental belief.</h2>
+        <p class="body-tx">
+          ACE Design + Build Partners was founded in Nairobi in 2020 on a single
+          premise: that separating design from construction creates
+          inefficiency, conflict and waste.
+        </p>
+        <p class="body-tx">
+          Traditional procurement pushes architects and contractors into an
+          adversarial relationship. One draws it, the other builds it, and when
+          the two do not agree, nobody is fully accountable for the result. The
+          client pays for that gap — in variations, in delays, and in the time
+          spent refereeing between two firms.
+        </p>
+        <p class="body-tx">
+          Today our multidisciplinary team works across every project type, from
+          luxury residential compounds in Karen to industrial masterplans in the
+          Horn of Africa.
         </p>
       </div>
-
-      <div class="value-card">
-        <div class="value-number">02</div>
-        <h3>Innovation</h3>
-        <p>
-          BIM 360, Revit and digital coordination help us resolve
-          issues before construction begins.
-        </p>
+      <div class="split-media reveal">
+        <img src="{{ url_for('static', filename='proj-1.jpg') }}" alt="An ACE residential project under construction in Karen, Nairobi" loading="lazy">
       </div>
-
-      <div class="value-card">
-        <div class="value-number">03</div>
-        <h3>Integrity</h3>
-        <p>
-          Open books, transparent costing and honest project timelines.
-        </p>
-      </div>
-
-      <div class="value-card">
-        <div class="value-number">04</div>
-        <h3>Partnership</h3>
-        <p>
-          Your project becomes our portfolio and our responsibility.
-        </p>
-      </div>
-
-      <div class="value-card">
-        <div class="value-number">05</div>
-        <h3>Sustainability</h3>
-        <p>
-          Climate-responsive design and long-term operational efficiency
-          guide every project.
-        </p>
-      </div>
-
-      <div class="value-card">
-        <div class="value-number">06</div>
-        <h3>Safety</h3>
-        <p>
-          Zero Harm culture enforced daily through strict HSE standards.
-        </p>
-      </div>
-
     </div>
-
   </div>
-
 </section>
 
 
-<!-- PROJECT -->
-<section class="project-section">
-
-  <div class="container">
-
-    <div class="section-center left">
-
-      <div class="section-tag">Flagship Project</div>
-
-      <h2 class="section-title">
-        Industrial Masterplanning
-        <span>& Systems Integration.</span>
-      </h2>
-
-      <p class="section-sub">
-        Gold Plant Masterplan — Awdal Region, Somaliland
-      </p>
-
-    </div>
-
-  </div>
-
-  <div class="project-hero">
-
-    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1600&q=85" alt="Gold Processing Facility">
-
-    <div class="project-overlay"></div>
-
-    <div class="project-content">
-
-      <h3>Gold Plant Masterplan</h3>
-
-      <p>
-        We undertook the masterplanning of a 500 TPD gold processing
-        facility in Somaliland.
-      </p>
-
-    </div>
-
-  </div>
-
-  <div class="container">
-
-    <div class="project-stats">
-
-      <div class="project-stat">
-        <h4>500</h4>
-        <p>TPD Capacity</p>
-      </div>
-
-      <div class="project-stat">
-        <h4>25 TPH</h4>
-        <p>Ball Mill Circuit</p>
-      </div>
-
-      <div class="project-stat">
-        <h4>2,000T</h4>
-        <p>CIL Circuit</p>
-      </div>
-
-      <div class="project-stat">
-        <h4>45</h4>
-        <p>Days to Production</p>
-      </div>
-
-      <div class="project-stat">
-        <h4>$8.7M</h4>
-        <p>Monthly Income</p>
-      </div>
-
-      <div class="project-stat">
-        <h4>$100M+</h4>
-        <p>Annual Revenue</p>
-      </div>
-
-    </div>
-
-    <div class="project-grid">
-
-      <div class="project-main">
-
-        <div class="project-block">
-          <h3>Systems Integration</h3>
-
-          <p>
-            We managed the interface between factory specifications and
-            local site realities, ensuring the 25 TPH Ball Mill and
-            recovery circuits integrated seamlessly.
-          </p>
-        </div>
-
-        <div class="project-block">
-          <h3>Technical Expansion</h3>
-
-          <p>
-            Civil works and foundations were engineered specifically
-            to support high-vibration industrial machinery.
-          </p>
-        </div>
-
-        <div class="project-block">
-
-          <h3>Functional Zoning</h3>
-
-          <p>
-            The facility was divided into high-efficiency operational zones
-            managing production, refining and administration.
-          </p>
-
-          <div class="zone-grid">
-
-            <div class="zone-card">
-              <h4>Production Core</h4>
-              <p>Crushing plant · Ore stockpiles · Ball Mill circuit</p>
-            </div>
-
-            <div class="zone-card">
-              <h4>Secure Value Chain</h4>
-              <p>Smelting hall · Refinery · Strongroom</p>
-            </div>
-
-            <div class="zone-card">
-              <h4>Support & Personnel</h4>
-              <p>Labs · Offices · Dining · Accommodation</p>
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-
-      <aside class="project-side">
-
-        <h3 class="side-title">
-          Execution Roadmap
-        </h3>
-
-        <div class="phase-card">
-          <span>1</span>
-          <div>
-            <h4>Site Preparation & Foundation Works</h4>
-            <p>
-              Engineered foundations and site preparation before equipment arrival.
-            </p>
-          </div>
-        </div>
-
-        <div class="phase-card">
-          <span>2</span>
-          <div>
-            <h4>25 TPH Ball Mill Groundwork</h4>
-            <p>
-              Civil works completed for international supplier integration.
-            </p>
-          </div>
-        </div>
-
-        <div class="phase-card">
-          <span>3</span>
-          <div>
-            <h4>2,000-Ton CIL Circuit Installation</h4>
-            <p>
-              Coordinated integration of recovery circuits and leaching systems.
-            </p>
-          </div>
-        </div>
-
-        <div class="phase-card">
-          <span>4</span>
-          <div>
-            <h4>Commissioning to Production</h4>
-            <p>
-              30–45 day commissioning window to full-scale operation.
-            </p>
-          </div>
-        </div>
-
-      </aside>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- CTA -->
-<section class="final-cta">
-
-  <div class="cta-overlay"></div>
-
-  <div class="container cta-inner">
-
-    <div class="section-tag">
-      Work With ACE
-    </div>
-
-    <h2>
-      YOUR PROJECT.<br>
-      OUR <span>ACCOUNTABILITY.</span>
-    </h2>
-
-    <p>
-      Whether you have a detailed brief, a bare site, or an ambitious idea —
-      contact the ACE team and we will respond within one business day.
-    </p>
-
-    <div class="hero-buttons">
-
-      <a href="{{ url_for('contact') }}" class="btn btn-primary">
-        Start Your Project
-      </a>
-
-      <a href="{{ url_for('services') }}" class="btn btn-outline">
-        Our Services
-      </a>
-
-    </div>
-
-    <div class="cta-contact">
-
-      <div>
-        <small>Call Directly</small>
-        <a href="tel:+254726314608">+254 726 314 608</a>
-      </div>
-
-      <div>
-        <small>Email</small>
-        <a href="mailto:acedesignbuildplus@gmail.com">
-          acedesignbuildplus@gmail.com
-        </a>
-      </div>
-
-      <div>
-        <small>Location</small>
-        <span>Tebere Crescent Rd, Nairobi</span>
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- ════════════════════════════════════════════════════════
-     FOOTER — self-contained
-════════════════════════════════════════════════════════ -->
-<footer class="ace-footer">
-  <div class="ace-footer-grid">
-
-    <!-- Brand col -->
-    <div class="ace-footer-brand">
-      <div class="ace-footer-logo-row">
-        <img src="static/ace-logo.jpeg" alt="ACE Logo" style="height:32px;width:auto;" onerror="this.style.display='none'"/>
+<!-- ===================== QUOTE ===================== -->
+<section class="section on-dark">
+  <div class="wrap">
+    <div class="quote reveal">
+      <span class="eyebrow">What It Means In Practice</span>
+      <blockquote>
+        We eliminated the gap. One team carries your project from the first site
+        visit to the final key. No handovers, no blame — just delivery.
+      </blockquote>
+      <div class="quote-by">
         <div>
-          <div class="ace-footer-logo-mark">ACE</div>
-          <div class="ace-footer-logo-sub">Adaptive City Ecosystems</div>
+          <div style="font-weight:600;">ACE Design + Build Partners</div>
+          <div class="small">Founded by four architects, Nairobi, 2020</div>
         </div>
       </div>
-      <p class="ace-footer-tagline">Integrated architecture, structural engineering, interior design and construction management. Nairobi, Kenya. Est. 2020.</p>
-      <div class="ace-footer-contact">
-        <a href="tel:+254726314608">
-          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.36 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.34 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-          +254 726 314 608
-        </a>
-        <a href="mailto:acedesignbuildplus@gmail.com">
-          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          acedesignbuildplus@gmail.com
-        </a>
-        <a href="#">
-          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          Nairobi, Kenya
-        </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===================== MISSION + VISION ===================== -->
+<section class="section">
+  <div class="wrap">
+    <div class="split" style="align-items:start;">
+
+      <div class="split-text reveal">
+        <span class="eyebrow">Our Mission</span>
+        <h2 class="d3">One team.<br>Full accountability.<br>Zero compromise.</h2>
+        <p class="body-tx">
+          To deliver integrated architecture and construction that is technically
+          excellent, economically rational and built to last — measured by what
+          stands at handover, not by what was promised at pitch.
+        </p>
       </div>
+
+      <div class="split-text reveal">
+        <span class="eyebrow">Our Vision</span>
+        <h2 class="d3">The benchmark<br>design-build firm<br>in East Africa.</h2>
+        <p class="body-tx">
+          To set the regional standard for engineering excellence, sustainable
+          construction and client-first delivery — so that integrated
+          design-build becomes the expectation rather than the exception.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ===================== VALUES ===================== -->
+<section class="section on-paper-2">
+  <div class="wrap">
+
+    <div class="sec-head">
+      <div>
+        <span class="eyebrow">What Drives Us</span>
+        <h2 class="d2">Six values.<br>Non-negotiable.</h2>
+      </div>
+      <p class="lead">
+        These are the commitments we are willing to be measured against on any
+        project, by any client, at any stage.
+      </p>
     </div>
 
-    <!-- Services -->
-    <div>
-      <div class="ace-footer-col-title">Services</div>
-      <div class="ace-footer-links">
-        <a href="{{ url_for('services') }}">Architecture &amp; Design</a>
-        <a href="{{ url_for('services') }}">Structural Engineering</a>
-        <a href="{{ url_for('services') }}#fitouts">Interior Fit-Out</a>
-        <a href="{{ url_for('services') }}">Construction Management</a>
-        <a href="{{ url_for('services') }}">Diaspora Real Estate</a>
-        <a href="{{ url_for('services') }}">Industrial Masterplanning</a>
+    <div class="steps reveal">
+      <div class="step">
+        <span class="step-n">01</span>
+        <h3 class="d4">Precision</h3>
+        <p>Every measurement, budget line and structural calculation is verified before execution.</p>
       </div>
-    </div>
-
-    <!-- Company -->
-    <div>
-      <div class="ace-footer-col-title">Company</div>
-      <div class="ace-footer-links">
-        <a href="{{ url_for('about') }}">About ACE</a>
-        <a href="{{ url_for('company') }}">Projects</a>
-        <a href="{{ url_for('company') }}#faces">Our Team</a>
-        <a href="{{ url_for('company') }}#downloads">Downloads</a>
-        <a href="{{ url_for('company') }}#affiliations">Affiliations</a>
+      <div class="step">
+        <span class="step-n">02</span>
+        <h3 class="d4">Innovation</h3>
+        <p>BIM 360, Revit and digital coordination let us resolve clashes before construction begins.</p>
       </div>
-    </div>
-
-    <!-- Contact -->
-    <div>
-      <div class="ace-footer-col-title">Contact</div>
-      <div class="ace-footer-links">
-        <a href="{{ url_for('contact') }}">Start a Project</a>
-        <a href="{{ url_for('contact') }}">Request a Quote</a>
-        <a href="{{ url_for('contact') }}">Request Credentials</a>
-        <a href="{{ url_for('contact') }}">Diaspora Enquiries</a>
-        <a href="{{ url_for('contact') }}">Media Enquiries</a>
-        <a href="{{ url_for('terms') }}">Terms & Conditions</a>
-        <a href="{{ url_for('privacy') }}">Privacy Policy</a>
+      <div class="step">
+        <span class="step-n">03</span>
+        <h3 class="d4">Integrity</h3>
+        <p>Open books, transparent costing and honest programmes — including when the honest answer is bad news.</p>
+      </div>
+      <div class="step">
+        <span class="step-n">04</span>
+        <h3 class="d4">Partnership</h3>
+        <p>Your project becomes our portfolio, and therefore our responsibility.</p>
+      </div>
+      <div class="step">
+        <span class="step-n">05</span>
+        <h3 class="d4">Sustainability</h3>
+        <p>Climate-responsive design and long-term operational efficiency guide every decision.</p>
+      </div>
+      <div class="step">
+        <span class="step-n">06</span>
+        <h3 class="d4">Safety</h3>
+        <p>A Zero Harm culture enforced daily through strict HSE standards on every site.</p>
       </div>
     </div>
 
   </div>
+</section>
 
-  <div class="ace-footer-bottom">
-    <span class="ace-footer-copy">© 2026 ACE — Adaptive City Ecosystems Ltd. All rights reserved. Nairobi, Kenya.</span>
-    <div class="ace-footer-pills">
-      <span class="ace-footer-pill">NCA Cat 4</span>
-      <span class="ace-footer-pill">AAK</span>
-      <span class="ace-footer-pill">IEK</span>
-      <span class="ace-footer-pill">ACMK</span>
-      <span class="ace-footer-pill">KABCEC</span>
+
+<!-- ===================== FLAGSHIP: INDUSTRIAL ===================== -->
+<section class="section on-dark">
+  <div class="wrap">
+
+    <div class="sec-head">
+      <div>
+        <span class="eyebrow">Flagship — Industrial</span>
+        <h2 class="d2">Gold plant masterplan,<br>Awdal region, Somaliland.</h2>
+      </div>
+      <p class="lead">
+        Masterplanning and systems integration for a 500 TPD gold processing
+        facility — the clearest test of whether integrated delivery holds up
+        outside a city plot.
+      </p>
+    </div>
+
+    <div class="figures reveal" style="margin-bottom:clamp(30px,3.5vw,48px);">
+      <div class="figure">
+        <div class="figure-n">500</div>
+        <div class="figure-l">TPD Capacity</div>
+      </div>
+      <div class="figure">
+        <div class="figure-n">25<em> TPH</em></div>
+        <div class="figure-l">Ball Mill Circuit</div>
+      </div>
+      <div class="figure">
+        <div class="figure-n">2,000<em>T</em></div>
+        <div class="figure-l">CIL Circuit</div>
+      </div>
+      <div class="figure">
+        <div class="figure-n">45</div>
+        <div class="figure-l">Days To Production</div>
+      </div>
+    </div>
+
+    <div class="steps reveal">
+      <div class="step">
+        <span class="step-n">01</span>
+        <h3 class="d4">Systems Integration</h3>
+        <p>Managed the interface between factory specifications and local site realities, so the 25 TPH ball mill and recovery circuits integrated without rework.</p>
+      </div>
+      <div class="step">
+        <span class="step-n">02</span>
+        <h3 class="d4">Functional Zoning</h3>
+        <p>Site laid out around throughput and logistics — production core, secure value chain, support and personnel zones each placed against how material actually moves.</p>
+      </div>
+      <div class="step">
+        <span class="step-n">03</span>
+        <h3 class="d4">Site &amp; Foundations</h3>
+        <p>Site preparation and foundation works engineered for the ball mill groundwork and the 2,000-ton CIL circuit installation.</p>
+      </div>
+      <div class="step">
+        <span class="step-n">04</span>
+        <h3 class="d4">Commissioning</h3>
+        <p>Phased technical expansion planned from commissioning through to full production, with capacity to grow without rebuilding the core.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ===================== CTA ===================== -->
+<section class="section">
+  <div class="wrap">
+    <div class="cta-band reveal">
+      <div style="display:flex;flex-direction:column;gap:20px;align-items:flex-start;">
+        <span class="eyebrow">Work With Us</span>
+        <h2 class="d2">One team, from<br>brief to key.</h2>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:26px;">
+        <p class="lead" style="margin:0;">
+          If you have a site, a brief or just a decision to make about how to
+          procure a project, we are happy to talk it through before anyone signs
+          anything.
+        </p>
+        <div class="cta-actions">
+          <a href="{{ url_for('contact') }}" class="btn">
+            Start a Project
+            <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a href="{{ url_for('company') }}" class="btn btn-ghost">Selected Work</a>
+        </div>
+      </div>
     </div>
   </div>
-</footer>
+</section>
 
-
-
-
-<!-- NAVBAR JS -->
-<script>
-const burger = document.getElementById("burger");
-const mobileMenu = document.getElementById("mobileMenu");
-
-burger.addEventListener("click", () => {
-  burger.classList.toggle("active");
-  mobileMenu.classList.toggle("active");
-});
-</script>
-
-</body>
-</html>
+{% endblock %}
