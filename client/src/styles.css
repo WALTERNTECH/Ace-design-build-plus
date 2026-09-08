@@ -62,7 +62,14 @@ body{
   line-height:1.6;
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
-  overflow-x:hidden;
+  /* `overflow-x:hidden` on body silently disables `position:sticky` on iOS
+     Safari, which would let the header — and the logo that leads home —
+     scroll away and never come back. `clip` contains the same overflow
+     without creating a scroll container, so sticky keeps working. */
+  overflow-x:clip;
+}
+@supports not (overflow-x:clip){
+  body{overflow-x:hidden;}
 }
 h1,h2,h3,h4{
   margin:0;
