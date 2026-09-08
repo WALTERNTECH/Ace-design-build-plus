@@ -118,7 +118,10 @@ function Nav() {
         </div>
       </header>
 
-      <div className={`drawer${open ? " on" : ""}`}>
+      {/* Close on tap rather than waiting for the route effect: tapping the
+          page you are already on never changes pathname, so the effect would
+          not fire and the menu would sit there looking broken. */}
+      <div className={`drawer${open ? " on" : ""}`} onClick={() => setOpen(false)}>
         {NAV.map((item) => (
           <NavLink key={item.to} to={item.to} end={item.to === "/"}>
             <em>{item.n}</em>
@@ -242,6 +245,14 @@ function ScrollManager() {
     const root = document.documentElement;
     const previous = root.style.scrollBehavior;
     root.style.scrollBehavior = "auto";
+
+    // The mobile drawer locks body scrolling while it is open, and this effect
+    // runs before the drawer's own close effect (ScrollManager sits above Nav
+    // in the tree). Scrolling a locked body is ignored, so the visitor would
+    // land on the new page still scrolled to where they were — on a phone that
+    // means arriving "home" at the footer. Release the lock first.
+    document.body.style.overflow = "";
+    document.documentElement.style.overflow = "";
 
     try {
       const target = hash ? document.querySelector(hash) : null;

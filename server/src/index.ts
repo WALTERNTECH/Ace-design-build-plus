@@ -200,6 +200,10 @@ if (fs.existsSync(clientDir)) {
 
   app.get("*", (req, res, next) => {
     if (req.path.startsWith("/api/")) return next();
+    // Same no-cache rule the static middleware applies to index.html at "/".
+    // Without it sendFile emits "public, max-age=0" and a phone can hold a
+    // stale shell pointing at a bundle from a previous deploy.
+    res.setHeader("Cache-Control", "no-cache");
     res.sendFile(path.join(clientDir, "index.html"));
   });
 } else {
