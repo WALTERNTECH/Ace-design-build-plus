@@ -220,10 +220,17 @@ ul,ol{margin:0;padding:0;list-style:none;}
   position:sticky;
   top:0;
   z-index:900;
-  background:rgba(255,255,255,.92);
-  backdrop-filter:saturate(180%) blur(12px);
-  -webkit-backdrop-filter:saturate(180%) blur(12px);
+  background:var(--white);
   border-bottom:1px solid var(--line-soft);
+}
+/* backdrop-filter on a sticky header has swallowed taps on some iOS
+   versions, so it is desktop-only where the hazard does not apply. */
+@media(min-width:1024px){
+  .nav{
+    background:rgba(255,255,255,.92);
+    backdrop-filter:saturate(180%) blur(12px);
+    -webkit-backdrop-filter:saturate(180%) blur(12px);
+  }
 }
 .nav-in{
   height:var(--nav-h);

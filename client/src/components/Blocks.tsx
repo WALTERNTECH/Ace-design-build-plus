@@ -22,7 +22,9 @@ export function PageHead({
     <section className="phead">
       <div className="wrap phead-in">
         <div className="crumb">
-          <Link to="/">Home</Link> <span>/</span> <span>{crumb}</span>
+          {/* Native anchor: this breadcrumb is the route home on every
+              interior page and must not depend on the router. */}
+          <a href="/">Home</a> <span>/</span> <span>{crumb}</span>
         </div>
         <span className="eyebrow">{eyebrow}</span>
         <h1 className="t-hero">{title}</h1>

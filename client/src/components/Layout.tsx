@@ -81,25 +81,35 @@ function Nav() {
     <>
       <header className="nav">
         <div className="nav-in">
-          <Link to="/" className="brand" aria-label={`${COMPANY.legal}, home`}>
+          {/* Deliberately a plain anchor, not a router Link. A Link cancels the
+              browser's own navigation and then does it in JavaScript; if that
+              JS step fails the tap does nothing at all and the URL never
+              changes. Going home is the one action that must never be able to
+              fail, so it uses the browser's native navigation. */}
+          <a href="/" className="brand" aria-label={`${COMPANY.legal}, home`}>
             <img src="/img/ace-logo.jpeg" alt="" />
             <span>
               <span className="brand-name">{COMPANY.name}</span>
               <span className="brand-sub">{COMPANY.tagline}</span>
             </span>
-          </Link>
+          </a>
 
           <nav className="nav-links" aria-label="Primary">
-            {NAV.map((item) => (
-              <NavLink
-                key={item.to}
-                to={item.to}
-                end={item.to === "/"}
-                className={({ isActive }) => (isActive ? "on" : undefined)}
-              >
-                {item.label}
-              </NavLink>
-            ))}
+            {NAV.map((item) =>
+              item.to === "/" ? (
+                <a key={item.to} href="/" className={pathname === "/" ? "on" : undefined}>
+                  {item.label}
+                </a>
+              ) : (
+                <NavLink
+                  key={item.to}
+                  to={item.to}
+                  className={({ isActive }) => (isActive ? "on" : undefined)}
+                >
+                  {item.label}
+                </NavLink>
+              ),
+            )}
           </nav>
 
           <Link to="/contact" className="nav-cta">
@@ -122,12 +132,20 @@ function Nav() {
           page you are already on never changes pathname, so the effect would
           not fire and the menu would sit there looking broken. */}
       <div className={`drawer${open ? " on" : ""}`} onClick={() => setOpen(false)}>
-        {NAV.map((item) => (
-          <NavLink key={item.to} to={item.to} end={item.to === "/"}>
-            <em>{item.n}</em>
-            {item.label}
-          </NavLink>
-        ))}
+        {NAV.map((item) =>
+          /* Home is a native anchor for the same reason as the logo. */
+          item.to === "/" ? (
+            <a key={item.to} href="/">
+              <em>{item.n}</em>
+              {item.label}
+            </a>
+          ) : (
+            <NavLink key={item.to} to={item.to}>
+              <em>{item.n}</em>
+              {item.label}
+            </NavLink>
+          ),
+        )}
         <Link to="/contact" className="btn">
           Start a Project <IconArrow />
         </Link>
@@ -143,13 +161,13 @@ function Footer() {
       <div className="wrap">
         <div className="foot-grid">
           <div className="foot-brand">
-            <Link to="/" className="brand" style={{ marginRight: 0 }}>
+            <a href="/" className="brand" style={{ marginRight: 0 }}>
               <img src="/img/ace-logo.jpeg" alt="" />
               <span>
                 <span className="brand-name">{COMPANY.name}</span>
                 <span className="brand-sub">{COMPANY.tagline}</span>
               </span>
-            </Link>
+            </a>
             <p className="foot-tag">
               Integrated architecture, structural engineering, interior design and
               construction management, delivered by one accountable team. Nairobi,
@@ -183,6 +201,7 @@ function Footer() {
           <div>
             <div className="foot-t">Company</div>
             <div className="foot-links">
+              <a href="/">Home</a>
               <Link to="/about">About ACE</Link>
               <Link to="/work">Selected Work</Link>
               <Link to="/work#team">Our Team</Link>
