@@ -220,19 +220,42 @@ function Footer() {
   );
 }
 
-/* ---------- scroll restoration ---------- */
+/* ---------- scroll restoration ----------
+ *
+ * Two things this has to survive.
+ *
+ * 1. `scrollTo({behavior:"instant"})` throws a TypeError on browsers that
+ *    predate that enum value (below Chrome 97 / Safari 15.4). Thrown from an
+ *    effect with no boundary above it, React 18 unmounts the whole root — the
+ *    route changes and the screen goes blank. Never risk it: use the
+ *    two-argument form, which every browser has always supported.
+ *
+ * 2. `html { scroll-behavior: smooth }` would otherwise animate the jump to
+ *    the top. Coming home from a long page that means a slow crawl, or
+ *    landing clamped at the bottom of a shorter page looking at the footer,
+ *    which reads as "the link did nothing". Suspend it for the jump.
+ */
 function ScrollManager() {
   const { pathname, hash } = useLocation();
 
   useEffect(() => {
-    if (hash) {
-      const el = document.querySelector(hash);
-      if (el) {
-        el.scrollIntoView({ behavior: "smooth", block: "start" });
-        return;
+    const root = document.documentElement;
+    const previous = root.style.scrollBehavior;
+    root.style.scrollBehavior = "auto";
+
+    try {
+      const target = hash ? document.querySelector(hash) : null;
+      if (target) {
+        const top = target.getBoundingClientRect().top + window.pageYOffset - 96;
+        window.scrollTo(0, Math.max(top, 0));
+      } else {
+        window.scrollTo(0, 0);
       }
+    } catch {
+      /* Scrolling must never be able to break navigation. */
+    } finally {
+      root.style.scrollBehavior = previous;
     }
-    window.scrollTo({ top: 0, behavior: "instant" as ScrollBehavior });
   }, [pathname, hash]);
 
   return null;
